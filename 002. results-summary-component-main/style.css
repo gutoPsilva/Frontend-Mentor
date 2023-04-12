@@ -14,6 +14,7 @@
     padding: 0px;
     margin: 0px;
     cursor: default;
+    box-sizing: border-box;
 }
 
 body{
@@ -40,15 +41,15 @@ body{
 
 .circle{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
 
     background-image: linear-gradient(to bottom, var(--Violetblue), var(--Persianblue));
     padding: 15px;
     margin: 20px;
-    height: 110px;
-    width: 110px;
+    height: 140px;
+    width: 140px;
     border-radius: 50%;
 }
 
@@ -57,6 +58,13 @@ body{
 #overall{
     font-size: 3.7em;
     font-weight: 800;
+
+    transition: all .2s ease-in-out;
+}
+
+#overall:hover{
+    cursor: pointer;
+    transform: translateY(-3px);
 }
 
 #avaliation{
@@ -74,9 +82,9 @@ body{
 }
 
 #dados h1{
-    align-self: flex-start;
     font-size: 20px;
     margin-bottom: 8px;
+    width: 100%;
 }
 
 #dados p {color: black;}
@@ -91,10 +99,13 @@ body{
     justify-content: space-between;
     align-items: center;
     
-    width: 90%;
+    width: 100%;
     padding: 10px 15px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 5px;
+    border: 2px solid transparent; /* borda transparente que evita movimento no hover, pois border n é criada somente no hover*/
+
+
 }
 
 .maxStats{opacity: .6;}
@@ -104,9 +115,19 @@ body{
     background-color: rgba(255, 87, 87, 0.106);
 }
 
+#reaction:hover{
+    border-color: hsl(0, 100%, 67%);
+    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
+}
+
 #memory{
     color: hsla(39, 100%, 56%);;
     background-color: rgba(255, 177, 31, 0.106);
+}
+
+#memory:hover{
+    border-color:hsl(39, 100%, 56%);
+    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
 }
 
 #verbal{
@@ -114,9 +135,19 @@ body{
     background-color: hsla(166, 100%, 37%, 0.106);
 }
 
+#verbal:hover{
+    border-color:hsl(166, 100%, 37%);
+    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
+}
+
 #visual{
     color: hsl(234, 85%, 45%);
     background-color: hsla(234, 85%, 45%, 0.106);
+}
+
+#visual:hover{
+    border-color:hsl(234, 85%, 45%);
+    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
 }
 
 #continueBtn{
@@ -127,10 +158,14 @@ body{
 
     width: 100%;
     padding: 15px;
-    margin-bottom: 15px;
+    margin: 15px 0px 15px 0px;
     border-radius: 30px;
+    transition: transform .2s ease-in-out;
+
+    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
 }
 
 #continueBtn:hover{
     cursor: pointer;
+    transform: translateY(-4px);
 }
