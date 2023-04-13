@@ -22,10 +22,10 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
-
+<p align="center">
 ![screenshot](./design/screenshot.JPG)
 ![screenshotM](./design/screenshotM.JPG)
-
+</p>
 ### Links
 
 - Solution URL: [https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/002.%20results-summary-component-main]
