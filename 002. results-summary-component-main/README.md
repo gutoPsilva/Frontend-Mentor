@@ -28,8 +28,8 @@ Users should be able to:
 </div>
 ### Links
 
-- Solution URL: https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/002.%20results-summary-component-main
-- Live Site URL: https://gutopsilva.github.io/FrontEnd-Mentor/002.%20results-summary-component-main/index.html
+- Solution URL: [Solution](https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/002.%20results-summary-component-main)
+- Live Site URL: [Site](https://gutopsilva.github.io/FrontEnd-Mentor/002.%20results-summary-component-main/index.html)
 
 ### Built with
 
