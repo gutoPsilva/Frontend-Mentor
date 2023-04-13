@@ -18,7 +18,7 @@
 }
 
 body{
-    height: 95vh;
+    height: 100vh;
     width: 100vw;
     font: 700 normal 18px 'Hanken Grotesk', sans-serif;
     background-color: white;
@@ -34,7 +34,7 @@ body{
     background-image: linear-gradient(to Bottom, var(--Lightslateblue), var(--Lightroyalblue));
     padding: 20px;
     padding-bottom: 40px;
-    border-radius: 0px 0px 10% 10%;
+    border-radius: 0px 0px 30px 30px;
 }
 
 #resultado > p{opacity: .7;}
@@ -46,10 +46,9 @@ body{
     align-items: center;
 
     background-image: linear-gradient(to bottom, var(--Violetblue), var(--Persianblue));
-    padding: 15px;
-    margin: 20px;
-    height: 140px;
-    width: 140px;
+    margin: 20px 0px;
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
 }
 
@@ -94,18 +93,17 @@ body{
     top: 3px;
 }
 
+#spanGroup{width: 100%;}
+
 .caixasContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     
-    width: 100%;
-    padding: 10px 15px;
+    padding: 10px 0px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 2px solid transparent; /* borda transparente que evita movimento no hover, pois border n é criada somente no hover*/
-
-
 }
 
 .maxStats{opacity: .6;}
@@ -115,40 +113,28 @@ body{
     background-color: rgba(255, 87, 87, 0.106);
 }
 
-#reaction:hover{
-    border-color: hsl(0, 100%, 67%);
-    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
-}
+#reaction:hover{border-color: hsl(0, 100%, 67%);}
 
 #memory{
     color: hsla(39, 100%, 56%);;
     background-color: rgba(255, 177, 31, 0.106);
 }
 
-#memory:hover{
-    border-color:hsl(39, 100%, 56%);
-    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
-}
+#memory:hover{border-color:hsl(39, 100%, 56%);}
 
 #verbal{
     color: hsl(166, 100%, 37%);
     background-color: hsla(166, 100%, 37%, 0.106);
 }
 
-#verbal:hover{
-    border-color:hsl(166, 100%, 37%);
-    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
-}
+#verbal:hover{border-color:hsl(166, 100%, 37%);}
 
 #visual{
     color: hsl(234, 85%, 45%);
     background-color: hsla(234, 85%, 45%, 0.106);
 }
 
-#visual:hover{
-    border-color:hsl(234, 85%, 45%);
-    box-shadow: 2px 3px 5px 1px rgba(0, 0, 0, 0.432);
-}
+#visual:hover{border-color:hsl(234, 85%, 45%);}
 
 #continueBtn{
     font-size: 1em;
@@ -163,7 +149,9 @@ body{
     transition: transform .2s ease-in-out;
 }
 
-#continueBtn:hover{
+#continueBtn:hover, :focus{
     cursor: pointer;
+    background-image: linear-gradient(to bottom, var(--Lightslateblue), var(--Lightroyalblue));
     transform: translateY(-4px);
+    
 }
