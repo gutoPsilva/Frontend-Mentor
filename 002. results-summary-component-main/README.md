@@ -41,7 +41,7 @@ Users should be able to:
 
 ## Author
 
-- GitHub - [Gustavo P. Silva](https://github.com/gutoPsilva)
+- GitHub - [gutoPsilva](https://github.com/gutoPsilva)
 - Frontend Mentor - [@gutoPsilva](https://www.frontendmentor.io/profile/gutoPsilva)
 - Twitter - [@nakeru78](https://www.twitter.com/nakeru78)
 - LinkedIn - [Gustavo Pereira da Silva](https://www.linkedin.com/in/gustavo-pereira-da-silva-b5b684247/)
