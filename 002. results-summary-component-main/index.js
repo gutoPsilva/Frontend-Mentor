@@ -8,7 +8,7 @@ let m = 92;
 let e = 61;
 let i = 72;
 
-
+/*
 function calculate(){
     overallStats = Math.round((r + m + e + i) / 4);
     overallDoc.innerHTML = overallStats;
@@ -60,5 +60,4 @@ visualDoc.onclick = function(){
     visualDoc.innerHTML = `${Number(i)} <span class="maxStats">/ 100</span>`;
     calculate();
 }
-
-
+*/
