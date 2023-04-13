@@ -22,8 +22,10 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
-<img src="design/screenshot.JPG" alt="screenshotDesktop" align="center">
-<img src="design/screenshotM.JPG" alt="screenshotMobile" align="center">
+<div align="center">
+  <img src="design/screenshot.JPG" alt="screenshotDesktop">
+  <img src="design/screenshotM.JPG" alt="screenshotMobile">
+</div>
 ### Links
 
 - Solution URL: [https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/002.%20results-summary-component-main]
