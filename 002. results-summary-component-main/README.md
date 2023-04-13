@@ -22,14 +22,14 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
-
-![screenshot](./design/screenshot.JPG)
-![screenshotM](./design/screenshotM.JPG)
-
+<div align="center">
+  <img src="design/screenshot.JPG" alt="screenshotDesktop">
+  <img src="design/screenshotM.JPG" alt="screenshotMobile">
+</div>
 ### Links
 
-- Solution URL: [https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/002.%20results-summary-component-main]
-- Live Site URL: [https://gutopsilva.github.io/FrontEnd-Mentor/002.%20results-summary-component-main/index.html]
+- Solution URL: https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/002.%20results-summary-component-main
+- Live Site URL: https://gutopsilva.github.io/FrontEnd-Mentor/002.%20results-summary-component-main/index.html
 
 ### Built with
 
@@ -41,6 +41,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Gustavo P. Silva](https://github.com/gutoPsilva)
+- GitHub - [gutoPsilva](https://github.com/gutoPsilva)
 - Frontend Mentor - [@gutoPsilva](https://www.frontendmentor.io/profile/gutoPsilva)
 - Twitter - [@nakeru78](https://www.twitter.com/nakeru78)
+- LinkedIn - [Gustavo Pereira da Silva](https://www.linkedin.com/in/gustavo-pereira-da-silva-b5b684247/)
