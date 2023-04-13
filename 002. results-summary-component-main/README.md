@@ -23,8 +23,7 @@ Users should be able to:
 
 ### Screenshot
 <p align="center">
-![screenshot](./design/screenshot.JPG)
-![screenshotM](./design/screenshotM.JPG)
+    <img src="design/screenshot.JPG" alt="screenshotDesktop">
 </p>
 ### Links
 
