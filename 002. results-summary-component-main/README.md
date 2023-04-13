@@ -24,6 +24,7 @@ Users should be able to:
 ### Screenshot
 <p align="center">
     <img src="design/screenshot.JPG" alt="screenshotDesktop">
+  <img src="design/screenshotM.JPG" alt="screenshotMobile">
 </p>
 ### Links
 
