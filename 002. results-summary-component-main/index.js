@@ -1,3 +1,4 @@
+/*
 const overallDoc = document.getElementById("overall");
 const reactionDoc = document.getElementById("reactionStats");
 const memoryDoc = document.getElementById("memoryStats");
@@ -60,3 +61,4 @@ visualDoc.onclick = function(){
     visualDoc.innerHTML = `${Number(i)} <span class="maxStats">/ 100</span>`;
     calculate();
 }
+*/
