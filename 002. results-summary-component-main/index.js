@@ -47,7 +47,7 @@ verbalDoc.onclick = function(){
         window.alert("A pontuação deve ir de 0 a 100!");
         e = Number(window.prompt("Digite a nova pontuação: "));
     }
-    verbalDoc.innerHTML = `${Number(m)} <span class="maxStats">/ 100</span>`;
+    verbalDoc.innerHTML = `${Number(e)} <span class="maxStats">/ 100</span>`;
     calculate();
 }
 
