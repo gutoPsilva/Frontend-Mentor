@@ -26,7 +26,7 @@ Users should be able to:
 <div align="center">
   <img src="images/screenshot.JPG" alt="screenshot">
 </div>
-### Links
+## Links
 
 - Solution URL: https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/003.%20nft-preview-card-component-main
 - Live Site URL: https://gutopsilva.github.io/FrontEnd-Mentor/003.%20nft-preview-card-component-main/index.html
