@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+/* mobile-first workflow*/
+
+:root{
+  --Orange: hsl(25, 97%, 53%);
+  --LightGrey: hsl(217, 12%, 63%);
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Overpass', sans-serif;
+  color: hsl(0, 0%, 100%);
+}
+
+p{
+  font-size:15px;
+}
+
+body{
+  background-color: #141519;
+}
+
+main{
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .general-container{
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .general-container{
+    width: 350px;
+  }
+}
+
+.general-container{
+  padding: 25px;
+  border-radius: 15px;
+  background-color: #1E252F;
+}
+
+.svg-container{
+  width: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  background-color: #262F38;
+  border-radius: 50%;
+}
+
+.svg-container,
+.title{
+  align-self: flex-start;
+  margin-bottom: 16px;
+}
+
+.mid-text{
+  color: var(--LightGrey);
+  line-height: 24px;
+}
+
+.container-rating-buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0px;
+}
+
+.rating-button{
+  background-color: #262F38;
+  color: var(--LightGrey);
+}
+
+.rating-button:hover{
+  background-color: var(--Orange);
+  color: hsl(0, 0%, 100%);
+}
+
+.selected{
+  background-color: var(--LightGrey);
+  color: hsl(0, 0%, 100%);
+}
+
+.submit-button{
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 0px;
+  background-color: var(--Orange);
+  width: 100%;
+  cursor: pointer;
+}
+
+.submit-button:hover{
+  background-color: hsl(0, 0%, 100%);
+  color: var(--Orange);
+}
+
+.submit-button,
+.rating-button,
+.selected{
+  transition: background-color 0.15s, 
+   color 0.15s;
+}
+
+.selected,
+.rating-button{
+  height: 50px;
+  width: 50px;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.image-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.selected-rating-container{
+  display: flex;
+  justify-content: center;
+  margin: 25px 0px;
+}
+
+.selected-rating{
+  font-weight: 700;
+  border-radius: 20px;
+  color: var(--Orange);
+  background-color: #262F38;
+  padding: 8px 13px;
+}
+
+#number{
+  color: var(--Orange);
+}
+
+.title-c{
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.mid-text-c{
+  text-align: center;
+  color: var(--LightGrey);
+  line-height: 24px;
+  margin-bottom: 15px;
+}
