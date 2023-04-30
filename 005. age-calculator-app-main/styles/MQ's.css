@@ -1,7 +1,7 @@
 /* #descoberta: MQ's devem ser linkadas após todos os outros CSS, pois algumas propriedades dentro das MQ's podem ser sobrepostas por outras que estão abaixo dela. */
 
 /* desktop devices*/
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 1000px) {
   .general-container{
     width: 600px;
     padding: 30px 40px;

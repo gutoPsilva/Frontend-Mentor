@@ -1,19 +1,16 @@
 const calculateButton = document.getElementById("advance");
-const objInputDay = document.getElementById("inputDay");
-const objInputMonth = document.getElementById("inputMonth");
-const objInputYear = document.getElementById("inputYear");
-const yearAlert = document.getElementById("yAlert");
-const monthAlert = document.getElementById("mAlert");
-const dayAlert = document.getElementById("dAlert");
 
-calculateButton.addEventListener("click", validadeData); // clique no botão
-objInputDay.addEventListener("keypress", validadeData); // enter nos inputs
-objInputMonth.addEventListener("keypress", validadeData);
-objInputYear.addEventListener("keypress", validadeData);
+calculateButton.addEventListener("click", validadeData); // apertar no botão
+document.getElementById("inputDay").addEventListener("keypress", validadeData); // enter nos inputs
+document.getElementById("inputMonth").addEventListener("keypress", validadeData);
+document.getElementById("inputYear").addEventListener("keypress", validadeData);
 
 function validadeData(e){ // recebe o evento como argumento
-  if(e.key == "Enter" || e.target.id == "advance"){ // caso o evento seja o clique no botão avançar, ou enter nos inputs
+  if(e.key == "Enter" || e.target.id == "advance" || e.target.id == "advanceIcon"){ // caso o evento seja o clique no botão avançar, ou no ícone do botão, ou enter nos inputs
     const dataAtual = new Date();
+    const yearAlert = document.getElementById("yAlert");
+    const monthAlert = document.getElementById("mAlert");
+    const dayAlert = document.getElementById("dAlert");
     let inputDay = Number(document.getElementById("inputDay").value);
     let inputMonth = Number(document.getElementById("inputMonth").value);
     let inputYear = Number(document.getElementById("inputYear").value);
@@ -25,11 +22,11 @@ function validadeData(e){ // recebe o evento como argumento
       dayAlert.innerHTML = "This field is required";
       styleDay();
     }
-    else if(inputDay < 1 || inputDay > 31 ){ // dias vão de 1 até 31
+    else if(inputDay < 1 || inputDay > 31){ // dias vão de 1 até 31
       dayAlert.innerHTML = "Must be a valid day";
       styleDay();
     }
-    else if(inputMonth == 2 && inputDay == 31 || inputMonth == 4 && inputDay == 31 || inputMonth == 6 && inputDay == 31 || inputMonth == 9 && inputDay == 31 || inputMonth == 11 && inputDay == 31){ // meses que não possuem 31 dias
+    else if(inputMonth == 2 && inputDay == 31 || inputMonth == 6 && inputDay == 31 || inputMonth == 9 && inputDay == 31 || inputMonth == 11 && inputDay == 31){ // meses que não possuem 31 dias
       dayAlert.innerHTML = "Must be a valid date";
       styleDay();
     }
@@ -44,6 +41,7 @@ function validadeData(e){ // recebe o evento como argumento
     else{
       dayAlert.innerHTML = "";
       document.getElementById("labelDay").classList.remove("label-wrongStyle");
+      document.getElementById("labelDay").className = "input-label";
       document.getElementById("inputDay").classList.remove("input-wrongStyle");
       diaValido = true;
     }
@@ -60,10 +58,10 @@ function validadeData(e){ // recebe o evento como argumento
     else{
       monthAlert.innerHTML = "";
       document.getElementById("labelMonth").classList.remove("label-wrongStyle");
+      document.getElementById("labelMonth").className = "input-label";
       document.getElementById("inputMonth").classList.remove("input-wrongStyle");
       mesValido = true;
     }
-  
   
     if(document.getElementById("inputYear").value === ""){ // input vazio
       yearAlert.innerHTML = "This field is required";
@@ -76,18 +74,54 @@ function validadeData(e){ // recebe o evento como argumento
     else{
       yearAlert.innerHTML = "";
       document.getElementById("labelYear").classList.remove("label-wrongStyle");
+      document.getElementById("labelYear").className = "input-label";
       document.getElementById("inputYear").classList.remove("input-wrongStyle");
       anoValido = true;
     }
   
     // dados válidos
     if(diaValido && mesValido && anoValido){
-      let years = Number(dataAtual.getFullYear()) - inputYear;
-      let months = (Number(dataAtual.getMonth()) + 1) - inputMonth; // getMonth retorna de 0 a 11, portanto +1 para inteirar os 12
-      let days = Number(dataAtual.getDate()) - inputDay;
-      document.getElementById("resultYear").innerHTML = Math.abs(years); // valores absolutos, caso o ano seja a.C.
-      document.getElementById("resultMonth").innerHTML = Math.abs(months);
-      document.getElementById("resultDay").innerHTML = Math.abs(days);
+      let days, months, years;
+      let timeYear = dataAtual.getFullYear();
+      let timeMonth = dataAtual.getMonth() + 1;
+      let timeDay = dataAtual.getDate();
+
+      if(inputMonth < timeMonth){ // já fez aniversário
+          years = timeYear - inputYear;
+          if(inputDay <= timeDay){
+            months = timeMonth - inputMonth;
+            days = timeDay - inputDay;
+          }
+          else{
+            months = timeMonth - inputMonth - 1;
+            days = timeDay - inputDay + 31;
+          }
+      }
+
+      else if(inputMonth == timeMonth){ // mesmo mês de aniv
+
+        if(inputDay <= timeDay){ // dia aniversário
+          years = timeYear - inputYear;
+          months = 0;
+          days = timeDay - inputDay;
+        }
+        else{
+          years = timeYear - inputYear - 1;
+          months = 11;
+          days = timeDay - inputDay + 31;
+        }
+      }
+
+      else if(inputMonth > timeMonth){ // não fez aniversário
+
+        years = timeYear - inputYear - 1;
+        months = timeMonth - inputMonth + 12;
+        days = timeDay - inputDay;
+      }
+
+      document.getElementById("resultYear").innerHTML = years; // valores absolutos, caso o ano seja a.C.
+      document.getElementById("resultMonth").innerHTML = months;
+      document.getElementById("resultDay").innerHTML = days;
     }
     else{ // reiniciar os resultados
       document.getElementById("resultYear").innerHTML = "- -";
