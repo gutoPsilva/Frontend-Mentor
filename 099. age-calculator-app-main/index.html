@@ -2,36 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/MQ's.css">
   <title>Frontend Mentor | Age calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <main class="general-container">
+    <div class="input-container">
+      <div class="input-section">
+        <label id="labelDay" class="input-label" for="inputDay">D A Y</label>
+        <input type="text" placeholder="DD" required id="inputDay"></input>
+        <p id="dAlert" class="errorAlert"></p>
+      </div>
+      <div class="input-section">
+        <label id="labelMonth" class="input-label" for="inputMonth"> M O N T H</label>
+        <input type="text" placeholder="MM" required id="inputMonth"></input>
+        <p id="mAlert" class="errorAlert"></p>
+      </div>
+      <div class="input-section">
+        <label id="labelYear" class="input-label" for="inputYear">Y E A R</label>
+        <input type="text" placeholder="YYYY" required id="inputYear"></input>
+        <p id="yAlert" class="errorAlert"></p>
+      </div>
+    </div>
 
-  Day
-  DD
+    <div class="middle-button">
+      <div class="line"></div>
+      <button id="advance">
+        <img class="icon-arrow" src="assets/images/icon-arrow.svg" alt="arrow-icon">
+      </button>
+    </div>
 
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <div class="results-container">
+      <p class="result">
+        <span id="resultYear">- -</span> 
+        years
+      </p>
+      <p class="result result-spacing">
+        <span id="resultMonths">- -</span>
+         months
+        </p>
+      <p class="result">
+        <span id="resultDays">- -</span> 
+        days
+      </p>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>

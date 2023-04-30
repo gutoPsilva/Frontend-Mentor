@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+/* Mobile-First WorkFlow*/
+
+:root{
+  --Purple: hsl(259, 100%, 65%);
+  --LightRed: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --OffWhite: hsl(0, 0%, 94%);
+  --LightGrey: hsl(0, 0%, 86%);
+  --SmokeyGrey: hsl(0, 1%, 44%);
+  --OffBlack: hsl(0, 0%, 8%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--OffWhite);
+}
+
+.general-container{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px 25px 120px 25px;
+  background-color: var(--White);
+  padding: 40px 25px;
+}
+
+
+
+.input-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+  
+.input-label{
+  color: var(--SmokeyGrey);
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.input-section{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+input{
+  width: 75px;
+  font-size: 22px;
+  border: 1px solid var(--LightGrey);
+  border-radius: 8px;
+  padding: 8px 0px 8px 14px;
+  color: var(--OffBlack);
+  outline: none;
+  transition: border 0.15s;
+}
+
+input:hover,
+input:focus{
+  border: 1px solid var(--Purple);
+}
+
+.errorAlert{
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--LightRed);
+  width: 91px;
+}
+
+.middle-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  margin: 40px 0px 20px 0px;
+}
+
+#advance{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--Purple);
+  z-index: 50;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  outline: none;
+}
+
+#advance:hover{
+  background-color: var(--OffBlack);
+}
+
+.icon-arrow{
+  height: 24px;
+}
+
+.line{
+  z-index: 0;
+  position: absolute;
+  background-color: var(--LightGrey);
+  height: 1.5px;
+  width: 100%;
+}
+
+.results-container{
+  display: flex;
+  flex-direction: column;
+  font-size: 53px;
+}
+
+.result{
+  font-weight: 800;
+  font-style: italic;
+  color: var(--OffBlack);
+}
+
+.result-spacing{
+  margin: -22px 0px;
+}
+
+.result > span{
+  color: var(--Purple);
+}
