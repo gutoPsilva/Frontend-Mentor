@@ -141,3 +141,11 @@ input:focus{
 .result > span{
   color: var(--Purple);
 }
+
+.input-wrongStyle{
+  border: 1px solid var(--LightRed);
+}
+
+.label-wrongStyle{
+  color: var(--LightRed);
+}
