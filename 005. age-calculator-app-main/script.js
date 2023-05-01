@@ -1,6 +1,4 @@
-const calculateButton = document.getElementById("advance");
-
-calculateButton.addEventListener("click", validadeData); // apertar no botão
+document.getElementById("advance").addEventListener("click", validadeData); // apertar no botão
 document.getElementById("inputDay").addEventListener("keypress", validadeData); // enter nos inputs
 document.getElementById("inputMonth").addEventListener("keypress", validadeData);
 document.getElementById("inputYear").addEventListener("keypress", validadeData);
@@ -14,68 +12,59 @@ function validadeData(e){ // recebe o evento como argumento
     let inputDay = Number(document.getElementById("inputDay").value);
     let inputMonth = Number(document.getElementById("inputMonth").value);
     let inputYear = Number(document.getElementById("inputYear").value);
-    let diaValido = false;
-    let mesValido = false;
-    let anoValido = false;
+    let diaValido, mesValido, anoValido = false;
   
     if(document.getElementById("inputDay").value === ""){ // input vazio
       dayAlert.innerHTML = "This field is required";
-      styleDay();
+      styleErrors("labelDay", "inputDay");
     }
     else if(inputDay < 1 || inputDay > 31){ // dias vão de 1 até 31
       dayAlert.innerHTML = "Must be a valid day";
-      styleDay();
+      styleErrors("labelDay", "inputDay");
     }
-    else if(inputMonth == 2 && inputDay == 31 || inputMonth == 6 && inputDay == 31 || inputMonth == 9 && inputDay == 31 || inputMonth == 11 && inputDay == 31){ // meses que não possuem 31 dias
+    else if(inputMonth == 4 && inputDay == 31 || inputMonth == 6 && inputDay == 31 || inputMonth == 9 && inputDay == 31 || inputMonth == 11 && inputDay == 31){ // meses que não possuem 31 dias
       dayAlert.innerHTML = "Must be a valid date";
-      styleDay();
+      styleErrors("labelDay", "inputDay");
     }
     else if(inputDay > 29 && inputMonth == 2){ // fev não passa de 29 dias
       dayAlert.innerHTML = "Must be a valid date";
-      styleDay();
+      styleErrors("labelDay", "inputDay");
     }
     else if(inputDay == 29 && inputMonth == 2 && inputYear % 4 != 0){ // 29 fev mas não é ano bissexto 
       dayAlert.innerHTML = "Must be a valid date";
-      styleDay();
+      styleErrors("labelDay", "inputDay");
     }
     else{
       dayAlert.innerHTML = "";
-      document.getElementById("labelDay").classList.remove("label-wrongStyle");
-      document.getElementById("labelDay").className = "input-label";
-      document.getElementById("inputDay").classList.remove("input-wrongStyle");
+      styleNormal("labelDay", "inputDay");
       diaValido = true;
     }
   
-  
     if(document.getElementById("inputMonth").value === ""){ // input vazio
       monthAlert.innerHTML = "This field is required";
-      styleMonth();
+      styleErrors("labelMonth", "inputMonth");
     }
     else if(inputMonth < 1 || inputMonth > 12){ // meses vão de 1 até 12
       monthAlert.innerHTML = "Must be a valid month";
-      styleMonth();
+      styleErrors("labelMonth", "inputMonth");
     }
     else{
       monthAlert.innerHTML = "";
-      document.getElementById("labelMonth").classList.remove("label-wrongStyle");
-      document.getElementById("labelMonth").className = "input-label";
-      document.getElementById("inputMonth").classList.remove("input-wrongStyle");
+      styleNormal("labelMonth", "inputMonth");
       mesValido = true;
     }
   
     if(document.getElementById("inputYear").value === ""){ // input vazio
       yearAlert.innerHTML = "This field is required";
-      styleYear();
+      styleErrors("labelYear", "inputYear");
     }
     else if(inputYear > dataAtual.getFullYear()){ // input de ano a frente do ano atual
       yearAlert.innerHTML = "Must be in the past";
-      styleYear();
+      styleErrors("labelYear", "inputYear");
     }
     else{
       yearAlert.innerHTML = "";
-      document.getElementById("labelYear").classList.remove("label-wrongStyle");
-      document.getElementById("labelYear").className = "input-label";
-      document.getElementById("inputYear").classList.remove("input-wrongStyle");
+      styleNormal("labelYear", "inputYear");
       anoValido = true;
     }
   
@@ -93,13 +82,12 @@ function validadeData(e){ // recebe o evento como argumento
             days = timeDay - inputDay;
           }
           else{
-            months = timeMonth - inputMonth - 1;
+            months = timeMonth - inputMonth;
             days = timeDay - inputDay + 31;
           }
       }
 
       else if(inputMonth == timeMonth){ // mesmo mês de aniv
-
         if(inputDay <= timeDay){ // dia aniversário
           years = timeYear - inputYear;
           months = 0;
@@ -113,35 +101,38 @@ function validadeData(e){ // recebe o evento como argumento
       }
 
       else if(inputMonth > timeMonth){ // não fez aniversário
-
         years = timeYear - inputYear - 1;
-        months = timeMonth - inputMonth + 12;
-        days = timeDay - inputDay;
+        if(inputDay <= timeDay){
+          months = timeMonth - inputMonth + 12;
+          days = timeDay - inputDay;
+        }
+        else{
+          months = timeMonth - inputMonth + 12 - 1;
+          days = timeDay - inputDay + 31;
+        } 
       }
 
-      document.getElementById("resultYear").innerHTML = years; // valores absolutos, caso o ano seja a.C.
-      document.getElementById("resultMonth").innerHTML = months;
-      document.getElementById("resultDay").innerHTML = days;
+      atualizarValores(years, months, days);
     }
     else{ // reiniciar os resultados
-      document.getElementById("resultYear").innerHTML = "- -";
-      document.getElementById("resultMonth").innerHTML = "- -";
-      document.getElementById("resultDay").innerHTML = "- -";
+      atualizarValores("- -", "- -", "- -");
     }
   }
 }
 
-function styleDay(){
-  document.getElementById("labelDay").className = "label-wrongStyle";
-  document.getElementById("inputDay").className = "input-wrongStyle";
+function atualizarValores(y, m, d){
+  document.getElementById("resultYear").innerHTML = y; // valores absolutos, caso o ano seja a.C.
+  document.getElementById("resultMonth").innerHTML = m;
+  document.getElementById("resultDay").innerHTML = d;
 }
 
-function styleMonth(){
-  document.getElementById("labelMonth").className = "label-wrongStyle";
-  document.getElementById("inputMonth").className = "input-wrongStyle";
+function styleErrors(label, input){
+  document.getElementById(label).className = "label-wrongStyle";
+  document.getElementById(input).className = "input-wrongStyle";
 }
 
-function styleYear(){
-  document.getElementById("labelYear").className = "label-wrongStyle";
-  document.getElementById("inputYear").className = "input-wrongStyle"
+function styleNormal(label, input){
+  document.getElementById(label).classList.remove("label-wrongStyle");
+  document.getElementById(label).className = "input-label";
+  document.getElementById(input).classList.remove("input-wrongStyle");
 }

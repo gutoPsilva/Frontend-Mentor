@@ -57,6 +57,13 @@ body{
   position: relative;
 }
 
+/* esconder setas de + e - no input Number*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 input{
   width: 75px;
   font-size: 22px;
