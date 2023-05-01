@@ -2,6 +2,7 @@ document.getElementById("advance").addEventListener("click", validadeData); // a
 document.getElementById("inputDay").addEventListener("keypress", validadeData); // enter nos inputs
 document.getElementById("inputMonth").addEventListener("keypress", validadeData);
 document.getElementById("inputYear").addEventListener("keypress", validadeData);
+let speed = 10;
 
 function validadeData(e){ // recebe o evento como argumento
   if(e.key == "Enter" || e.target.id == "advance" || e.target.id == "advanceIcon"){ // caso o evento seja o clique no botão avançar, ou no ícone do botão, ou enter nos inputs
