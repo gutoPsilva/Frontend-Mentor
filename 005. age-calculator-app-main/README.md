@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Screenshot
 <div align="center">
-  <img src="assets/images/screenshot.JPG" alt="screenshot">
+  <img src="assets/images/screenshoot.JPG" alt="screenshot">
 </div>
 
 ### Links
