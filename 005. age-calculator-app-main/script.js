@@ -83,8 +83,8 @@ function validadeData(e){ // recebe o evento como argumento
             days = timeDay - inputDay;
           }
           else{
-            months = timeMonth - inputMonth;
-            days = timeDay - inputDay + 31;
+            months = timeMonth - inputMonth - 1;
+            days = timeDay - inputDay + 30;
           }
       }
 
@@ -97,7 +97,7 @@ function validadeData(e){ // recebe o evento como argumento
         else{
           years = timeYear - inputYear - 1;
           months = 11;
-          days = timeDay - inputDay + 31;
+          days = timeDay - inputDay + 30;
         }
       }
 
@@ -108,8 +108,8 @@ function validadeData(e){ // recebe o evento como argumento
           days = timeDay - inputDay;
         }
         else{
-          months = timeMonth - inputMonth + 12 - 1;
-          days = timeDay - inputDay + 31;
+          months = timeMonth - inputMonth + 12 - 1; // -1 mês por conta do dia ser depois do dia do aniv, logo é -1 mês e considera-se os dias restantes.
+          days = timeDay - inputDay + 30;
         } 
       }
 
