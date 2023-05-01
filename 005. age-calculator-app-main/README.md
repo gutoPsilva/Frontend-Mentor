@@ -6,6 +6,7 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
+  - [Note](#note)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -29,6 +30,9 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 <!-- - **Bonus**: See the age numbers animate to their final number when the form is submitted -->
 
+### Note
+
+This age calculator starts count a.C. birth. So a negative year input doesn't represent b.C., therefore, it is invalid.
 
 ### Screenshot
 <div align="center">
@@ -41,10 +45,6 @@ Users should be able to:
 - Live Site URL: https://gutopsilva.github.io/FrontEnd-Mentor/005.%20age-calculator-app-main/index.html
 
 ## My process
-
-### Note
-
-This age calculator starts count a.C. birth. So a negative year input doesn't represent b.C., therefore, it is invalid.
 
 ### Built with
 
