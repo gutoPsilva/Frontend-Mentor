@@ -42,6 +42,10 @@ Users should be able to:
 
 ## My process
 
+### Note
+
+This age calculator starts count a.C. birth. So a negative year input doesn't represent b.C., therefore, it is invalid.
+
 ### Built with
 
 - Semantic HTML5 markup

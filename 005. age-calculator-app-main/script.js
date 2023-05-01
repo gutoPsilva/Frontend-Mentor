@@ -19,6 +19,10 @@ function validadeData(e){ // recebe o evento como argumento
       dayAlert.innerHTML = "This field is required";
       styleErrors("labelDay", "inputDay");
     }
+    else if(Number.isInteger(inputDay) == false){
+      dayAlert.innerHTML = "Must be a valid date";
+      styleErrors("labelDay", "inputDay");
+    }
     else if(inputDay < 1 || inputDay > 31){ // dias vão de 1 até 31
       dayAlert.innerHTML = "Must be a valid day";
       styleErrors("labelDay", "inputDay");
@@ -45,6 +49,10 @@ function validadeData(e){ // recebe o evento como argumento
       monthAlert.innerHTML = "This field is required";
       styleErrors("labelMonth", "inputMonth");
     }
+    else if(Number.isInteger(inputMonth) == false){
+      monthAlert.innerHTML = "Must be a valid date";
+      styleErrors("labelMonth", "inputMonth");
+    }
     else if(inputMonth < 1 || inputMonth > 12){ // meses vão de 1 até 12
       monthAlert.innerHTML = "Must be a valid month";
       styleErrors("labelMonth", "inputMonth");
@@ -57,6 +65,10 @@ function validadeData(e){ // recebe o evento como argumento
   
     if(document.getElementById("inputYear").value === ""){ // input vazio
       yearAlert.innerHTML = "This field is required";
+      styleErrors("labelYear", "inputYear");
+    }
+    else if(Number.isInteger(inputYear) == false || inputYear < 0){
+      yearAlert.innerHTML = "Must be a valid date";
       styleErrors("labelYear", "inputYear");
     }
     else if(inputYear > dataAtual.getFullYear()){ // input de ano a frente do ano atual
