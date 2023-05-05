@@ -1,0 +1,38 @@
+/* Desktop */
+@media screen and (min-width:900px) {
+  main{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 1000px;
+  }
+
+  h1, h1>span{
+    text-align: left;
+    font-size: 34px;
+    line-height: 38px;
+  }
+
+  .containerText{
+    text-align: left;
+    width: 680px;
+    margin: 40px;
+  }
+
+  .mainParagraph{
+    margin-top: 25px;
+    width: 350px;
+  }
+  
+  .stats{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15px;
+  }
+
+  .containerImage{
+    background: url(images/image-header-desktop.jpg);
+    background-size: cover;
+    height: auto;
+    border-radius: 0px 8px 8px 0px;
+  }
+}

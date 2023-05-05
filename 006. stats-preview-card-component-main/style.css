@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
 
+/* mobile-first workflow */
+
 :root{
   --VeryDarkBlue: hsl(233, 47%, 7%);
   --DarkDesaturedBlue: hsl(244, 38%, 16%);
@@ -20,33 +22,53 @@
   /*font-family: 'Lexend Deca', sans-serif;*/
   font-weight: 400px;
   color: var(--White);
-  text-align: center;
 }
 
 body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--VeryDarkBlue);
+  height: 100svh;
+  overflow: hidden;
 }
 
 main{
-  margin: auto;
-  margin-top: 45px;
   width: 300px;
   background-color: var(--DarkDesaturedBlue);
   border-radius: 8px;
 }
 
-img{
+.containerImage{
   width: 100%;
+  height: 220.17px;
   border-radius: 8px 8px 0px 0px;
+  background: url(images/image-header-mobile.jpg);
+  background-size: cover;
+}
+
+.purpleOverlay{
+  height: 100%;
+  width: 100%;
+  background-color: hsl(277, 64%, 61%);
+  mix-blend-mode: multiply;
+  opacity: .7;
+}
+
+.image{
+  width: 100%;
+  opacity: 1;
 }
 
 .containerText{
-  padding: 20px;
+  padding: 25px 20px;
+  text-align: center;
 }
 
 h1, h1 > span{
-  font-size: 26px;
+  font-size: 28px;
   line-height: 29px;
+  text-align: center;
 }
 
 h1>span{
@@ -59,16 +81,23 @@ h1>span{
   margin: 15px 0px;
 }
 
-.stats > p{
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 15px 0px;
+.stats{
+  margin-top: 25px;
 }
 
-.stats span{
+.stats > div{
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  margin: 20px 0px 0px 0px;
+  font-size: 24px;
+}
+
+.stats > div > span{
   font-family: 'Lexend Deca', sans-serif;
+  font-weight: 400;
   color: var(--SlightlyTransparentWhite);
-  font-size: 15px;
+  letter-spacing: .5px;
+  font-size: 13px;
+  margin-top: 4px;
 }
