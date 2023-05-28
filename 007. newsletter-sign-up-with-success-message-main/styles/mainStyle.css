@@ -71,9 +71,17 @@ form{
 }
 
 label{
+  display: flex;
+  justify-content: space-between;
   color: var(--neo01);
   font-weight: 700;
   font-size: 14px;
+}
+
+.wrong-msg{
+  font-size: 14px;
+  color: #fa2537c4;
+  opacity: 0;
 }
 
 #email{
@@ -108,7 +116,8 @@ label{
   transition-timing-function: ease-in-out;
 }
 
-.submit-button:hover{
+.submit-button:hover,
+.submit-button:focus{
   background-position: left;
-  box-shadow: 1px 2px 13px 5px #fb904869;
+  box-shadow: 1px 2px 13px 5px #fb9048a8; /*#ff4a7a8f #fb9048a8 */
 }

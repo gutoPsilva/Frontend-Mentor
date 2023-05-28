@@ -11,16 +11,33 @@
   main{
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
     background-color: #FFFFFF;
-    width: 800px;
+    width: 900px;
+    padding: 22px 0px;
+    border-radius: 25px;
   }
 
   .login-container{
-    margin: 0px;
+    margin: 0px 0px 0px 45px;
+  }
+
+  h1{
+    font-size: 56px;
+  }
+
+  .login-container > p{
+    width: 400px;
+  }
+
+  form{
+    width: 360px;
   }
 
   .image-container{
+    height: 593px; /*img height*/
+    margin-right: 8px;
   }
 
   .image-container > img{
