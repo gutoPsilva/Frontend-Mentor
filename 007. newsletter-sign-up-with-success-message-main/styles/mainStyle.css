@@ -21,7 +21,6 @@
 
 body{
   max-width: 100vw;
-  height: 110vh;
   overflow-x: hidden;
 }
 
@@ -81,7 +80,6 @@ label{
   padding: 15px 0px 15px 20px;
   border: 1px solid hsl(231, 7%, 60%);
   border-radius: 6px;
-  outline: transparent;
   margin: 8px 0px 24px 0px;
 }
 
@@ -90,12 +88,27 @@ label{
 }
 
 .submit-button{
-  position: relative;
-  background-color: var(--neo01);
+  background: linear-gradient(
+    to left,
+    var(--neo01),
+    var(--neo01),
+    #FB9048,
+    #FF4A79
+  );
+  background-size: 300%;
+  background-position: right;
   color: #FFFFFF;
   border: none;
+  font-weight: 700;
   padding: 18px 0px;
   border-radius: 6px;
-  outline: transparent;
   cursor: pointer;
+  transition: background-position .5s,
+    box-shadow .5s;
+  transition-timing-function: ease-in-out;
+}
+
+.submit-button:hover{
+  background-position: left;
+  box-shadow: 1px 2px 13px 5px #fb904869;
 }

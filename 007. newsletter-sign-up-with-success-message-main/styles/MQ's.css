@@ -1,0 +1,29 @@
+@media screen and (min-width: 1000px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background-color: var(--neo02);
+  }
+
+  main{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: 800px;
+  }
+
+  .login-container{
+    margin: 0px;
+  }
+
+  .image-container{
+  }
+
+  .image-container > img{
+    content: url(../assets/images/illustration-sign-up-desktop.svg);
+  }
+}
