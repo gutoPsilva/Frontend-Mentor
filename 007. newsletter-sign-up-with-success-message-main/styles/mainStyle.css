@@ -1,0 +1,101 @@
+/*MOBILE-FIRST Workflow*/
+
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+:root{
+  --corPr: hsl(4, 100%, 67%);
+  --neo01: hsl(234, 29%, 20%);
+  --neo02: hsl(235, 18%, 26%);
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--neo02);
+  font-size: 16px;
+}
+
+body{
+  max-width: 100vw;
+  height: 110vh;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+main{
+  margin: auto;
+  width: 375px;
+}
+
+.login-container{
+  margin: 15px 20px 0px 20px;
+}
+
+h1{
+  color: var(--neo01);
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: var(--neo01);
+}
+
+p{
+  line-height: 24px;
+}
+
+.topics-container{
+  margin: 20px 0px 28px 0px;
+}
+
+.topic-item{
+  display: flex;
+  margin-top: 10px;
+}
+
+.topic-item > p{
+  margin-left: 16px;
+}
+
+.topic-item > img{
+  align-self: flex-start;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  color: var(--neo01);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+#email{
+  padding: 15px 0px 15px 20px;
+  border: 1px solid hsl(231, 7%, 60%);
+  border-radius: 6px;
+  outline: transparent;
+  margin: 8px 0px 24px 0px;
+}
+
+#email::placeholder{
+  color: hsl(231, 7%, 60%);
+}
+
+.submit-button{
+  position: relative;
+  background-color: var(--neo01);
+  color: #FFFFFF;
+  border: none;
+  padding: 18px 0px;
+  border-radius: 6px;
+  outline: transparent;
+  cursor: pointer;
+}
