@@ -2,12 +2,11 @@ const formElement = document.getElementById("form");
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
   
-
   const inputEmail = document.getElementById("email");
   const emailAdress = inputEmail.value;
   const alertMsg = document.querySelector('.wrong-msg');
 
-  if(!emailAdress.includes('@' && '.')){
+  if(!emailAdress.includes('@') || !emailAdress.includes('.')){ // ao menos @ e . no string do email
     alertMsg.style.opacity = 1;
     inputEmail.classList.add('wrong-email');
     return;
