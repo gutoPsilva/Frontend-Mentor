@@ -1,24 +1,26 @@
 @media screen and (min-width: 1000px) {
   body{
     display: flex;
-    justify-content: center;
-    align-items: center;
-
     height: 100vh;
     background-color: var(--neo02);
   }
-
+  
   main{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 900px;
+  }
+
+  .sign-up-form{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     background-color: #FFFFFF;
-    width: 900px;
-    padding: 22px 0px;
     border-radius: 25px;
   }
-
+ 
   .login-container{
     margin: 0px 0px 0px 45px;
   }
@@ -37,10 +39,38 @@
 
   .image-container{
     height: 593px; /*img height*/
-    margin-right: 8px;
+    margin: 22px;
   }
 
   .image-container > img{
     content: url(../assets/images/illustration-sign-up-desktop.svg);
+  }
+
+  .sucess-message{
+    height: 100%;
+    width: 42%;
+    border-radius: 32px;
+    background-color: #FFFFFF;
+    padding: 50px;
+  }
+
+  .sucess-message h1{
+    line-height: 54px;
+  }
+  
+  .text-container,
+  .sucess-icon,
+  .dismiss-button{
+    margin: 0px 0px;
+  }
+  
+  .sucess-icon{
+    width: 64px;
+    margin-bottom: 25px;
+  }
+
+  .dismiss-button{
+    margin-top: 35px;
+    width: 100%;
   }
 }

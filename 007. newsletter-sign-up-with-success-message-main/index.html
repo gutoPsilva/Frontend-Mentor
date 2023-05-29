@@ -10,33 +10,43 @@
 </head>
 <body>
   <main>
-    <div class="image-container">
-      <img src="assets/images/illustration-sign-up-mobile.svg" alt="illustration-sign-up-mobile">
-    </div>
-    <div class="login-container">
-      <h1>Stay updated!</h1>
-      <p>
-        Join 60,000+ product managers receiving monthly updates on:
-      </p>
-      <div class="topics-container">
-        <div class="topic-item">
-          <img src="assets/images/icon-list.svg" alt="icon-list">
-          <p>Product discovery and building what matters</p>
-        </div>
-        <div class="topic-item">
-          <img src="assets/images/icon-list.svg" alt="icon-list">
-          <p>Measuring to ensure updates are a success</p>
-        </div>
-        <div class="topic-item">
-          <img src="assets/images/icon-list.svg" alt="icon-list">
-          <p>And much more!</p>
-        </div>
+    <div class="sign-up-form">
+      <div class="image-container">
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="illustration-sign-up-mobile">
       </div>
-      <form id="form">
-        <label for="email">Email address <span class="wrong-msg">Valid email required</span></label>
-        <input placeholder="email@company.com" id="email">
-        <input type="submit" value="Subscribe to monthly newsletter" class="submit-button">
-      </form>
+      <div class="login-container">
+        <h1>Stay updated!</h1>
+        <p>
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <div class="topics-container">
+          <div class="topic-item">
+            <img src="assets/images/icon-list.svg" alt="icon-list">
+            <p>Product discovery and building what matters</p>
+          </div>
+          <div class="topic-item">
+            <img src="assets/images/icon-list.svg" alt="icon-list">
+            <p>Measuring to ensure updates are a success</p>
+          </div>
+          <div class="topic-item">
+            <img src="assets/images/icon-list.svg" alt="icon-list">
+            <p>And much more!</p>
+          </div>
+        </div>
+        <form id="form">
+          <label for="email">Email address <span class="wrong-msg">Valid email required</span></label>
+          <input placeholder="email@company.com" id="email" class="email">
+          <input type="submit" value="Subscribe to monthly newsletter" class="submit-button">
+        </form>
+      </div>
+    </div>
+    <div class="sucess-message">
+      <img src="assets/images/icon-success.svg" alt="success" class="sucess-icon">
+      <div class="text-container">
+        <h1>Thanks for subscribing!</h1>
+        <p>A confirmation email has been sent to <span id="js-email"></span>. Please open it and click the button inside to confirm your subscription</p>
+      </div>
+      <button class="dismiss-button">Dismiss message</button>
     </div>
   </main>
 

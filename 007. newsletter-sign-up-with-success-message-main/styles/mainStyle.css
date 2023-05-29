@@ -33,6 +33,10 @@ main{
   width: 375px;
 }
 
+.sign-up-form{
+  transition: opacity .5s;
+}
+
 .login-container{
   margin: 15px 20px 0px 20px;
 }
@@ -82,20 +86,28 @@ label{
   font-size: 14px;
   color: #fa2537c4;
   opacity: 0;
+  transition: opacity .15s linear;
 }
 
-#email{
+.email{
   padding: 15px 0px 15px 20px;
   border: 1px solid hsl(231, 7%, 60%);
   border-radius: 6px;
   margin: 8px 0px 24px 0px;
 }
 
-#email::placeholder{
-  color: hsl(231, 7%, 60%);
+.wrong-email{
+  background-color: #fd373734;
+  border: 1px solid #ff7b7b;
+  color: #ff5252;
 }
 
-.submit-button{
+.wrong-email::placeholder{
+  color: #ff5252;
+}
+
+.submit-button,
+.dismiss-button{
   background: linear-gradient(
     to left,
     var(--neo01),
@@ -117,7 +129,42 @@ label{
 }
 
 .submit-button:hover,
-.submit-button:focus{
+.submit-button:focus,
+.dismiss-button:hover,
+.dismiss-button:focus{
   background-position: left;
   box-shadow: 1px 2px 13px 5px #fb9048a8; /*#ff4a7a8f #fb9048a8 */
+}
+
+.sucess-message{
+  height: 100svh;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+.text-container,
+.sucess-icon,
+.dismiss-button{
+  margin: 0px 20px;
+}
+
+.text-container{
+  margin-bottom: 125px;
+  margin-top: -45px;
+}
+
+.sucess-icon{
+  margin-top: 65px;
+  width: 64px;
+}
+
+.dismiss-button{
+  margin-top: 25px;
+}
+
+#js-email{
+  font-weight: 700;
 }
