@@ -1,5 +1,5 @@
 const formElement = document.getElementById("form");
-formElement.addEventListener('submit', (event) => {
+const checkEmail = (event) => {
   event.preventDefault();
   
   const inputEmail = document.getElementById("email");
@@ -22,4 +22,14 @@ formElement.addEventListener('submit', (event) => {
     setInterval(() => document.querySelector(".sucess-message").style.opacity = 1, 800);
     document.getElementById('js-email').innerHTML = emailAdress;
   }
+};
+
+document.body.addEventListener('keyup', (event) => {
+  if(event.key = 'Enter'){
+    checkEmail(event);
+  }
+});
+
+formElement.addEventListener('submit', (event) => {
+  checkEmail(event);
 });
