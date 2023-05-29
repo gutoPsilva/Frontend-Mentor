@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Screenshot
 <div align="center">
-  <img src="assets/images/screenshot01Desk.jpg" alt="screenshot">
-  <img src="assets/images/screenshot02Desk.jpg" alt="screenshot">
+  <img src="assets/images/screenshot01Desk.JPG" alt="screenshot">
+  <img src="assets/images/screenshot02Desk.JPG" alt="screenshot">
 </div>
 
 ### Links
