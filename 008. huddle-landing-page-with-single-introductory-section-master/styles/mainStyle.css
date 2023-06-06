@@ -1,0 +1,108 @@
+/* Mobile-first Workflow*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root{
+  --cViolet: hsl(257, 40%, 49%);
+  --cSoftMg: hsl(300, 69%, 71%);
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+  font: 400 16px 'Poppins', sans-serif;
+  color: hsl(0, 0%, 100%);
+}
+
+body{
+  background-color: var(--cViolet);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.bg-mobile{
+  z-index: -1;
+  position: absolute;
+}
+
+.background{
+  display: flex;
+  justify-content: center;
+}
+
+.logo-mockup-container{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.logo{
+  align-self: flex-start;
+  height: 32px;
+  margin-top: 30px;
+}
+
+.mockup{
+  width: 300px;
+  margin-top: 62px;
+}
+
+.textContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1{
+  font-weight: 600;
+  font-size: 1.7em;
+  margin-top: 50px;
+  max-width: 325px;
+}
+
+p{
+  margin-top: 20px;
+  max-width: 325px;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.registerBtn{
+  color: var(--cViolet);
+  border: none;
+  outline: transparent;
+  padding: 10px 75px;
+  border-radius: 25px;
+  box-shadow: 0px 2px 4px 3px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background-color .15s,
+    color .15s;
+}
+
+.socialIcons{
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
+  margin: 75px 0px 40px 0px;
+}
+
+.icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  padding: 3px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+  transition: border-color .15s,
+  color .15s;
+}
