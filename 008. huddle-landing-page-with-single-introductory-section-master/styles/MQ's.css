@@ -1,0 +1,53 @@
+@media screen and (min-width: 1000px) {
+
+  body{
+    background-image: url(../images/bg-desktop.svg);
+    background-position: left center;
+  }
+
+  main{
+    height: 100svh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+  }
+
+  .logo-mockup-container{
+    width: 750px;
+    margin: 0px;
+  }
+
+  .logo{
+    height: 50px;
+    margin-top: 0px;
+  }
+
+  .textContainer{
+    display: flex;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  h1{
+    font-size: 2em;
+    max-width: 360px;
+  }
+
+  p{
+    max-width: 480px;
+  }
+
+  .socialIcons{
+    position: absolute;
+    align-self: flex-end;
+    right: 0px;
+    margin: 0px 75px 25px 0px;
+  }
+
+  .icon-container{
+    height: 32px;
+    width: 32px;
+  }
+
+}

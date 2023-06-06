@@ -15,21 +15,11 @@
 }
 
 body{
-  background-color: var(--cViolet);
+  background: url(../images/bg-mobile.svg) top center no-repeat var(--cViolet);
 }
 
 body::-webkit-scrollbar {
   display: none;
-}
-
-.bg-mobile{
-  z-index: -1;
-  position: absolute;
-}
-
-.background{
-  display: flex;
-  justify-content: center;
 }
 
 .logo-mockup-container{
@@ -46,7 +36,7 @@ body::-webkit-scrollbar {
 }
 
 .mockup{
-  width: 300px;
+  width: 100%;
   margin-top: 62px;
 }
 
@@ -91,7 +81,7 @@ p{
   display: flex;
   justify-content: center;
   column-gap: 10px;
-  margin: 75px 0px 40px 0px;
+  margin: 75px 0px 50px 0px;
 }
 
 .icon-container{
