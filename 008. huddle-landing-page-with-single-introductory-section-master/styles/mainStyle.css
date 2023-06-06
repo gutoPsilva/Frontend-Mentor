@@ -103,6 +103,19 @@ p{
   padding: 3px;
   border: 1px solid hsl(0, 0%, 100%);
   border-radius: 50%;
-  transition: border-color .15s,
-  color .15s;
+  transition: border-color .15s
+}
+
+.registerBtn:hover{
+  color: hsl(0, 0%, 100%);
+  background-color: var(--cSoftMg);
+}
+
+a:hover .icon-container{
+ border-color: var(--cSoftMg);
+}
+
+a:hover .icon-logo{
+  /* brightness 0 e saturate 100% para tornar a imagem preta e depois aplicar o resto, cor mais fiel*/
+  filter: brightness(0) saturate(100%) invert(74%) sepia(64%) saturate(1333%) hue-rotate(241deg) brightness(95%) contrast(92%);
 }
