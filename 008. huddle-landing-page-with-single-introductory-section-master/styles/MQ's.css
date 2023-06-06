@@ -1,4 +1,4 @@
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1440px) {
 
   body{
     background-image: url(../images/bg-desktop.svg);
@@ -14,12 +14,17 @@
   }
 
   .logo-mockup-container{
-    width: 750px;
-    margin: 0px;
+    width: 700px;
+    row-gap: 38px;
+    margin: 0px 24px;
   }
 
   .logo{
     height: 50px;
+    margin-top: 0px;
+  }
+
+  .mockup{
     margin-top: 0px;
   }
 
@@ -35,7 +40,7 @@
   }
 
   p{
-    max-width: 480px;
+    max-width: 500px;
   }
 
   .socialIcons{
@@ -50,4 +55,7 @@
     width: 32px;
   }
 
+  .buttonContainer{
+    justify-content: flex-start;
+  }
 }
