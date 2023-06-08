@@ -11,6 +11,16 @@
   --VeryLightGrayishCyan: hsl(189, 41%, 97%);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 *{
   margin: 0px;
   padding: 0px;
@@ -29,16 +39,162 @@ main{
   align-items: center;
 }
 
-.logo{
-  width: min-content;
-  margin: 35px 0px;
+p, label{
+  font-size: 16px;
+  color: var(--DarkGrayishCyan);
 }
 
-.container{
+.logo{
+  width: min-content;
+  margin: 40px 0px;
+}
+
+.container-geral{
+  display: flex;
+  flex-direction: column;
+  width: 325px; /* 375-40px dos padding's laterais*/
   background-color: hsl(0, 0%, 100%);
+  border-radius: 20px 20px 0px 0px;
+  padding: 25px 25px;
+}
+
+.bill-container{
+  display: flex;
+  flex-direction: column;
+}
+
+#inputBill{
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  outline: transparent;
+  background: url(../images/icon-dollar.svg) no-repeat scroll 18px center var(--VeryLightGrayishCyan);
+  padding: 5px 15px 5px 35px;
+  text-align: right;
+  color: var(--VeryDarkCyan);
+}
+
+.select-tip{
+  margin-top: 25px;
+}
+
+.select-tip > p{
+  margin-bottom: 15px;
+}
+
+.grid-tip-percentage{
+  display: grid;
+  grid-template-columns: 155px 155px; /* 325px width-max, -15px de column gap e dividido por 2, 155px para cada item*/
+  column-gap: 15px;
+  row-gap: 15px;
+}
+
+.tip-button{
+  border: none;
+  border-radius: 6px;
+  padding: 4px 0px;
+  outline: transparent;
+  color: hsl(0, 0%, 100%);
+  background-color: var(--VeryDarkCyan);
+  cursor: pointer;
+  transition: background-color .15s linear, color .15s linear;
+}
+
+#customTip{
+  border: none;
+  border-radius: 5px;
+  outline: transparent;
+  background-color: var(--VeryLightGrayishCyan);
+  padding: 5px 15px;
+  text-align: right;
+  color: var(--VeryDarkCyan);
+}
+
+#inputBill:hover,
+#inputBill:focus,
+#customTip:hover,
+#customTip:focus,
+#inputPeople:hover,
+#inputPeople:focus{
+  outline: 2px solid var(--StrongCyan);
+}
+
+.tip-button:hover,
+.tip-button:focus{
+  background-color: var(--LightGrayishCyan);
+  color: var(--VeryDarkCyan);
+}
+
+.selected-tip{
+  background-color: var(--StrongCyan);
+  color: var(--VeryDarkCyan);
+}
+
+.number-of-people{
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+#inputPeople{
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  outline: transparent;
+  background: url(../images/icon-person.svg) no-repeat scroll 18px center var(--VeryLightGrayishCyan);
+  padding: 5px 15px 5px 35px;
+  text-align: right;
+  color: var(--VeryDarkCyan);
+}
+
+.result-section{
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  padding: 25px;
+  background-color: var(--VeryDarkCyan);
   border-radius: 15px;
 }
 
-p, label{
-  font-size: 16px;
+#resetBtn{
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 6px 0px;
+  color: var(--VeryDarkCyan);
+  background-color: var(--StrongCyan);
+  transition: background-color .15s linear;
+}
+
+#resetBtn:hover{
+  background-color: var(--LightGrayishCyan);
+}
+
+.tip-amount,
+.total-amount{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tip-amount{
+  margin-top: 10px;
+}
+
+.total-amount{
+  margin: 20px 0px;
+}
+
+.amount{
+  color: hsl(0, 0%, 100%);
+}
+
+.person{
+  font-size: 14px;
+}
+
+.value{
+  font-size: 28px;
+  color: var(--StrongCyan);
+  vertical-align: text-bottom;
 }
