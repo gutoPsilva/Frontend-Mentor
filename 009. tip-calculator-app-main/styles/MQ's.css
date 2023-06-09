@@ -1,0 +1,53 @@
+@media screen and (min-width: 1440px) {
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo{
+    margin-top: 0px;
+  }
+
+  .container-geral{
+    width: fit-content;
+    border-radius: 20px;
+    flex-direction: row;
+  }
+
+  .bill-label{
+    margin-top: 10px;
+  }
+
+  .select-tip,
+  .number-of-people{
+    margin-top: 30px;
+  }
+
+  .select-tip > p{
+    margin-bottom: 10px;
+  }
+
+  .grid-tip-percentage{
+    grid-template-columns: 125px 125px 125px;
+  }
+
+  .inputPeople{
+    margin-bottom: 10px;
+  }
+
+  .result-section{
+    margin: 0px 0px 0px 35px;
+    justify-content: space-between;
+    width: 300px;
+    padding: 30px;
+  }
+
+  .value{
+    font-size: 36px;
+  }
+
+  #resetBtn{
+    margin-bottom: 5px;
+  }
+}

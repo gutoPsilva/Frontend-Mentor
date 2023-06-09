@@ -14,7 +14,7 @@ const clearTipBtnsStyles = () => {
   tipButtonElements.forEach(button => button.classList.remove('selected-tip'));
 };
 
-// essa função verifica se o botão está ativo ou não e altera seu visual
+// função verifica se o botão está ativo ou não e apenas altera seu visual
 const checkBtnStatus = () => {
   if(nBill || nTip || nPeople){
     resetBtn.style.opacity = '1';
@@ -25,19 +25,39 @@ const checkBtnStatus = () => {
   }
 };
 
+const resetAll = () => {
+  nBill = 0;
+  nTip = 0;
+  nPeople = 0;
+  billAmountElement.value = '';
+  customTipElement.value = '';
+  numberPeopleElement.value = '';
+  tipAmountElement.textContent = '$0.00';
+  totalAmountElement.textContent = '$0.00';
+  numberPeopleElement.classList.remove('error-input');
+  document.querySelector('.error-people').style.opacity = '0';
+};
+
 const calculateTips = () => {
+  if(!Number.isInteger(nPeople)){
+    alert('Number of People must be an integer');
+    return;
+  }
+
+  if(nBill < 0 || nTip < 0){ // evitar negativos no amount
+    alert('Bill & tips must be atleast 0');
+    return;
+  }
+
   if(nBill && nPeople > 0){ // bill e nPeople > 0 é obrigatório para fazer o cálculo, tips não
-    if(nBill < 0 || nTip < 0){ // evitar negativos no amount
-      alert('Bill & tips must be atleast 0');
-      return;
-    }
   
     // variáveis só chegam aqui se forem positivas
-    const tipAmount = nBill * (nTip/100) / nPeople; // 100 * (10/100) / 2 = 100 * 0.1 / 2 = 
+    const tipAmount = nBill * (nTip/100) / nPeople;
     const totalAmount = (nBill / nPeople) + tipAmount;
-    // um número maior que 999999.99 quebra a formatação do design, e é surreal que alguma conta com doações chegue próximo a esse valor
-    if(tipAmount >= 999999.99 || totalAmount >= 9999999.99){
-      alert('The tip amount/total is too much big to fit this calculator.');
+    // um número maior que 99999.99 quebra a formatação do design, e é surreal que alguma conta com doações chegue próximo a esse valor
+    if(tipAmount >= 99999.99 || totalAmount >= 999999.99){
+      alert('The tip amount/total is too big to fit on this calculator.');
+      resetAll();
       return;
     }
     tipAmountElement.textContent = `$${tipAmount.toFixed(2)}`;
@@ -85,16 +105,7 @@ numberPeopleElement.addEventListener('change', () => {
 });
 
 resetBtn.addEventListener('click', () => {
-  nBill = 0;
-  nTip = 0;
-  nPeople = 0;
-  billAmountElement.value = '';
-  customTipElement.value = '';
-  numberPeopleElement.value = '';
-  tipAmountElement.textContent = '$0.00';
-  totalAmountElement.textContent = '$0.00';
-  numberPeopleElement.classList.remove('error-input');
-  document.querySelector('.error-people').style.opacity = '0';
+  resetAll();
   clearTipBtnsStyles();
   checkBtnStatus();
 });

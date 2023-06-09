@@ -59,23 +59,53 @@ p, label{
   padding: 25px 25px;
 }
 
-.bill-container{
+.bill-container,
+.number-of-people{
   display: flex;
   flex-direction: column;
 }
 
-#inputBill{
-  margin-top: 5px;
+#inputBill,
+#customTip,
+.inputPeople{
   border: none;
   border-radius: 5px;
   outline: transparent;
-  background: url(../images/icon-dollar.svg) no-repeat scroll 18px center var(--VeryLightGrayishCyan);
-  padding: 5px 15px 5px 35px;
-  text-align: right;
+  background-color: var(--VeryLightGrayishCyan);
   color: var(--VeryDarkCyan);
 }
 
-.select-tip{
+#inputBill,
+.inputPeople{
+  margin-top: 5px;
+  padding: 5px 15px 5px 35px;
+  text-align: right;
+}
+
+#customTip{
+  padding: 5px 15px;
+  text-align: center;
+}
+
+#inputBill{
+  background: url(../images/icon-dollar.svg) no-repeat scroll 18px center var(--VeryLightGrayishCyan);
+}
+
+.inputPeople{
+  background: url(../images/icon-person.svg) no-repeat scroll 18px center var(--VeryLightGrayishCyan);
+}
+
+#inputBill:hover,
+#inputBill:focus,
+#customTip:hover,
+#customTip:focus,
+.inputPeople:hover,
+.inputPeople:focus{
+  outline: 2px solid var(--StrongCyan);
+}
+
+.select-tip,
+.number-of-people{
   margin-top: 25px;
 }
 
@@ -98,26 +128,8 @@ p, label{
   color: hsl(0, 0%, 100%);
   background-color: var(--VeryDarkCyan);
   cursor: pointer;
-  transition: background-color .15s linear, color .15s linear;
-}
-
-#customTip{
-  border: none;
-  border-radius: 5px;
-  outline: transparent;
-  background-color: var(--VeryLightGrayishCyan);
-  padding: 5px 15px;
-  text-align: center;
-  color: var(--VeryDarkCyan);
-}
-
-#inputBill:hover,
-#inputBill:focus,
-#customTip:hover,
-#customTip:focus,
-.inputPeople:hover,
-.inputPeople:focus{
-  outline: 2px solid var(--StrongCyan);
+  transition: background-color .15s linear, 
+    color .15s linear;
 }
 
 .tip-button:hover{
@@ -128,38 +140,6 @@ p, label{
 .selected-tip{
   background-color: var(--StrongCyan);
   color: var(--VeryDarkCyan);
-}
-
-.number-of-people{
-  display: flex;
-  flex-direction: column;
-  margin-top: 25px;
-}
-
-.label-number-of-people{
-  display: flex;
-  justify-content: space-between;
-}
-
-.inputPeople{
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-  outline: transparent;
-  background: url(../images/icon-person.svg) no-repeat scroll 18px center var(--VeryLightGrayishCyan);
-  padding: 5px 15px 5px 35px;
-  text-align: right;
-  color: var(--VeryDarkCyan);
-}
-
-.error-input{
-  outline: 2px solid var(--colorError);
-}
-
-.error-people{
-  color: var(--colorError);
-  opacity: 0;
-  transition: opacity .15s linear;
 }
 
 .result-section{
@@ -186,17 +166,20 @@ p, label{
 }
 
 .tip-amount,
-.total-amount{
+.total-amount,
+.label-number-of-people{
   display: flex;
   justify-content: space-between;
 }
 
-.tip-amount{
-  margin-top: 10px;
+.error-input{
+  outline: 2px solid var(--colorError);
 }
 
-.total-amount{
-  margin: 20px 0px;
+.error-people{
+  color: var(--colorError);
+  opacity: 0;
+  transition: opacity .15s linear;
 }
 
 .amount{
@@ -211,4 +194,12 @@ p, label{
   font-size: 28px;
   color: var(--StrongCyan);
   vertical-align: text-bottom;
+}
+
+.tip-amount{
+  margin-top: 10px;
+}
+
+.total-amount{
+  margin: 20px 0px;
 }
