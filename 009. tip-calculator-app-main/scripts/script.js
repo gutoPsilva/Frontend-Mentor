@@ -93,6 +93,8 @@ resetBtn.addEventListener('click', () => {
   numberPeopleElement.value = '';
   tipAmountElement.textContent = '$0.00';
   totalAmountElement.textContent = '$0.00';
+  numberPeopleElement.classList.remove('error-input');
+  document.querySelector('.error-people').style.opacity = '0';
   clearTipBtnsStyles();
   checkBtnStatus();
 });
