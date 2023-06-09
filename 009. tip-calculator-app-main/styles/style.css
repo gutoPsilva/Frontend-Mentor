@@ -9,6 +9,7 @@
   --GrayishCyan:          hsl(184, 14%, 56%);
   --LightGrayishCyan:     hsl(185, 41%, 84%);
   --VeryLightGrayishCyan: hsl(189, 41%, 97%);
+  --colorError: hsl(0, 97%, 58%);
 }
 
 input::-webkit-outer-spin-button,
@@ -106,7 +107,7 @@ p, label{
   outline: transparent;
   background-color: var(--VeryLightGrayishCyan);
   padding: 5px 15px;
-  text-align: right;
+  text-align: center;
   color: var(--VeryDarkCyan);
 }
 
@@ -114,13 +115,12 @@ p, label{
 #inputBill:focus,
 #customTip:hover,
 #customTip:focus,
-#inputPeople:hover,
-#inputPeople:focus{
+.inputPeople:hover,
+.inputPeople:focus{
   outline: 2px solid var(--StrongCyan);
 }
 
-.tip-button:hover,
-.tip-button:focus{
+.tip-button:hover{
   background-color: var(--LightGrayishCyan);
   color: var(--VeryDarkCyan);
 }
@@ -136,7 +136,12 @@ p, label{
   margin-top: 25px;
 }
 
-#inputPeople{
+.label-number-of-people{
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputPeople{
   margin-top: 5px;
   border: none;
   border-radius: 5px;
@@ -145,6 +150,16 @@ p, label{
   padding: 5px 15px 5px 35px;
   text-align: right;
   color: var(--VeryDarkCyan);
+}
+
+.error-input{
+  outline: 2px solid var(--colorError);
+}
+
+.error-people{
+  color: var(--colorError);
+  opacity: 0;
+  transition: opacity .15s linear;
 }
 
 .result-section{
@@ -157,18 +172,17 @@ p, label{
 }
 
 #resetBtn{
-  cursor: pointer;
+  cursor: default; /* mudar para pointer quando ativado em JS*/
   border: none;
   border-radius: 5px;
   margin-top: 10px;
   padding: 6px 0px;
   color: var(--VeryDarkCyan);
+  outline: transparent;
   background-color: var(--StrongCyan);
-  transition: background-color .15s linear;
-}
-
-#resetBtn:hover{
-  background-color: var(--LightGrayishCyan);
+  opacity: .3; /* inicialmente desativado, JS altera para 1 após dados inseridos*/
+  transition: background-color .15s linear,
+    opacity .15s linear;
 }
 
 .tip-amount,

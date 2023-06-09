@@ -20,17 +20,20 @@
         <div class="select-tip">
           <p>Select Tip %</p>
           <div class="grid-tip-percentage">
-            <button class="tip-button" id="tip5">5%</button>
-            <button class="tip-button" id="tip10">10%</button>
-            <button class="tip-button" id="tip15">15%</button>
-            <button class="tip-button" id="tip25">25%</button>
-            <button class="tip-button" id="tip50">50%</button>
+            <button class="tip-button" value="5">5%</button>
+            <button class="tip-button" value="10">10%</button>
+            <button class="tip-button" value="15">15%</button>
+            <button class="tip-button" value="25">25%</button>
+            <button class="tip-button" value="50">50%</button>
             <input id="customTip" type="number" placeholder="Custom" min="0">
           </div>
         </div>
         <div class="number-of-people">
-          <label for="inputPeople">Number of People</label>
-          <input type="number" id="inputPeople" min="1" placeholder="0">
+          <label for="inptPp" class="label-number-of-people">
+            <p>Number of People</p>
+            <p class="error-people">Can't be zero</p>
+          </label>
+          <input type="number" class="inputPeople" min="1" placeholder="0" id="inptPp">
         </div>
       </div>
 
@@ -41,19 +44,20 @@
               <p class="amount">Tip Amount</p>
               <p class="person">/ person</p>
             </div>
-            <span class="value">$4.27</span>
+            <span class="value" id="tipPerPerson">$0.00</span>
           </div>
           <div class="total-amount">
             <div class="text">
               <p class="amount">Total</p>
               <p class="person">/ person</p>
             </div>
-            <span class="value">$32.79</span>
+            <span class="value" id="totalPerPerson">$0.00</span>
           </div>
         </div>
         <button id="resetBtn">RESET</button>
       </div>
     </div>
   </main>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
