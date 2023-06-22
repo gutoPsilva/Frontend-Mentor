@@ -23,8 +23,6 @@ removeQuantityButton.addEventListener('click', () => {
   if(cartQuantity >= 1){
     cartQuantity -= 1;
     saveStorageDisplay();
-  }else{
-    alert("Cart quantity must be atleast 0!");
   }
 });
 

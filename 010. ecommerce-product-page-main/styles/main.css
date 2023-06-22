@@ -18,17 +18,22 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 body::-webkit-scrollbar {display: none;}
 
+/* manter ambos em 375px limita as telas menores que 1440px a verem a versão mobile, isso gerou uma dúvida pois não sei se devo apenas limitar ou deixar que os elementos aumentem de acordo com o tamanho da tela mantendo as proporções.... */
+header,main{
+  max-width: 375px;
+}
+
 header{
-  width: 375px;
-  padding: 15px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 15px 0px;
 }
 
 .menu-overlay{
@@ -39,13 +44,13 @@ header{
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 10;
+  z-index: 100;
   background-color: hsla(0, 0%, 0%, 0.75);
   transition: opacity .35s;
 }
 
 .modal{
-  position: fixed;
+  position: absolute;
   top: 0px;
   bottom: 0px;
   padding: 20px;
@@ -64,9 +69,66 @@ header{
   cursor: pointer;
 }
 
-.avatar{height: 24px;}
+.menu-icon{
+  margin-left: 15px;
+}
 
-main{max-width: 375px;}
+.cart-icon-container{
+  position: relative;
+}
+
+.cart-qnt-icon{
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 10px;
+  padding: 0px 6px;
+  border-radius: 10px;
+  background-color: var(--Orange);
+  color: #FFFFFF;
+  transition: opacity .35s;
+}
+
+.cart-popup{
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  height: 250px;
+  max-width: 360px;
+  width: 100%;
+  position: absolute;
+  margin: 10px 7.5px;
+  z-index: 50;
+  background-color: #FFFFFF;
+}
+
+.cart-popup > span{
+  font-weight: 700;
+  margin: 20px 0px 20px 20px;
+}
+
+.line{
+  background-color: hsl(0, 0%, 87%);
+  width: 100%;
+  height: 1px;
+}
+
+.product-container{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: hsl(219, 9%, 45%);
+}
+
+.avatar{
+  margin-right: 15px;
+  height: 24px;
+}
+
 
 .image-container{
   position: relative;
@@ -100,7 +162,7 @@ main{max-width: 375px;}
 
 .colored-text{
   color: hsl(26, 100%, 55%);
-  letter-spacing: 2px;
+  letter-spacing: .8px;
   font-size: 14px;
   font-weight: 700;
   margin-top: 20px;
@@ -159,7 +221,7 @@ h1{
 
 .icons-qnt,
 .menu-icon,
-header img{cursor: pointer;}
+.icon-close{cursor: pointer;}
 
 .add-button{
   cursor: pointer;
@@ -169,7 +231,7 @@ header img{cursor: pointer;}
   justify-content: center;
   align-items: center;
   margin: 15px 0px 0px 15px;
-  width: 345px;
+  width: calc(100% - 30px);
   padding: 15px;
   background-color: var(--Orange);
   color: hsl(0, 0%, 100%);
