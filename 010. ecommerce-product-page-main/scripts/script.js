@@ -6,8 +6,8 @@ const closeMenuElement = document.querySelector(".icon-close");
 const menuOverlay = document.querySelector('.menu-overlay');
 const cartIconElement = document.querySelector(".cart-icon-container");
 const cartPopup = document.querySelector('.cart-popup');
-const addToCartBtn = document.querySelector(".add-button");
 const productContainer = document.querySelector(".product-container");
+const addToCartBtn = document.querySelector(".add-button");
 
 let cartQuantity = JSON.parse(localStorage.getItem("cartQnt")) || 0;
 let cartSpan = 0;
@@ -28,14 +28,14 @@ const updateCart = () => {
     productContainer.style.justifyContent = 'space-between';
     productContainer.innerHTML = `
     <div class="product">
-    <img class="checkout-image" src="images/image-product-1-thumbnail.jpg" alt="checkout-product">
-    <div class="checkout-text">
-      <p>Fall Limited Edition Sneakers</p>
-      <p>$125.00 x ${cartQuantity} <span>$${(125.00 * cartQuantity).toFixed(2)}</span></p>
+      <img class="checkout-image" src="images/image-product-1-thumbnail.jpg" alt="checkout-product">
+      <div class="checkout-text">
+        <p>Fall Limited Edition Sneakers</p>
+        <p>$125.00 x ${cartQuantity} <span>$${(125.00 * cartQuantity).toFixed(2)}</span></p>
+      </div>
+      <img class="delete-button" src="images/icon-delete.svg" alt="icon-delete">
     </div>
-    <img class="delete-button" src="images/icon-delete.svg" alt="icon-delete">
-  </div>
-  <button class="checkout-button">Checkout</button>
+    <button class="checkout-button">Checkout</button>
     `;
     const deleteButton = document.querySelector(".delete-button");
     deleteButton.addEventListener('click', () => {
@@ -93,7 +93,7 @@ cartIconElement.addEventListener('click', () => {
     cartPopup.style.opacity = "0";
     setTimeout(() => {
       cartPopup.style.display = "none";
-    }, 350);
+    }, 350); // .35s transition
     shown = false;
   }
 });
