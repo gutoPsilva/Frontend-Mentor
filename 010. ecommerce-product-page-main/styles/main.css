@@ -75,11 +75,10 @@ header{
 
 .cart-icon-container{
   position: relative;
+  cursor: pointer;
 }
 
 .cart-qnt-icon{
-  display: none;
-  opacity: 0;
   position: absolute;
   top: -5px;
   right: -5px;
@@ -88,20 +87,21 @@ header{
   border-radius: 10px;
   background-color: var(--Orange);
   color: #FFFFFF;
-  transition: opacity .35s;
 }
 
 .cart-popup{
-  display: flex;
+  display: none;
+  opacity: 0;
   flex-direction: column;
   border-radius: 12px;
   height: 250px;
-  max-width: 360px;
-  width: 100%;
+  max-width: 359px;
+  width: calc(100% - 16px);
+  margin: 10px 0px 0px 8px;
   position: absolute;
-  margin: 10px 7.5px;
   z-index: 50;
   background-color: #FFFFFF;
+  transition: opacity .35s;
 }
 
 .cart-popup > span{
@@ -118,17 +118,51 @@ header{
 .product-container{
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; 
+  JS deixa default como center, com items no cart vira space-between */
+  padding: 30px 0px;
   align-items: center;
   font-weight: 700;
   color: hsl(219, 9%, 45%);
 }
 
-.avatar{
-  margin-right: 15px;
-  height: 24px;
+.product{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: calc(100% - 40px);
 }
 
+.checkout-image{
+  height: 100%;
+  border-radius: 4px;
+}
+
+.checkout-text{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.checkout-text span{
+  font-weight: 700;
+  color: hsla(0, 0%, 0%);
+}
+
+.avatar{
+  border: 1px solid transparent;
+  border-radius: 50%;
+  margin-right: 15px;
+  height: 24px;
+  transition: border-color .15s;
+}
+
+.avatar:hover{
+  border-color: var(--Orange);
+}
 
 .image-container{
   position: relative;
@@ -219,11 +253,14 @@ h1{
 
 .quantity{font-weight: 700;}
 
+.avatar,
 .icons-qnt,
 .menu-icon,
-.icon-close{cursor: pointer;}
+.icon-close,
+.delete-button{cursor: pointer;}
 
-.add-button{
+.add-button,
+.checkout-button{
   cursor: pointer;
   border: none;
   border-radius: 8px;
@@ -236,6 +273,18 @@ h1{
   background-color: var(--Orange);
   color: hsl(0, 0%, 100%);
   font-weight: 700;
+  transition: opacity .35s,
+    box-shadow .35s;
+}
+
+.add-button:hover{
+  opacity: .8;
+  box-shadow: 0px 2px 8px 2px hsla(26, 100%, 55%, 0.35);
+}
+
+.checkout-button{
+  margin: 0px 0px 0px 0px;
+  width: calc(100% - 40px);
 }
 
 .icon-cart{
