@@ -34,7 +34,6 @@ header,main{
 
 header{
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 15px 0px;
@@ -61,6 +60,10 @@ header{
   background-color: #FFFFFF;
 }
 
+ul{
+  list-style-type: none;
+}
+
 .modal ul{
   margin: 30px 130px 0px 0px;
 }
@@ -72,24 +75,42 @@ header{
   cursor: pointer;
 }
 
-.menu-icon{
+.desk-menu{
+  display: none;
+}
+
+.menu-icon,
+.sneakers-logo{
   margin-left: 15px;
+}
+
+.cart-icon{
+  position: relative;
+  top: 3px;
+  transition: filter .15s ease-in-out;
 }
 
 .cart-icon-container{
   position: relative;
+  margin: auto;
+  margin-right: 15px;
   cursor: pointer;
+}
+
+.cart-icon-container:hover .cart-icon{
+  filter: brightness(0) saturate(100%) invert(3%) sepia(82%) saturate(1676%) hue-rotate(228deg) brightness(68%) contrast(108%);
 }
 
 .cart-qnt-icon{
   position: absolute;
-  top: -5px;
+  top: -3px;
   right: -5px;
   font-size: 10px;
   padding: 0px 6px;
   border-radius: 10px;
   background-color: var(--Orange);
   color: #FFFFFF;
+  z-index: 1;
 }
 
 .cart-popup{
@@ -98,7 +119,7 @@ header{
   flex-direction: column;
   border-radius: 12px;
   height: 250px;
-  max-width: 359px;
+  max-width: 360px;
   width: calc(100% - 16px);
   margin: 10px 0px 0px 8px;
   position: absolute;
@@ -160,11 +181,16 @@ header{
   border-radius: 50%;
   margin-right: 15px;
   height: 24px;
-  transition: border-color .15s;
+  transition: border-color .2s ease-in-out;
 }
 
 .avatar:hover{
   border-color: var(--Orange);
+}
+
+.sep-header-main{
+  display: none;
+  border: none;
 }
 
 .image-container{
@@ -174,8 +200,7 @@ header{
   align-items: center;
 }
 
-ul{
-  list-style-type: none;
+.image-container ul{
   width: 100%;
   height: 300px;
 }
@@ -215,6 +240,10 @@ ul{
   background-color: hsl(0, 0%, 100%);
   cursor: pointer;
   z-index: 2;
+}
+
+.thumb-container{
+  display: none;
 }
 
 .text-container{margin: 0px 15px;}

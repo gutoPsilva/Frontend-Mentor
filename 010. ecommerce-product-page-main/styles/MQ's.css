@@ -1,0 +1,97 @@
+@media screen and (min-width:1300px) {
+
+  header,main{
+    max-width: 1100px;
+  }
+
+  header{
+    padding: 30px 0px;
+  }
+
+  main{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sep-header-main{
+    display: block;
+    height: 1px;
+    width: 1100px; /* deve ter o mesmo tamanho que o header*/
+    margin-bottom: 55px;
+    background-color: hsl(0, 0%, 87%);
+  }
+  
+  .menu-icon{
+    display: none;
+  }
+  
+  .sneakers-logo{
+    margin: 0px;
+  }
+
+  .desk-menu{
+    margin: 0px 20px;
+    display: flex;
+    column-gap: 18px;
+  }
+
+  .desk-menu li {
+    cursor: pointer;
+    color: hsl(219, 9%, 45%);
+    text-decoration: 4px underline transparent;
+    text-underline-offset: calc(10px + 30px); /* bot text margin + bot padding header */
+    transition: text-decoration .2s,
+      color .2s;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .desk-menu li:hover{
+    color: #000000;
+    text-decoration-color: hsl(26, 100%, 55%);
+  }
+
+  .cart-icon-container{
+    margin-right: 25px;
+  }
+
+  .cart-popup{
+    margin: 0px;
+    top: -75px; /* margin HR(55px) + padding header(30px) - 10px espaçamento*/
+    right: -85px;
+    box-shadow: 0px 10px 16px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .avatar{
+    height: 36px;
+    border-width: 2px;
+  }
+
+  .image-container{
+    flex-direction: column;
+  }
+
+  .image-container ul{
+    width: 375px;
+    height: 375px;
+  }
+
+  .image{
+    height: 375px;
+    border-radius: 12px;
+    object-position: center; /* center no DESKTOP */
+  }
+
+  .thumb-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+    z-index: 0;
+  }
+
+  .thumbnail-image{
+    width: 75px;
+  }
+}
