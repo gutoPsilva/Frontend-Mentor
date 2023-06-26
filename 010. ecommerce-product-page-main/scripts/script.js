@@ -4,6 +4,7 @@ const removeQuantityButton = document.querySelector(".icon-minus");
 const menuElement = document.querySelector(".menu-icon");
 const closeMenuElement = document.querySelector(".icon-close");
 const menuOverlay = document.querySelector('.menu-overlay');
+const imageButtons = document.querySelectorAll("[data-carousel-button]");
 const cartIconElement = document.querySelector(".cart-icon-container");
 const cartPopup = document.querySelector('.cart-popup');
 const productContainer = document.querySelector(".product-container");
@@ -80,24 +81,22 @@ closeMenuElement.addEventListener('click', () => {
   }, 350); // .35s transition
 });
 
-let shown = false; 
-// por alguma razão verificar o .style.display diretamente pelo CSS na primeira vez não funciona, então criei essa variável
+// por alguma razão verificar o .style.display diretamente pelo CSS na primeira vez não funciona, então criei essa variável que vai 'agilizar' isso e ainda permite resetar o timer de 350ms caso a pessoa clique novamente
+let shown = false;
+let timeoutID;
 cartIconElement.addEventListener('click', () => {
   if(!shown){
     cartPopup.style.display = "flex";
-    setTimeout(() => {
-      cartPopup.style.opacity = '1';
-    }, 1);
+    setTimeout(() => cartPopup.style.opacity = '1', 1);
+    clearInterval(timeoutID);
     shown = true;
   }else{
     cartPopup.style.opacity = "0";
-    setTimeout(() => {
-      cartPopup.style.display = "none";
-    }, 350); // .35s transition
+    timeoutID = setTimeout(() => cartPopup.style.display = "none", 350); // .35s transition
     shown = false;
   }
 });
-
+    
 addToCartBtn.addEventListener('click', () => {
   if((cartQuantity + cartSpan) <= inStock){
     cartQuantity += cartSpan;
@@ -106,4 +105,19 @@ addToCartBtn.addEventListener('click', () => {
   }
   saveStorage();
   updateCart();
+});
+
+imageButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
+
+    const activeSlide = slides.querySelector("[data-active]");
+    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+    if (newIndex < 0) newIndex = slides.children.length - 1;
+    if (newIndex >= slides.children.length) newIndex = 0;
+
+    slides.children[newIndex].dataset.active = true;
+    delete activeSlide.dataset.active;
+  })
 });
