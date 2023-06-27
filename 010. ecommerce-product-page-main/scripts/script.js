@@ -3,8 +3,9 @@ const addQuantityButton = document.querySelector(".icon-plus");
 const removeQuantityButton = document.querySelector(".icon-minus");
 const menuElement = document.querySelector(".menu-icon");
 const closeMenuElement = document.querySelector(".icon-close");
-const menuOverlay = document.querySelector('.menu-overlay');
+const menuOverlay = document.querySelector(".menu-overlay");
 const imageButtons = document.querySelectorAll("[data-carousel-button]");
+const thumbImages = document.querySelectorAll("[data-thumb-image]");
 const cartIconElement = document.querySelector(".cart-icon-container");
 const cartPopup = document.querySelector('.cart-popup');
 const productContainer = document.querySelector(".product-container");
@@ -110,6 +111,7 @@ addToCartBtn.addEventListener('click', () => {
 imageButtons.forEach(button => {
   button.addEventListener('click', () => {
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    console.log(button.dataset.carouselButton);
     const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
 
     const activeSlide = slides.querySelector("[data-active]");
@@ -121,3 +123,26 @@ imageButtons.forEach(button => {
     delete activeSlide.dataset.active;
   })
 });
+
+const clearSelected = () => {
+  thumbImages.forEach(thumb => {
+    thumb.classList.remove("selected-thumbnail");
+  });
+};
+
+thumbImages.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    clearSelected();
+
+    thumbImages[Number(thumb.dataset.thumbImage)].classList.add("selected-thumbnail");
+    
+    const slides = thumb.closest("[data-carousel]").querySelector("[data-slides]");
+    const activeSlide = slides.querySelector("[data-active]");
+
+    slides.children[Number(thumb.dataset.thumbImage)].dataset.active = true;
+    delete activeSlide.dataset.active;
+  });
+});
+
+console.log(imageButtons);
+console.log(thumbImages);

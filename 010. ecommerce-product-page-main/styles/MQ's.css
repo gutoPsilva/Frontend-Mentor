@@ -76,6 +76,7 @@
 
   .image-container{
     flex-direction: column;
+    border-radius: 12px;
   }
 
   .image-container ul{
@@ -89,7 +90,7 @@
     object-position: center; /* center no DESKTOP */
   }
 
-  .thumb-container{
+  .thumbs-container{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -97,12 +98,23 @@
     z-index: 5;
   }
 
+  .thumb{
+    border: 2px solid transparent;
+    border-radius: 8px;
+  }
+
   .thumbnail-image{
     cursor: pointer;
     width: 75px;
     border-radius: 8px;
     border: 2px solid transparent;
-    transition: border .2s ease-in-out;
+    transition: border .2s,
+      opacity .2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .thumb:hover{
+    border-color: hsl(26, 100%, 55%);
   }
 
   .thumbnail-image:hover{
@@ -140,5 +152,10 @@
   .quantity-container{
     margin: 0px;
     flex: 1.35;
+  }
+
+  .selected-thumbnail{
+    border-color: rgba(255, 125, 26, 1);
+    opacity: .8;
   }
 }
