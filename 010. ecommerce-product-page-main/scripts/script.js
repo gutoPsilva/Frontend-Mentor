@@ -5,7 +5,7 @@ const menuElement = document.querySelector(".menu-icon");
 const closeMenuElement = document.querySelector(".icon-close-menu");
 const galleryOverlay = document.querySelector(".gallery-overlay");
 const menuOverlay = document.querySelector(".menu-overlay");
-const bigImage = document.querySelector(".focus-image");
+const imagesToFocus = document.querySelectorAll(".focus-image");
 const navButtons = document.querySelectorAll("[data-carousel-button]");
 const thumbImages = document.querySelectorAll("[data-thumb-image]");
 const cartIconElement = document.querySelector(".cart-icon-container");
@@ -13,6 +13,7 @@ const cartPopup = document.querySelector('.cart-popup');
 const productContainer = document.querySelector(".product-container");
 const addToCartBtn = document.querySelector(".add-button");
 
+let galleryShown = false;
 let cartQuantity = JSON.parse(localStorage.getItem("cartQnt")) || 0;
 let cartSpan = 0;
 let inStock = 250;
@@ -110,17 +111,28 @@ addToCartBtn.addEventListener('click', () => {
   updateCart();
 });
 
-let newIndex = 0;
-
 const clearSelected = () => {
-  thumbImages.forEach(thumb => {
-    thumb.classList.remove("selected-thumbnail");
-  });
+  if(galleryShown){
+    for(let i = 0; i <= 3; i++) thumbImages[i].classList.remove("selected-thumbnail");
+  }else{
+    for(let i = 4; i <= 7; i++) thumbImages[i].classList.remove("selected-thumbnail");
+  }
 };
 
+let width = this.innerWidth;
+window.onresize = () => {
+  width = this.innerWidth;
+  if(width < 1440){
+    galleryOverlay.style.display = 'none';
+    galleryShown = false;
+  }
+};
+
+let newIndex = 0;
 navButtons.forEach(button => {
   button.addEventListener('click', () => {
-    clearSelected();
+    clearSelected();  
+    
     const offset = button.dataset.carouselButton === "next" ? 1 : -1;
     const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
 
@@ -132,7 +144,6 @@ navButtons.forEach(button => {
     thumbImages[newIndex].classList.add("selected-thumbnail");
     slides.children[newIndex].dataset.active = true;
     delete activeSlide.dataset.active;
-    console.log(newIndex);
   });
 });
 
@@ -148,16 +159,20 @@ thumbImages.forEach(thumb => {
 
     delete activeSlide.dataset.active; // deletar antes de atribuir o novo
     slides.children[newIndex].dataset.active = true;
-    console.log(newIndex);
   });
 });
 
-bigImage.addEventListener('click', () => {
-  galleryOverlay.style.display = 'flex';
-  setTimeout(() => galleryOverlay.style.opacity = '1', 1);
-
-  document.querySelector(".close-gallery").addEventListener('click', () => {
-    galleryOverlay.style.opacity = '0';
-    setTimeout(() => galleryOverlay.style.display = 'none', 350);
+imagesToFocus.forEach(image => {
+  image.addEventListener('click', () => {
+    if(width >= 1440){
+      galleryOverlay.style.display = 'flex';
+      setTimeout(() => galleryOverlay.style.opacity = '1', 1);
+      galleryShown = true;
+    }
+    document.querySelector(".close-gallery").addEventListener('click', () => {
+      galleryOverlay.style.opacity = '0';
+      setTimeout(() => galleryOverlay.style.display = 'none', 350);
+      galleryShown = false;
+    });
   });
 });
