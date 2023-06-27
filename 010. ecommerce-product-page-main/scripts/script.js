@@ -2,9 +2,11 @@ const cartQuantityElement = document.querySelector(".quantity");
 const addQuantityButton = document.querySelector(".icon-plus");
 const removeQuantityButton = document.querySelector(".icon-minus");
 const menuElement = document.querySelector(".menu-icon");
-const closeMenuElement = document.querySelector(".icon-close");
+const closeMenuElement = document.querySelector(".icon-close-menu");
+const galleryOverlay = document.querySelector(".gallery-overlay");
 const menuOverlay = document.querySelector(".menu-overlay");
-const imageButtons = document.querySelectorAll("[data-carousel-button]");
+const bigImage = document.querySelector(".focus-image");
+const navButtons = document.querySelectorAll("[data-carousel-button]");
 const thumbImages = document.querySelectorAll("[data-thumb-image]");
 const cartIconElement = document.querySelector(".cart-icon-container");
 const cartPopup = document.querySelector('.cart-popup');
@@ -108,21 +110,7 @@ addToCartBtn.addEventListener('click', () => {
   updateCart();
 });
 
-imageButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-    console.log(button.dataset.carouselButton);
-    const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
-
-    const activeSlide = slides.querySelector("[data-active]");
-    let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-    if (newIndex < 0) newIndex = slides.children.length - 1;
-    if (newIndex >= slides.children.length) newIndex = 0;
-
-    slides.children[newIndex].dataset.active = true;
-    delete activeSlide.dataset.active;
-  })
-});
+let newIndex = 0;
 
 const clearSelected = () => {
   thumbImages.forEach(thumb => {
@@ -130,19 +118,46 @@ const clearSelected = () => {
   });
 };
 
-thumbImages.forEach(thumb => {
-  thumb.addEventListener('click', () => {
+navButtons.forEach(button => {
+  button.addEventListener('click', () => {
     clearSelected();
+    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
 
-    thumbImages[Number(thumb.dataset.thumbImage)].classList.add("selected-thumbnail");
-    
-    const slides = thumb.closest("[data-carousel]").querySelector("[data-slides]");
     const activeSlide = slides.querySelector("[data-active]");
+    newIndex = [...slides.children].indexOf(activeSlide) + offset;
+    if (newIndex < 0) newIndex = slides.children.length - 1;
+    if (newIndex > 3) newIndex = 0;
 
-    slides.children[Number(thumb.dataset.thumbImage)].dataset.active = true;
+    thumbImages[newIndex].classList.add("selected-thumbnail");
+    slides.children[newIndex].dataset.active = true;
     delete activeSlide.dataset.active;
+    console.log(newIndex);
   });
 });
 
-console.log(imageButtons);
-console.log(thumbImages);
+thumbImages.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+
+    clearSelected();
+    thumb.classList.add("selected-thumbnail");
+    newIndex = Number(thumb.dataset.thumbImage);
+
+    const slides = thumb.closest("[data-carousel]").querySelector("[data-slides]");
+    const activeSlide = slides.querySelector("[data-active]");
+
+    delete activeSlide.dataset.active; // deletar antes de atribuir o novo
+    slides.children[newIndex].dataset.active = true;
+    console.log(newIndex);
+  });
+});
+
+bigImage.addEventListener('click', () => {
+  galleryOverlay.style.display = 'flex';
+  setTimeout(() => galleryOverlay.style.opacity = '1', 1);
+
+  document.querySelector(".close-gallery").addEventListener('click', () => {
+    galleryOverlay.style.opacity = '0';
+    setTimeout(() => galleryOverlay.style.display = 'none', 350);
+  });
+});
