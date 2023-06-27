@@ -1,18 +1,22 @@
 @media screen and (min-width:1300px) {
 
+  body{
+    padding-bottom: 0px;
+  }
+
   header,main{
     max-width: 1100px;
   }
 
   header{
-    padding: 30px 0px;
+    padding: 15px 0px 30px 0px;
   }
 
   main{
     display: flex;
     position: relative;
-    justify-content: center;
     align-items: center;
+    column-gap: 80px;
   }
 
   .sep-header-main{
@@ -23,7 +27,8 @@
     background-color: hsl(0, 0%, 87%);
   }
   
-  .menu-icon{
+  .menu-icon,
+  .arrows{
     display: none;
   }
   
@@ -32,7 +37,7 @@
   }
 
   .desk-menu{
-    margin: 0px 20px;
+    margin: 0px 30px;
     display: flex;
     column-gap: 18px;
   }
@@ -41,7 +46,7 @@
     cursor: pointer;
     color: hsl(219, 9%, 45%);
     text-decoration: 4px underline transparent;
-    text-underline-offset: calc(10px + 30px); /* bot text margin + bot padding header */
+    text-underline-offset: calc(13px + 30px); /* bot text margin + bot padding header */
     transition: text-decoration .2s,
       color .2s;
     transition-timing-function: ease-in-out;
@@ -53,19 +58,20 @@
   }
 
   .cart-icon-container{
-    margin-right: 25px;
+    margin-right: 40px;
   }
 
   .cart-popup{
     margin: 0px;
     top: -75px; /* margin HR(55px) + padding header(30px) - 10px espaçamento*/
-    right: -85px;
+    right: -75px;
     box-shadow: 0px 10px 16px 4px rgba(0, 0, 0, 0.15);
   }
 
   .avatar{
-    height: 36px;
+    height: 46px;
     border-width: 2px;
+    margin: 0px;
   }
 
   .image-container{
@@ -73,12 +79,12 @@
   }
 
   .image-container ul{
-    width: 375px;
-    height: 375px;
+    width: 400px;
+    height: 400px;
   }
 
   .image{
-    height: 375px;
+    height: 400px;
     border-radius: 12px;
     object-position: center; /* center no DESKTOP */
   }
@@ -87,11 +93,52 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 15px;
-    z-index: 0;
+    margin-top: 25px;
+    z-index: 5;
   }
 
   .thumbnail-image{
+    cursor: pointer;
     width: 75px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border .2s ease-in-out;
+  }
+
+  .thumbnail-image:hover{
+    opacity: .7;
+  }
+
+  .right-section{
+    width: 470px;
+  }
+
+  h1{
+    font-size: 2.8em;
+    margin-bottom: 25px;
+  }
+
+  .price-container{
+    width: 200px;
+  }
+
+  .old-price{
+    margin: 8px auto 0px 0px;
+  }
+
+  .buy-area{
+    display: flex;
+    width: 100%;
+    column-gap: 10px;
+  }
+
+  .add-button{
+    margin: 0px;
+    flex: 3;
+  }
+
+  .quantity-container{
+    margin: 0px;
+    flex: 1.35;
   }
 }
