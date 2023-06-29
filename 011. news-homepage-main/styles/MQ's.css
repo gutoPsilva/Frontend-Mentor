@@ -5,9 +5,73 @@
   #close-menu{
     display: none;
   }
+}
 
-  .overlay-menu{
-    display: block;
-    opacity: 1;
+@media (min-width: 1440px) {
+  #menu,
+  #close-menu{
+    display: none;
+  }
+
+  header, .grid-container{
+    width: 79svw;
+  }
+
+  header{
+    margin: 5rem auto 2.5rem auto;
+  }
+
+  .logo{
+    height: inherit;
+  }
+
+  .grid-container{
+    margin: auto;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'one one four'
+    'two three four'
+    'five six seven';
+    gap: 2rem 2rem;
+  }
+
+  .main-image{grid-area: one;}
+  h1{grid-area: two;}
+  .flex-between{grid-area: three;}
+  article:nth-child(4){grid-area: four;}
+  article:nth-child(5){
+    grid-area: five;
+    margin-top: 2rem;
+  }
+  article:nth-child(6){
+    grid-area: six;
+    margin-top: 2rem;
+  }
+  article:nth-child(7){
+    grid-area: seven;
+    margin-top: 2rem;
+  }
+
+
+  .main-image{
+    content: url(../assets/images/image-web-3-desktop.jpg);
+    object-fit: cover;
+  }
+
+  h1{
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .new-container h2{
+    font-size: 3rem;
+    margin: none;
+  }
+
+  .flex-between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
