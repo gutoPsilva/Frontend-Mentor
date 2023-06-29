@@ -31,7 +31,11 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 1rem;
+  margin: 1.75rem 1rem;
+}
+
+.logo{
+  height: 30px;
 }
 
 nav{
@@ -52,7 +56,7 @@ nav > ul{
   margin: 1rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 0fr 0fr 1.75fr;
+  /* grid-template-rows: 1fr 0fr 0fr 1.8fr 0fr 0fr 0fr; */
   gap: 1.2rem 0em;
 }
 
@@ -65,19 +69,28 @@ h1{
   font-weight: 800;
 }
 
-.desc-p{
+.desc-p,
+.flex-topic p{
   color: var(--DarkGrayishBlue);
-  line-height: 1.5rem;
+  line-height: 1.65rem;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 374px) {
+  body{
+    padding-bottom: 3rem;
+  }
+
   h1{
-    font-size: 2.7rem;
+    font-size: 2.8rem;
     line-height: 2.9rem;
   }
 
   .new-container{
-    margin-top: 2.5rem;
+    margin: 2.5rem 0rem;
+  }
+
+  .flex-topic{
+    margin-bottom: 1rem;
   }
 }
 
@@ -104,7 +117,7 @@ h2{
   color: var(--SoftOrange);
   font-weight: 700;
   font-size: 2rem;
-  /* margin-bottom: 2rem; */
+  margin-bottom: 2rem;
 }
 
 h3{
@@ -122,13 +135,29 @@ hr{
   border: none;
   background: var(--DarkGrayishBlue);
   height: 1px;
-  /* margin: 2rem 0em; */
-}
-
-.flex-topic img{
-  width: 100%;
+  margin: 2rem 0em;
 }
 
 .flex-topic{
   display: flex;
+  gap: 0rem 1.7rem;
+}
+
+.flex-topic img{
+  width: 100px;
+}
+
+.flex-topic section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-topic h2{
+  color: var(--GrayishBlue);
+}
+
+.flex-topic h3{
+  color: var(--VeryDarkBlue);
+  font-size: 1.28rem;
 }
