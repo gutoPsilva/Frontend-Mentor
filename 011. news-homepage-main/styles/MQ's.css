@@ -1,16 +1,17 @@
 @charset "UTF-8";
 
+/* desktop*/
 @media (min-width: 600px) {
   #menu,
   #close-menu{
     display: none;
   }
-}
 
-@media (min-width: 1440px) {
-  #menu,
-  #close-menu{
-    display: none;
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   header, .grid-container{
@@ -18,7 +19,7 @@
   }
 
   header{
-    margin: 5rem auto 2.5rem auto;
+    margin-bottom: 2.5rem;
   }
 
   .logo{
@@ -26,13 +27,9 @@
   }
 
   .grid-container{
-    margin: auto;
+    margin: 0rem auto;
     grid-auto-columns: 1fr;
-    grid-template-areas: 
-    'one one four'
-    'two three four'
-    'five six seven';
-    gap: 2rem 2rem;
+    gap: 2rem 3rem;
   }
 
   .main-image{grid-area: one;}
@@ -41,17 +38,13 @@
   article:nth-child(4){grid-area: four;}
   article:nth-child(5){
     grid-area: five;
-    margin-top: 2rem;
   }
   article:nth-child(6){
     grid-area: six;
-    margin-top: 2rem;
   }
   article:nth-child(7){
     grid-area: seven;
-    margin-top: 2rem;
   }
-
 
   .main-image{
     content: url(../assets/images/image-web-3-desktop.jpg);
@@ -59,8 +52,8 @@
   }
 
   h1{
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
   }
 
   .new-container h2{
@@ -73,5 +66,75 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+  }
+}
+
+/* tablet */
+@media (min-width: 600px) {
+  header, .grid-container{
+    width: 85svw;
+  }
+
+  .logo{
+    height: 30px;
+  }
+
+  .grid-container{
+    grid-template-areas: 
+    'one one'
+    'two three'
+    'four four'
+    'four four'
+    'five five'
+    'six six'
+    'seven seven';
+  }
+}
+
+@media (min-width: 1000px) {
+  header, .grid-container{
+    width: 85svw;
+  }
+
+  .logo{
+    height: 30px;
+  }
+
+  .grid-container{
+    grid-template-areas: 
+    'one one'
+    'two three'
+    'four five'
+    'four six'
+    'four seven';
+  }
+  
+  .flex-topic{
+    margin-top: 0;
+  }
+
+  .flex-topic img{
+    height: 150px;
+  }
+}
+
+@media (min-width: 1400px){
+  body{
+    height: 100svh;
+  }
+  
+  .grid-container{
+    grid-template-areas: 
+    'one one four'
+    'two three four'
+    'five six seven';
+  }
+
+  .flex-topic{
+    margin-top: 2rem;
+  }
+
+  .flex-topic img{
+    height: 125px;
   }
 }
