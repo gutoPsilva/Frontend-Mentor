@@ -119,10 +119,17 @@
 }
 
 @media (min-width: 1400px){
-  body{
-    height: 100svh;
+  header, .grid-container{
+    width: 79svw;
   }
   
+  header{
+    margin: 2.5rem 0rem;
+  }
+
+  .logo{
+    height: inherit;
+  }
   .grid-container{
     grid-template-areas: 
     'one one four'
