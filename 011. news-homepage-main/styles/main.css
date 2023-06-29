@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root{
+  --SoftOrange: hsl(35, 77%, 62%);
+  --SoftRed: hsl(5, 85%, 63%);
+  --OffWhite: hsl(36, 100%, 99%);
+  --GrayishBlue: hsl(233, 8%, 79%);
+  --DarkGrayishBlue: hsl(236, 13%, 42%);
+  --VeryDarkBlue: hsl(240, 100%, 5%);
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 1rem;
+}
+
+nav{
+  display: none; /*only display when the media screen is >= 700px*/
+}
+
+nav > ul{
+  display: flex;
+  column-gap: 3rem;
+  list-style: none;
+}
+
+#menu{
+  cursor: pointer;
+}
+
+.grid-container{
+  margin: 1rem;
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: 1.2rem 0em;
+}
+
+.main-image{
+  width: 100%;
+}
+
+h1{
+  color: var(--VeryDarkBlue);
+  font-weight: 800;
+}
+
+@media (min-width: 375px) {
+  h1{
+    font-size: 2.7rem;
+    line-height: 2.9rem;
+  }
+}
+
+.desc-p{
+  color: var(--DarkGrayishBlue);
+  line-height: 1.5rem;
+}
+
+.read-more-btn{
+  margin-top: 1.2rem;
+  border: none;
+  
+}
