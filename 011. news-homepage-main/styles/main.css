@@ -38,11 +38,70 @@ header{
   height: 30px;
 }
 
-nav{
-  display: none; /*only display when the media screen is >= 700px*/
+.overlay-menu{
+  display: none; /* shown when #menu is clicked*/
+  opacity: 0;
+  transition: opacity .35s linear; 
+}
+
+#close-menu{
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+@media (max-width:599px) { /*only use this style when the media screen is <= 599px, otherwise the normal menu layout appears*/
+  
+  body{
+    padding-bottom: 3rem;
+  }
+  
+  .overlay-menu{
+    position: fixed;
+    inset: 0;
+    background-color: hsla(0, 0%, 0%, 0.75);
+  }
+
+  header nav{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 67svw;
+    position: fixed;
+    top: 0;
+    right: -67svw; /* animation */
+    bottom: 0;
+    background-color: hsl(36, 100%, 99%);
+    padding: 1.75rem;
+    transition: right .35s linear;
+  }
+
+  .menu-list{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--VeryDarkBlue);
+  }
+
+  .menu-list li{
+    font-size: 1.1rem;
+  }
+
+  h1{
+    font-size: 2.8rem;
+    line-height: 2.9rem;
+  }
+
+  .new-container{
+    margin: 2.5rem 0rem;
+  }
+
+  .flex-topic{
+    margin-bottom: 1rem;
+  }
 }
 
 nav > ul{
+  cursor: pointer;
   display: flex;
   column-gap: 3rem;
   list-style: none;
@@ -73,25 +132,6 @@ h1{
 .flex-topic p{
   color: var(--DarkGrayishBlue);
   line-height: 1.65rem;
-}
-
-@media (min-width: 374px) {
-  body{
-    padding-bottom: 3rem;
-  }
-
-  h1{
-    font-size: 2.8rem;
-    line-height: 2.9rem;
-  }
-
-  .new-container{
-    margin: 2.5rem 0rem;
-  }
-
-  .flex-topic{
-    margin-bottom: 1rem;
-  }
 }
 
 .read-more-btn{
@@ -155,6 +195,7 @@ hr{
 
 .flex-topic h2{
   color: var(--GrayishBlue);
+  margin: 0;
 }
 
 .flex-topic h3{

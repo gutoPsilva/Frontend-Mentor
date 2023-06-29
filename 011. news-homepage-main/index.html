@@ -6,13 +6,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <title>Frontend Mentor | News homepage</title>
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/MQ's.css">
 </head>
 <body>
   <header>
     <img class="logo" src="assets/images/logo.svg" alt="logo">
     <img id="menu" src="assets/images/icon-menu.svg" alt="icon-menu">
-    <nav>
-      <ul>
+    <section class="overlay-menu">
+    </section>
+    <nav id="nav-menu">
+      <img id="close-menu" src="assets/images/icon-menu-close.svg" alt="icon-menu-close">
+      <ul class="menu-list">
         <li>Home</li>
         <li>New</li>
         <li>Popular</li>
@@ -87,5 +91,6 @@
       </section>
     </article>
   </main>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
