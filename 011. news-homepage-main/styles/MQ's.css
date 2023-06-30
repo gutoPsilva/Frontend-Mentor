@@ -7,6 +7,10 @@
     display: none;
   }
 
+  .menu-list li{
+    color: hsl(236, 13%, 42%);
+  }
+
   body{
     display: flex;
     flex-direction: column;
