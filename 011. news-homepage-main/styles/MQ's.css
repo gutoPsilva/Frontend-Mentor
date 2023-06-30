@@ -118,7 +118,7 @@
   }
 }
 
-@media (min-width: 1400px){
+@media (min-width: 1440px){
   header, .grid-container{
     width: 79svw;
   }
