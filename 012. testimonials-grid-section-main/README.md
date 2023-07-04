@@ -24,7 +24,7 @@ Users should be able to:
 ### Screenshot
 
 <div align="center">
-  <img src="images\screenshots\desk.jpg" alt="desktop-screenshot" style="width: 1440px">
+  <img src="images\screenshots\desk.jpg" alt="desktop-screenshot">
   <img src="images\screenshots\mobile.jpg" alt="mobile-screenshot" style="width: 375px">
 </div>
 
