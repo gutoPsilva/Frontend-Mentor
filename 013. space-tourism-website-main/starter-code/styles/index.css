@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+/* ------------------- */
+/*     Custom Prop     */
+/* ------------------- */
+
+:root{
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 89%;
+  --clr-white: 0 0% 100%;
+}
+
+/* ------------------- */
+/*        RESET        */
+/* ------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* form elements */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remover animações se o navegador tiver essa preferência*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; 
+  }
+}
+
+/* ------------------- */
+/*     Ut. Classes     */
+/* ------------------- */
+
+/* general*/
+
+.flex{
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid{
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container{
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.sr-only{ /* screen-readers only*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* colors */
+
+.bg-dark{ background-color: hsl(var(--clr-dark));}
+.bg-accent{ background-color: hsl(var(--clr-light));}
+.bg-white{ background-color: hsl(var(--clr-white));}
+
+.text-dark{ color: hsl(var(--clr-dark));}
+.text-accent{ color: hsl(var(--clr-light));}
+.text-white{ color: hsl(var(--clr-white));}
+
+.space-btw{
+  justify-content: space-between;
+}
+
+.flex-grow-1{
+  flex-grow: 1;
+}
