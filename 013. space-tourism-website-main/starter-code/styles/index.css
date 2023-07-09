@@ -172,8 +172,9 @@ select {
 }
 
 .lsp-475{ letter-spacing: 4.75; }
-.lsp-235{ letter-spacing: 2.35; }
 .lsp-270{ letter-spacing: 2.70; }
+.lsp-235{ letter-spacing: 2.35; }
+.lsp-200{ letter-spacing: 2.00; }
 
 .numbered-title{
   font-family: var(--ff-sans-cond);
@@ -193,11 +194,62 @@ select {
 /* -------------------- */
 
 .large-button{
+  position: relative;
   display: grid;
+  z-index: 1;
   place-content: center;
   padding: 0 2em;
   border-radius: 50%;
   aspect-ratio: 1;
   text-decoration: none;
   cursor: pointer;
+}
+
+.large-button::after{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: hsl(var(--clr-white) / .15);
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity .5s linear, transform .75s ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after{
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.primary-navigation {
+  --gap: 8rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: .5em;
+}
+
+.underline-indicators > li {
+  padding: var(--underline-gap, 1rem) 0;
+  border-bottom: .2rem solid hsl( var(--clr-white) / 0);
+}
+
+
+.underline-indicators > li:hover,
+.underline-indicators > li:focus {
+  border-color: hsl( var(--clr-white) / .5);
+}
+
+.underline-indicators .active{
+  border-color: hsl( var(--clr-white) / 1) !important; 
 }
