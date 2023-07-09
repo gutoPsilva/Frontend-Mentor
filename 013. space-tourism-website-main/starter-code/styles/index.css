@@ -170,3 +170,16 @@ select {
 .lsp-475{ letter-spacing: 4.75; }
 .lsp-235{ letter-spacing: 2.35; }
 .lsp-270{ letter-spacing: 2.70; }
+
+.numbered-title{
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+  letter-spacing: 4.72px;
+}
+
+.numbered-title span{
+  margin-right: .5em;
+  font-weight: 700;
+  color: hsl(var(--clr-white) / .25);
+}
