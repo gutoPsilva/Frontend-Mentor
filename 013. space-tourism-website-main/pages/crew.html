@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../styles/index.css">
   <title>Frontend Mentor | Space tourism website</title>
   <script src="../scripts/index.js" defer></script>
+  <script src="../scripts/crew-dots.js" defer></script>
 </head>
 <body class="crew">
   <a class="skip-to-content" href="#main">Skip to content</a>
@@ -35,7 +36,7 @@
   <main id="main" class="grid-container flow">
     <h1 class="numbered-title"><span aria-hidden="true">02</span>Meet your crew</h1>
 
-    <div class="dot-indicators flex">
+    <div id="member-dots" class="dot-indicators flex">
       <button aria-selected="true"><span class="sr-only">The commander</span></button>
       <button aria-selected="false"><span class="sr-only">The mission specialist</span></button>
       <button aria-selected="false"><span class="sr-only">The pilot</span></button>
@@ -44,17 +45,20 @@
 
     <article class="crew-details flow">
       <header class="flow flow-space-small">
-        <h2 class="fs-600 ff-serif uppercase">Commander</h2>
-        <p class="fs-700 ff-serif uppercase">Douglas Hurley</p>
+        <h2 id="member-role" class="fs-600 ff-serif uppercase">
+          <!-- JS generates this part -->
+        </h2>
+        <p id="member-name" class="fs-700 ff-serif uppercase">
+          <!-- JS generates this part -->
+        </p>
       </header>
-      <p>
-        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.
+      <p id="member-desc">
+        <!-- JS generates this part -->
       </p>
   </article>
 
-    <picture>
-      <source srcset="../assets/crew/image-douglas-hurley.webp" type="image/webp">
-      <img src="../assets/crew/image-douglas-hurley.png" alt="Douglas Hurley">
+    <picture id="member-pict">
+      <!-- JS Generates this part -->
     </picture>
   </main>
 </body>
