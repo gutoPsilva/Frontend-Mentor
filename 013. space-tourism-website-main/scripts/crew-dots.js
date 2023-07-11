@@ -78,7 +78,7 @@ document.body.addEventListener('keyup', e => {
   if (e.code == "ArrowLeft") i--;
   else if (e.code == "ArrowRight") i++;
   else return;
-  i = i < 0 ? destButtons.length - 1 : i > 3 ? 0 : i; 
+  i = i < 0 ? memberDots.length - 1 : i > 3 ? 0 : i; 
 
   clearSelectedDots();
   renderMember(i);
