@@ -13,14 +13,16 @@
 
   <link rel="stylesheet" href="../styles/index.css">
   <title>Frontend Mentor | Space tourism website</title>
+  <script src="../scripts/index.js" defer></script>
 </head>
 <body class="home">
-  <header class="primary-header flex space-btw">
+  <header class="primary-header flex">
     <div>
       <img class="logo" src="../assets/shared/logo.svg" alt="space tourism logo">
     </div>
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
     <nav>
-      <ul class="primary-navigation underline-indicators flex">
+      <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
         <li class="active"><a class="ff-sans-cond uppercase text-white lsp-200" href="#"><span>00</span>Home</a>
         <li><a class="ff-sans-cond uppercase text-white lsp-200" href="#"><span>01</span>Destination</a>
         <li><a class="ff-sans-cond uppercase text-white lsp-200" href="#"><span>02</span>Crew</a>
