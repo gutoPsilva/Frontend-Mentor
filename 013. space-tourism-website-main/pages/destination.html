@@ -36,34 +36,39 @@
 
     <h1 class="numbered-title"><span aria-hidden="true">01</span> Pick your destination</h1>
 
-    <img src="../assets/destination/image-moon.webp" alt="moon">
+    <picture id="current-destination-img">
+      <!-- JS generates the selected img -->
+    </picture>
 
-    <div class="tab-list underline-indicators flex">
+    <div id="destinations-list" class="tab-list underline-indicators flex">
       <button aria-selected="true" class="ff-sans-cond text-accent lsp-200  uppercase">Moon</button>
       <button aria-selected="false" class="ff-sans-cond text-accent lsp-200 uppercase">Mars</button>
       <button aria-selected="false" class="ff-sans-cond text-accent lsp-200 uppercase">Europa</button>
       <button aria-selected="false" class="ff-sans-cond text-accent lsp-200 uppercase">Titan</button>
     </div>
 
-    <article class="destination-info">
-      <h2 class="fs-800 ff-serif uppercase">Moon</h2>
-      <p class="text-accent line-h-32">
-        See our planet as you've never seen it before. A perfect relaxing trip away to help
-        regain perspective and come back refreshed. While you're there, take in some history
-        by visiting the Luna 2 and Apollo 11 landing sites.
+    <article class="destination-info flow">
+      <h2 id="destination-name" class="fs-800 ff-serif uppercase">
+        <!-- JS generates the destination name -->
+      </h2>
+      <p id="destination-desc" class="text-accent line-h-32">
+       <!-- JS generates the description -->
       </p>
       <div class="destination-meta flex">
         <div>
           <h3 class="fs-200 lsp-235 text-accent uppercase">Avg. distance</h3>
-          <p class="ff-serif uppercase">384,400 km</p>
+          <p id="destination-dist" class="ff-serif uppercase">
+            <!-- JS generates the distance -->
+          </p>
         </div>
         <div>
           <h3 class="fs-200 lsp-235 text-accent uppercase">Est. travel time</h3>
-          <p class="ff-serif uppercase">3 days</p>
+          <p id="destination-time" class="ff-serif uppercase">
+            <!-- JS generates estimated time -->
+          </p>
         </div>
       </div>
     </article>
-    
   </main>
 </body>
 </html>
