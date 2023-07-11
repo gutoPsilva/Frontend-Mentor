@@ -388,9 +388,10 @@ select {
 .underline-indicators > li,
 .underline-indicators > button{
   cursor: pointer;
-  padding: var(--underline-gap, 1rem) 0;
+  padding: var(--underline-gap, .5rem) 0;
   border: 0;
   border-bottom: .2rem solid hsl( var(--clr-white) / 0);
+  background-color: transparent;
 }
 
 .underline-indicators > li:hover,
@@ -407,10 +408,6 @@ select {
 
 .tab-list{
   --gap: 2rem;
-}
-
-.tab-list > button{
-  background-color: transparent;
 }
 
 .dot-indicators > *{
@@ -471,6 +468,10 @@ body{
   background-image: url(../assets/destination/background-destination-mobile.jpg);
 }
 
+.crew{
+  background-image: url(../assets/crew/background-crew-mobile.jpg);
+}
+
 @media (min-width: 35rem){
   .home{
     background-position: center center;
@@ -480,6 +481,10 @@ body{
   .destination{
     background-image: url(../assets/destination/background-destination-tablet.jpg);
   }
+
+  .crew{
+  background-image: url(../assets/crew/background-crew-tablet.jpg);
+}
 }
 
 @media (min-width: 45rem){
@@ -490,6 +495,10 @@ body{
   .destination{
     background-image: url(../assets/destination/background-destination-desktop.jpg);
   }
+
+  .crew{
+  background-image: url(../assets/crew/background-crew-desktop.jpg);
+}
 }
 
 /* LAYOUT */
@@ -517,7 +526,8 @@ body{
       'content';
 }
 
-.destination > .grid-container > img {
+.destination > .grid-container > img,
+.crew .grid-container > img {
   grid-area: image;
   max-width: 60%;
 }
@@ -541,6 +551,35 @@ body{
   font-size: 1.75rem;
 }
 
+/* crew layout */
+
+.crew .grid-container{
+  --flow-space: 2rem;
+  grid-template-areas: 
+      'title'
+      'image'
+      'dots'
+      'content';
+}
+
+.crew .grid-container > img {
+  grid-area: image;
+  max-width: 60%;
+  border-bottom: 1px solid hsl( var(--clr-white) / .1);
+}
+
+.crew .dot-indicators {
+  grid-area: dots;
+}
+
+.crew-details {
+  grid-area: content;
+}
+
+.crew-details h2{
+  opacity: .5;
+}
+
 @media (min-width: 35em){
   .numbered-title {
     justify-self: start;
@@ -550,6 +589,15 @@ body{
   .destination-meta {
     flex-direction: row;
     justify-content: space-evenly;
+  }
+
+  .crew .grid-container{
+    padding-bottom: 0;
+    grid-template-areas: 
+      'title'
+      'content'
+      'dots'
+      'image';
   }
 }
 
@@ -589,5 +637,20 @@ body{
   .destination-meta{
     --gap: min(5vw, 6rem);
     justify-content: start;
+  }
+
+  .crew .grid-container{
+    grid-template-areas: 
+      '. title title .'
+      '. content image .'
+      '. dots image .';
+  }
+
+  .crew-details{
+    justify-self: start;
+  }
+
+  .crew .dot-indicators{
+    justify-self: start;
   }
 }
