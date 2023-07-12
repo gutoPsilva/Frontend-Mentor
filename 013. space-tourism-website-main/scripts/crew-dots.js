@@ -53,7 +53,7 @@ const clearSelectedDots = () => {
 
 const renderMember = pos => {
   memberPict.innerHTML = `
-    <source srcset="${membersInfo[pos].pictUrl.webp}">
+    <source srcset="${membersInfo[pos].pictUrl.webp}" type="image/webp">
     <img src="${membersInfo[pos].pictUrl.png}">
   `;
 
@@ -68,9 +68,11 @@ renderMember(i);
 // controller
 memberDots.forEach(dot => {
   dot.addEventListener('click', () => {
+    const dotIndex = memberDots.indexOf(dot);
     clearSelectedDots();
-    renderMember(memberDots.indexOf(dot));
+    renderMember(dotIndex);
     dot.setAttribute("aria-selected", true);
+    i = dotIndex; // in case someone clicks any position, the i position that's used for the arrows is updated
   });
 });
 
