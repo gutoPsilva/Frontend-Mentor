@@ -58,15 +58,25 @@ const renderTechnology = pos => {
   techDesc.textContent = techInfo[pos].desc;
 };
 
-//controler
 numberedBts.forEach(btn => {
   btn.addEventListener("click", () => {
     const buttonIndex = numberedBts.indexOf(btn);
     clearSelectedBtns();
-    renderTechnology(buttonIndex);
     btn.setAttribute("aria-selected", true);
+    renderTechnology(buttonIndex);
     i = buttonIndex;
   });
+});
+
+document.body.addEventListener('keyup', (e) => {
+  if(e.code == "ArrowRight") i++;
+  else if(e.code == "ArrowLeft") i--;
+  else return;
+  
+  i = i < 0 ? numberedBts.length -1 : i > 2 ? 0 : i;
+  renderTechnology(i);
+  clearSelectedBtns();
+  numberedBts[i].setAttribute("aria-selected", true);
 });
 
 renderTechnology(i); // load launch vehicle info by default

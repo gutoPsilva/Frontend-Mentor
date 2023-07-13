@@ -84,7 +84,7 @@ destButtons.forEach((btn) => {
   });
 });
 
-document.body.addEventListener('keydown', (e) => {
+document.body.addEventListener('keyup', (e) => {
   if(e.code == "ArrowLeft") i--;
   else if(e.code == "ArrowRight") i++;
   else return;
