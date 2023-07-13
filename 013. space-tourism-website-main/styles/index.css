@@ -42,6 +42,24 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl( var(--clr-dark) );
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FFFFFF;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #D0D6F9;
+}
+
 /* ------------------- */
 /*        RESET        */
 /* ------------------- */
@@ -620,7 +638,7 @@ body{
 }
 
 .technology .grid-container img {
-  max-width: 100%;
+  max-width: 102%;
 }
 
 .technology-info{
