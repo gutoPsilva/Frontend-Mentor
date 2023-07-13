@@ -614,9 +614,13 @@ body{
   margin-inline: 1rem;
 }
 
-.technology .grid-container img {
+#tech-img{
   grid-area: image;
-  max-width: 102%;
+  width: 100%;
+}
+
+.technology .grid-container img {
+  max-width: 100%;
 }
 
 .technology-info{

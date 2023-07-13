@@ -31,20 +31,20 @@ const techInfo = [
   },
 ];
 
-let i = 2;
+let i = 0;
 
 const updateImage = pos => { // 720px img change
   let width = window.innerWidth;
-  if (width < 720){
-    techPict.setAttribute('src', techInfo[i].image.landscape);
-  }else{
-    techPict.setAttribute("src", techInfo[i].image.portrait);
+  if (width < 720) {
+    techPict.innerHTML = `
+    <img src="${techInfo[pos].image.landscape}" alt="${techInfo[pos].name}">
+    `;
+  } else {
+    techPict.innerHTML = `
+    <img src="${techInfo[pos].image.portrait}" alt="${techInfo[pos].name}">
+    `;;
   }
 };
-
-// techPict.src = techInfo[pos].image.portrait;
-// techPict.src = techInfo[pos].image.portrait;
-
 
 const clearSelectedBtns = () => {
   numberedBts.forEach(btn => {
@@ -53,10 +53,24 @@ const clearSelectedBtns = () => {
 };
 
 const renderTechnology = pos => {
-  clearSelectedBtns();
+  updateImage(pos);
   techName.textContent = techInfo[pos].name;
   techDesc.textContent = techInfo[pos].desc;
-  updateImage(pos);
 };
 
-window.onload = window.onresize = renderTechnology(i);
+//controler
+numberedBts.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const buttonIndex = numberedBts.indexOf(btn);
+    clearSelectedBtns();
+    renderTechnology(buttonIndex);
+    btn.setAttribute("aria-selected", true);
+    i = buttonIndex;
+  });
+});
+
+renderTechnology(i); // load launch vehicle info by default
+
+window.onresize = () => {
+  updateImage(i);
+};
