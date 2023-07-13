@@ -433,14 +433,16 @@ select {
 
 .numbered-indicators{
   place-content: start;
+  grid-area: numbers;
 }
 
 .numbered-indicators > *{
   cursor: pointer;
-  border: 1px solid hsl(var(--clr-light) / .5);
-  background-color: hsl(var(--clr-dark));
+  font-size: var(--fs-600);
+  border: 1px solid hsl(var(--clr-light) / .25);
+  background: hsl( var(--clr-dark) / 0.05);
   color: hsl(var(--clr-white));
-  padding: 0 .75em;
+  width: 2.2em;
   aspect-ratio: 1;
   border-radius: 50%;
 }
@@ -476,6 +478,10 @@ body{
   background-image: url(../assets/crew/background-crew-mobile.jpg);
 }
 
+.technology{
+  background-image: url(../assets/technology/background-technology-mobile.jpg);
+}
+
 @media (min-width: 35rem){
   .home{
     background-position: center center;
@@ -487,8 +493,12 @@ body{
   }
 
   .crew{
-  background-image: url(../assets/crew/background-crew-tablet.jpg);
-}
+    background-image: url(../assets/crew/background-crew-tablet.jpg);
+  }
+
+  .technology{
+    background-image: url(../assets/technology/background-technology-tablet.jpg);
+  }
 }
 
 @media (min-width: 45rem){
@@ -501,8 +511,12 @@ body{
   }
 
   .crew{
-  background-image: url(../assets/crew/background-crew-desktop.jpg);
-}
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+  }
+
+  .technology{
+    background-image: url(../assets/technology/background-technology-desktop.jpg);
+  }
 }
 
 /* LAYOUT */
@@ -535,8 +549,6 @@ body{
   max-width: 60%;
   align-self: start;
 }
-
-
 
 .destination .tab-list {
   grid-area: tabs;
@@ -585,6 +597,39 @@ body{
 .crew-details h2{
   opacity: .5;
 }
+
+/* technology layout */
+
+.technology .grid-container{
+  --flow-space: 2rem;
+  grid-template-areas: 
+      'title'
+      'image'
+      'numbers'
+      'content';
+  padding-inline: 0;
+}
+
+.technology .grid-container > *{
+  margin-inline: 1rem;
+}
+
+.technology .grid-container img {
+  grid-area: image;
+  max-width: 102%;
+}
+
+.technology-info{
+  grid-area: content;
+  display: grid;
+  gap: 1em;
+}
+
+.technology-info header{
+  display: grid;
+  gap: .2em;
+}
+
 
 @media (min-width: 35em){
   .numbered-title {
@@ -658,5 +703,26 @@ body{
     grid-column: span 2;
     align-self: end;
     max-width: 70%;
+  }
+
+  .technology .grid-container{
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 32rem) minmax(0, 23rem) minmax(1rem, 1fr);
+    grid-template-areas: 
+        'title title title .'
+        'numbers content image image'
+        'numbers content image image';
+    margin-left: 2rem;
+  }
+
+  .numbered-indicators{
+    display: grid;
+    gap: 2rem;
+  }
+
+  .technology .grid-container img {
+    grid-column: span 2;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: 0;
   }
 }
