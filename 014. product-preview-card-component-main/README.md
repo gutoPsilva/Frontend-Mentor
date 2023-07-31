@@ -57,7 +57,7 @@ Users should be able to:
 
 ### What I learned
 
-This specific challenge helped me find out how to change the image source depending on the screen size directly on the HTML. The use of the <picture> tag is really useful when adding the 'media' attribute on it, i just added the min-width i wanted to change the image and boom!
+This specific challenge helped me find out how to change the image source depending on the screen size directly on the HTML. The use of the `<picture>` tag is really useful when adding the ``media`` attribute on it, i just added the min-width i wanted to change the image and boom!
 
 ```html
   <picture class="sm:w-55%">
