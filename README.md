@@ -6,6 +6,10 @@ PS: Each challenge has its own desktop and mobile design, i always use the mobil
 
 PS: Since the 14th challenge i started using Tailwind CSS, so fully responsive webpages begins there.
 
+<a href="https://www.frontendmentor.io/profile/gutoPsilva" rel="external">
+  <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Frontend+Mentor&color=3F54A3&logo=Frontend+Mentor&logoColor=FFFFFF&label=">
+</a>
+
 ## Main Projects
 
 ### E-commerce Product Page
