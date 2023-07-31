@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/014.%20product-preview-card-component-main)
-- [Live Site URL](#)
+- [Live Site URL](https://gutopsilva.github.io/FrontEnd-Mentor/014.%20product-preview-card-component-main/dist/index.html)
 
 ## My process
 
