@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  button {
+    @apply hover:text-white transition;
+  }
+}
+
+.active-period {
+  color: white;
+}
