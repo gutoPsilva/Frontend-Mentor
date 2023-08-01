@@ -6,6 +6,10 @@
   button {
     @apply hover:text-white transition;
   }
+
+  section {
+    @apply rounded-2xl overflow-hidden;
+  }
 }
 
 .active-period {
