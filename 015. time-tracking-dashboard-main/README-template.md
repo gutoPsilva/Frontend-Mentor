@@ -14,9 +14,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,83 +27,86 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+<div align="center">
+  <img src="images\screenshots\desktop.jpeg" alt="desktop screenshot">
+  <img src="images\screenshots\tablet.jpeg" alt="tablet screenshot" style="width: 640px">
+  <img src="images\screenshots\mobile.jpeg" alt="mobile screenshot" style="width: 375px">
+</div>
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/015.%20time-tracking-dashboard-main)
+- [Live Site URL](https://gutopsilva.github.io/FrontEnd-Mentor/015.%20time-tracking-dashboard-main/dist/index.html)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+<!-- Badges -->
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- HTML5
+- CSS3
+- JS
+- Git
+- Mobile-first workflow
+- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
+- [Google Fonts](https://fonts.google.com/) - Fonts Library
+- [ChatGPT](https://chat.openai.com/) - Artificial Intelligence
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I had some trouble on the hover states, because the card components shouldn't trigger the background color change when hovering the options button (the three dots). With some research i found a solution on stackoverflow and implemented it on raw CSS as you can see below, the link to that question is on [Useful resources](#useful-resources).
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.options-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none; /* avoids that the parent hover doesn't trigger when hovering the ::before content */
+  border-radius: 1rem; /* rounded-2xl*/
+  transition: background-color .15s; /* transition */
 }
+
+.options-btn:hover::before { background-color: hsl(235 46% 20%); }
 ```
+
+I also had no idea on how to ´fetch data´, to be honest i didn't even know that i had to use it to get the data from a local file, i thought it was only to get stuff from API's and make HTTP requests, i saw some youtube tutorials but never used it on a real project, so with a little `chatGPT` help i sucessfully did it! I'm not sure if i should've extract that data onto a local variable so i could manipulate it without fetching every time, so i used the fetch for each time render function was called.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+fetch("../data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((item, i) => {
+      const currentTime = item.timeframes[period].current;
+      const previousTime = item.timeframes[period].previous;
+      currentTimeList[i].textContent = `${currentTime}hrs`;
+      previousTimeList[i].textContent = `${word} - ${previousTime}hrs`;
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Second challenge with Tailwind CSS, and there's not much to say about it, it just makes everything much easier & fast. The special thing about this challenge is that i finally managed to use the `data.json` to load the content, i think i'll probably stick with this approach on future projects.
 
 ### Useful resources
 
 - [Hover on child 'removes' the parent hover](https://stackoverflow.com/questions/17923922/hover-on-child-should-turn-off-hover-effect-on-parent) - This helped me on the cards component, so when i hover the optapparently. 
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [ChatGPT](https://chat.openai.com/) - It helped me fetch the data from `data.json`.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- GitHub - [gutoPsilva](https://github.com/gutoPsilva)
+- Frontend Mentor - [@gutoPsilva](https://www.frontendmentor.io/profile/gutoPsilva)
+- LinkedIn - [Gustavo Pereira da Silva](https://www.linkedin.com/in/gustavo-pereira-da-silva-b5b684247/)

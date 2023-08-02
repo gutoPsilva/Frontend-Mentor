@@ -6,18 +6,19 @@ const clearSelectedBtns = () => {
   buttonsList.forEach(btn => btn.classList.remove('active-period'));
 };
 
-const renderPeriodInfo = i => {
+// default render is week --> 1
+const renderPeriodInfo = (i = 1) => {
   const period = {
     0: "daily",
     1: "weekly",
     2: "monthly",
-  }[i] || 'weekly';
+  }[i];
 
   const word = {
-    0: "Day",
-    1: "Week",
-    2: "Month",
-  }[i] || "Week";
+    0: "Yesterday",
+    1: "Last Week",
+    2: "Last Month",
+  }[i];
 
   // get JSON data & render it
   fetch("../data.json")
@@ -27,7 +28,7 @@ const renderPeriodInfo = i => {
       const currentTime = item.timeframes[period].current;
       const previousTime = item.timeframes[period].previous;
       currentTimeList[i].textContent = `${currentTime}hrs`;
-      previousTimeList[i].textContent = `Last ${word} - ${previousTime}hrs`;
+      previousTimeList[i].textContent = `${word} - ${previousTime}hrs`;
     });
   })
   .catch((error) => {
@@ -43,3 +44,5 @@ buttonsList.forEach((btn, i) => {
   });
 });
 
+// the timeframes appears on HTML only when JS loads
+renderPeriodInfo();
