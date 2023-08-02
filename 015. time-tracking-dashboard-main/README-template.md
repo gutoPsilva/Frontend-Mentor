@@ -102,7 +102,7 @@ Second challenge with Tailwind CSS, and there's not much to say about it, it jus
 
 ### Useful resources
 
-- [Hover on child 'removes' the parent hover](https://stackoverflow.com/questions/17923922/hover-on-child-should-turn-off-hover-effect-on-parent) - This helped me on the cards component, so when i hover the optapparently. 
+- [Hover on child 'removes' the parent hover](https://stackoverflow.com/questions/17923922/hover-on-child-should-turn-off-hover-effect-on-parent) - This helped me on the cards component hover effects. 
 - [ChatGPT](https://chat.openai.com/) - It helped me fetch the data from `data.json`.
 
 ## Author
