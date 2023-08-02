@@ -868,6 +868,22 @@ section {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-\[\] {
+    grid-template-columns: ;
+  }
+
+  .lg\:grid-cols-\[0\.83fr\] {
+    grid-template-columns: 0.83fr;
+  }
+
+  .lg\:grid-cols-\[0\.83fr_1fr_1fr\] {
+    grid-template-columns: 0.83fr 1fr 1fr;
+  }
+
+  .lg\:grid-cols-\[1fr_1fr_1fr\] {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .lg\:flex-col {
     flex-direction: column;
   }
@@ -887,16 +903,120 @@ section {
 }
 
 @media (min-width: 1280px) {
+  .xl\:bottom-0 {
+    bottom: 0px;
+  }
+
   .xl\:row-span-2 {
     grid-row: span 2 / span 2;
+  }
+
+  .xl\:my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .xl\:mt-4 {
     margin-top: 1rem;
   }
 
+  .xl\:mt-auto {
+    margin-top: auto;
+  }
+
+  .xl\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .xl\:mt-6 {
+    margin-top: 1.5rem;
+  }
+
+  .xl\:-mb-0 {
+    margin-bottom: -0px;
+  }
+
+  .xl\:-mb-4 {
+    margin-bottom: -1rem;
+  }
+
   .xl\:flex {
     display: flex;
+  }
+
+  .xl\:h-full {
+    height: 100%;
+  }
+
+  .xl\:h-auto {
+    height: auto;
+  }
+
+  .xl\:h-fit {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .xl\:h-screen {
+    height: 100vh;
+  }
+
+  .xl\:h-1\/2 {
+    height: 50%;
+  }
+
+  .xl\:h-\[\] {
+    height: ;
+  }
+
+  .xl\:h-\[80\%\] {
+    height: 80%;
+  }
+
+  .xl\:h-\[100\%\] {
+    height: 100%;
+  }
+
+  .xl\:h-\[100\%-72px\] {
+    height: 100%-72px;
+  }
+
+  .xl\:h-\[calc\(100\%-72px\)\] {
+    height: calc(100% - 72px);
+  }
+
+  .xl\:h-\[calc\(72px\)\] {
+    height: calc(72px);
+  }
+
+  .xl\:h-\[calc\(100\%-22px\)\] {
+    height: calc(100% - 22px);
+  }
+
+  .xl\:h-max {
+    height: -moz-max-content;
+    height: max-content;
+  }
+
+  .xl\:h-\[158px\] {
+    height: 158px;
+  }
+
+  .xl\:h-\[calc\(100\%-\)\] {
+    height: calc(100% - );
+  }
+
+  .xl\:h-\[calc\(100\%-32px\)\] {
+    height: calc(100% - 32px);
+  }
+
+  .xl\:h-\[calc\(100\%-40px\)\] {
+    height: calc(100% - 40px);
+  }
+
+  .xl\:max-h-fit {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
   }
 
   .xl\:grid-cols-\[0\.83fr_1fr_1fr_1fr\] {
@@ -917,6 +1037,26 @@ section {
 
   .xl\:justify-between {
     justify-content: space-between;
+  }
+
+  .xl\:gap-4 {
+    gap: 1rem;
+  }
+
+  .xl\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .xl\:gap-0 {
+    gap: 0px;
+  }
+
+  .xl\:gap-1 {
+    gap: 0.25rem;
+  }
+
+  .xl\:p-0 {
+    padding: 0px;
   }
 
   .xl\:pb-20 {
