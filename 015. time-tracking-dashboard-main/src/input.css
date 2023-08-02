@@ -8,10 +8,22 @@
   }
 
   section {
-    @apply rounded-2xl overflow-hidden;
+    @apply rounded-2xl overflow-hidden bg-Dark-blue;
   }
 }
 
-.active-period {
-  color: white;
+.active-period { color: white; }
+
+.options-btn:hover img {filter: brightness(10); }
+
+.options-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none; /* avoid that the parent hover doesn't trigger when hovering the ::before content */
+  border-radius: 1rem; /* rounded-2xl*/
+  transition: background-color .15s; /* transition */
 }
+
+.options-btn:hover::before { background-color: hsl(235 46% 20%); }

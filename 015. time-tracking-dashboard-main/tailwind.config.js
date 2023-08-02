@@ -13,8 +13,9 @@ module.exports = {
         "card-yellow": "hsl(43, 84%, 65%)",
         "Very-dark-blue": "hsl(226, 43%, 10%)",
         "Dark-blue": "hsl(235, 46%, 20%)",
+        "Light-dark-blue": "hsl(236, 41%, 34%)",
         "Desaturated-blue": "hsl(235, 45%, 61%)",
-        "Pale-Blue": "hsl(236, 100%, 87%)",
+        "Pale-Blue": "hsl(236, 100%, 87%)"
       },
       fontFamily: {
         Rubik: "'Rubik', sans-serif",
