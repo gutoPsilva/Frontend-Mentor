@@ -50,7 +50,6 @@ Users should be able to:
 ![VSCode](https://img.shields.io/badge/-VSCODE-007ACC?style=for-the-badge&&logo=visual-studio-code&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
-![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 
 - HTML5
 - CSS3
@@ -59,7 +58,6 @@ Users should be able to:
 - Mobile-first workflow
 - [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
 - [Google Fonts](https://fonts.google.com/) - Fonts Library
-- [ChatGPT](https://chat.openai.com/) - Artificial Intelligence
 
 ### What I learned
 
