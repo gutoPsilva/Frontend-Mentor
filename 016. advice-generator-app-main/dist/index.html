@@ -7,22 +7,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet" />
+
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
     <link rel="stylesheet" href="output.css" />
     <title>Advice generator app</title>
     <script src="script.js" defer></script>
   </head>
-  <body class="bg-dark-blue font-manrope flex justify-center items-center min-h-screen">
-    <main class="relative max-w-[550px] bg-dark-grayish-blue grid place-items-center rounded-xl m-4 px-6 pt-9 pb-14">
+  <body class="bg-dark-blue font-manrope flex flex-col justify-center items-center min-h-screen">
+    <main class="relative max-w-[550px] bg-dark-grayish-blue grid place-items-center rounded-xl m-4 px-6 pt-9 pb-14 sm:px-8">
       <p class="font-manrope text-neon-green uppercase tracking-[.25em] text-sm">
-        Advice #<span>117</span>
+        Advice #<span id="adviceID">
+          ...
+          <!-- JS generates this part -->
+        </span>
       </p>
-      <p class="text-[24px] sm:text-[28px] text-center text-light-cyan max-w-[450px] my-4 sm:mb-6">“<span>It is easy to sit up and take notice, what's difficult is getting up and taking action.</span>”</p>
+      <p class="text-[24px] sm:text-[28px] text-center text-light-cyan max-w-[450px] my-4 sm:mb-6">
+        “<span id="adviceText">
+          loading...
+          <!-- JS generates this part --> </span
+        >”
+      </p>
       <picture>
         <source media="(min-width: 640px)" srcset="../images/pattern-divider-desktop.svg" />
         <img src="../images/pattern-divider-mobile.svg" alt="pattern divider" />
       </picture>
-      <button class="absolute bg-neon-green rounded-full p-4 bottom-[-28px] hover:shadow-[0px_0px_16px_4px] hover:shadow-neon-green transition-shadow duration-300"> <!-- 28px is half of the button size, so it should be exactly at the center of the button -->
+      <button id="adviceBtn" class="absolute bg-neon-green rounded-full p-4 bottom-[-28px] hover:shadow-neon focus:outline-none focus:shadow-neon transition-shadow duration-300">
+        <!-- 28px is half of the button size, so it should be exactly at the center of the button -->
         <img src="../images/icon-dice.svg" alt="dice icon" />
       </button>
     </main>
