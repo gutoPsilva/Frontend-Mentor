@@ -12,13 +12,13 @@ PS: Since the 14th challenge i started using Tailwind CSS, so fully responsive w
 
 ## Main Projects
 
-### Time tracking dashboard `[LATEST]`
+### Advice Generator App `[LATEST]`
+
+- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/016.%20advice-generator-app-main/dist/index.html
+
+### Time tracking dashboard
 
 - Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/015.%20time-tracking-dashboard-main/dist/index.html
-
-### E-commerce Product Page
-
-- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/010.%20ecommerce-product-page-main/index.html
 
 ### Tip Calcular App
 
@@ -27,3 +27,7 @@ PS: Since the 14th challenge i started using Tailwind CSS, so fully responsive w
 ### Age Calculator App
 
 - Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/005.%20age-calculator-app-main/index.html
+
+### E-commerce Product Page
+
+- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/010.%20ecommerce-product-page-main/index.html
