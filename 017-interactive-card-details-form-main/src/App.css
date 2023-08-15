@@ -1,0 +1,26 @@
+.main-app {
+  background: url(../public/images/bg-main-mobile.png) no-repeat center center;
+  background-size: cover;
+  height: 240px;
+}
+
+.card-front {
+  background: url(../public/images/bg-card-front.png) no-repeat center center;
+  background-size: cover;
+}
+
+.card-back {
+  background: url(../public/images/bg-card-back.png) no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+@media (min-width: 640px) {
+  .main-app{
+    background-image: url(../public/images/bg-main-desktop.png);
+    height: 100vh;
+    background-position: left left;
+    width: 483px;
+  }
+}
