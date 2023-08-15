@@ -24,3 +24,18 @@
     width: 483px;
   }
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.styled-border:hover,
+.styled-border:focus{
+  outline: none;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
