@@ -1,7 +1,8 @@
-.main-app {
+.main-bg {
   background: url(../public/images/bg-main-mobile.png) no-repeat center center;
   background-size: cover;
   height: 240px;
+  width: 100vw;
 }
 
 .card-front {
@@ -12,16 +13,13 @@
 .card-back {
   background: url(../public/images/bg-card-back.png) no-repeat center center;
   background-size: cover;
-  width: 100%;
   aspect-ratio: 16/9;
 }
 
 @media (min-width: 640px) {
-  .main-app{
-    background-image: url(../public/images/bg-main-desktop.png);
+  .main-bg{
+    background: url(../public/images/bg-main-desktop.png) left no-repeat;
     height: 100vh;
-    background-position: left left;
-    width: 483px;
   }
 }
 
@@ -36,6 +34,6 @@ input::-webkit-inner-spin-button {
   outline: none;
   background: linear-gradient(#fff, #fff) padding-box,
               linear-gradient(45deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
-  border: 1px solid transparent;
+  border-color: transparent;
   border-radius: 8px;
 }
