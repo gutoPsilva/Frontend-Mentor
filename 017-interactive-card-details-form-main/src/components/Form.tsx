@@ -6,15 +6,14 @@ import { AppContext } from "../App";
 
 const lastData = JSON.parse(localStorage.getItem("lastData") || "{}"); // doesn't have any meaningfull use, just wanted to save the forms info
 
-export const Form = () => {
-  const { setHolderName, setCardNumber, setCardMonth, setCardYear, setCardCVC } = useContext(AppContext);
+export const Form = (props: any) => {
+  const { setHolderName, setCardNumber, setCardMonth, setCardYear, setCardCVC, setComplete } = useContext(AppContext);
   const date = new Date();
   const currentYear = date.getFullYear() % 100; // the year module 100 returns the last 2 digits, 2023 % 100 = 23
 
-  // let inputYear:number;
   // const minMonth = inputYear && inputYear > currentYear ? 0 : currentMonth;
   // this value might change beucase it has 2 scenarios, 1 - the year input is the current year, however the input month is lower than current month,  2 - the year input is greater than current year so the input month may be whichever month
-  // my final decision was to make the exp date be atleast untill next year, therefore, the user can pick whichever month he wants
+  // my final decision was to make the exp date to be atleast next year, therefore, the user can pick whichever month he wants
 
   const schema = yup.object().shape({
     cardHolderName: yup.string().max(40).required("Can't be blank"),
@@ -37,6 +36,7 @@ export const Form = () => {
 
   const onSubmit = (data: object) => {
     localStorage.setItem("lastData", JSON.stringify(data));
+    setComplete(true);
   };
 
   const styleWrong = (id: string) => {
