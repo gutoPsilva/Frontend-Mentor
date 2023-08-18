@@ -1,8 +1,7 @@
 import "./App.css";
 import { useState, createContext } from "react";
-import { CardFront } from "./components/CardFront";
-import { CardBack } from "./components/CardBack";
 import { Form } from "./components/Form";
+import { Background } from "./components/Background";
 
 // this is redundant as fuck i know, still learning TS...
 interface IAppContext {
@@ -25,10 +24,10 @@ export const AppContext = createContext<IAppContext>({
   setCardNumber: () => {},
   cardMonth: "",
   setCardMonth: () => {},
-  cardYear: '',
+  cardYear: "",
   setCardYear: () => {},
-  cardCVC: '',
-  setCardCVC: () => {}
+  cardCVC: "",
+  setCardCVC: () => {},
 });
 
 function App() {
@@ -39,17 +38,10 @@ function App() {
   const [cardCVC, setCardCVC] = useState("");
 
   return (
-    <main className="App font-space-grotesk text-lg relative">
+    <main className="App font-space-grotesk text-lg relative md:flex md:justify-between md:items-center min-h-screen">
       <AppContext.Provider value={{ holderName, setHolderName, cardNumber, setCardNumber, cardMonth, setCardMonth, cardYear, setCardYear, cardCVC, setCardCVC }}>
-        <div className="pt-6 mx-auto sm:max-w-none xl:mx-0 xl:ml-auto xl:flex xl:flex-col-reverse main-bg xl:absolute xl:top-0 xl:left-0 xl:bottom-0">
-          <div className="flex justify-end mr-4">
-            <CardBack />
-          </div>
-          <div className="ml-4 -mt-[76px] ">
-            <CardFront />
-          </div>
-        </div>
-        <div className="mx-4 mt-8 xl:max-w-md xl:mr-auto">
+        <Background />
+        <div className="mx-4 mt-12 md:max-w-sm md:m-auto lg:max-w-md">
           <Form />
         </div>
       </AppContext.Provider>

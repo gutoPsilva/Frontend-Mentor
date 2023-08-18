@@ -10,20 +10,20 @@ export const Form = () => {
   const { setHolderName, setCardNumber, setCardMonth, setCardYear, setCardCVC } = useContext(AppContext);
   const date = new Date();
   const currentYear = date.getFullYear() % 100; // the year module 100 returns the last 2 digits, 2023 % 100 = 23
-  const currentMonth = date.getMonth() + 1; // getMonth returns 0-11, but jan is month 1 and so further...
 
   // let inputYear:number;
   // const minMonth = inputYear && inputYear > currentYear ? 0 : currentMonth;
   // this value might change beucase it has 2 scenarios, 1 - the year input is the current year, however the input month is lower than current month,  2 - the year input is greater than current year so the input month may be whichever month
+  // my final decision was to make the exp date be atleast untill next year, therefore, the user can pick whichever month he wants
 
   const schema = yup.object().shape({
     cardHolderName: yup.string().max(40).required("Can't be blank"),
     cardNumber: yup
       .string()
       .required("Can't be blank")
-      .matches(/^\d{4} \d{4} \d{4} \d{4}$/, "Wrong format, 16 numbers only"),
-    monthExp: yup.number().typeError("Can't be blank").min(currentMonth, `Min month is ${currentMonth}`).max(12, "Max month is 12").required(),
-    yearExp: yup.number().typeError("Can't be blank").min(currentYear, `Min year is ${currentYear}`).max(99, "Max year is 99").required(),
+      .matches(/^\d{4} \d{4} \d{4} \d{4}$/, "Wrong format, numbers only"),
+    monthExp: yup.number().typeError("Can't be blank").min(1, `Min month is 1`).max(12, "Max month is 12").required(),
+    yearExp: yup.number().typeError("Can't be blank").min(currentYear+1, `Min year is ${currentYear+1}`).max(99, "Max year is 99").required(),
     cvc: yup.string().required("Can't be blank").length(3, "Must be 3 digits").matches(/\d{3}/, "Numbers only"),
   });
 
@@ -91,7 +91,7 @@ export const Form = () => {
         </div>
       </div>
 
-      <input className="text-white bg-very-dark-violet rounded-md p-3 cursor-pointer mb-6" value="Confirm" type="submit" />
+      <input className="text-white bg-very-dark-violet rounded-md p-3 cursor-pointer mb-6 md:mb-0" value="Confirm" type="submit" />
     </form>
   );
 };
