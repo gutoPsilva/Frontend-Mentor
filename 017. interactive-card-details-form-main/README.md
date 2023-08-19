@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](#)
-- [Live Site URL](#)
+- [Solution URL](https://github.com/gutoPsilva/FrontEnd-Mentor/tree/main/017.%20interactive-card-details-form-main)
+- [Live Site URL](https://fe-reactapp-interactive-card-form.netlify.app/)
 
 ## My process
 
@@ -49,26 +49,32 @@ Users should be able to:
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![VSCode](https://img.shields.io/badge/-VSCODE-007ACC?style=for-the-badge&&logo=visual-studio-code&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
-- Flexbox
+- HTML5
+- CSS3
+- Git
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS Library
+- [Yup](https://www.npmjs.com/package/yup) - React Hook Form Vaildator
 - [Typescript](https://www.typescriptlang.org/) - JavaScript Superset
 - [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
 - [Google Fonts](https://fonts.google.com/) - Fonts Library
 
 ### Continued development
 
-First project with react library, i had a hard time figuring out how to organize the components & div elements and it was pretty difficult to deploy the final application because on other projects i was simply openning the index.html from the distribution... 
+First project with react library, i had a hard time figuring out how to organize the components & div elements and it was pretty difficult to deploy the final application because on other projects i was simply openning the index.html from the distribution and using GH pages. The solution i found out was to simply use Netlify to host the app BUILD, so i didn't need to get crazy trying to understand branches and all that GH stuff.
+
+I also got kinda lost on some styling with Tailwind CSS because this Components approach of react is really new to me, so i ended up doing some good old direct css on App.css to manage things like backgrounds & gradient styled borders.
 
 ### Useful resources
 
-- [Use Context](https://dev.to/madv/usecontext-with-typescript-23ln) - This helped me understand how to pass down useEffect states onto multiple Components without using props.
+- [Use Context](https://dev.to/madv/usecontext-with-typescript-23ln) - This helped me understand how to pass down useEffect states onto multiple Components without using props on TS.
 
 ## Author
 
