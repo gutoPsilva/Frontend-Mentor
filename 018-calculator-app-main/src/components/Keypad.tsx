@@ -15,9 +15,9 @@ export const Keypad = () => {
   };
 
   return (
-    <div className={`max-w-xl w-full ${tema.keypad} rounded-xl grid grid-cols-4 gap-4 p-6`}>
+    <div className={`max-w-xl w-full ${tema.keypad} rounded-md grid grid-cols-4 gap-4 p-6`}>
       {keys.map(key => {
-        return <button className={`relative outline-none rounded-lg p-3 active:translate-y-1 active:shadow-transparent ${themeButton(key)}`}>{key}</button>;
+        return <button className={`relative outline-none rounded-md p-3 active:translate-y-1 active:shadow-transparent ${themeButton(key)}`}>{key}</button>;
       })}
     </div>
   );

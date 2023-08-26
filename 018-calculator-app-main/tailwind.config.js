@@ -24,13 +24,13 @@ module.exports = {
 
         "very-dark-gb-prim": "hsl(221, 14%, 31%)",
       },
-    },
 
-    boxShadow: {
-      //theme 1
-      desbPrim: "0 4px 0 0 rgb(64, 78, 114)",
-      darkRed: "0 4px 0 0 rgb(147, 38, 26)",
-      lightOrange: "0 4px 0 0 rgb(180, 165, 151)",
+      boxShadow: {
+        //theme 1
+        desbPrim: "0 4px 0 0 rgb(64, 78, 114)",
+        darkRed: "0 4px 0 0 rgb(147, 38, 26)",
+        lightOrange: "0 4px 0 0 rgb(180, 165, 151)",
+      },
     },
   },
   plugins: [],

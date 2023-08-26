@@ -1,4 +1,6 @@
 import { Keypad } from "./components/Keypad";
+import { Screen } from "./components/Screen";
+import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { createContext, useState } from "react";
 
 type Theme = {
@@ -30,7 +32,7 @@ export const AppContext = createContext<IAppContext>({
 });
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState({
+  const theme1 = {
     main: "bg-main-prim",
     keypad: "bg-keypad-prim",
     screen: "bg-screen-prim",
@@ -45,13 +47,24 @@ function App() {
     "key-thr-shw": "shadow-lightOrange",
     "t-color-prim": "text-very-dark-gb-prim",
     "t-color-sec": "text-white",
-    "t-color-thr": "" // only exists on theme 3
-  });
+    "t-color-thr": "", // only exists on theme 3
+  };
+  const [currentTheme, setCurrentTheme] = useState(theme1);
 
   return (
-    <div className="App font-league-spartan bg-main-prim min-h-screen flex flex-col gap-4 justify-center items-center p-4">
+    <div className="App font-league-spartan bg-main-prim min-h-screen flex flex-col justify-center items-center p-4 gap-4">
       <AppContext.Provider value={{ currentTheme, setCurrentTheme }}>
-        <Keypad />
+        <header className="max-w-lg w-full flex justify-between text-white">
+          <span className="text-white text-4xl">calc</span>
+          <div className="text-sm flex gap-4">
+            <span className="uppercase self-end">theme</span>
+            <ThemeSwitcher/>
+          </div>
+        </header>
+        <main className="max-w-lg w-full flex flex-col gap-6">
+          <Screen />
+          <Keypad />
+        </main>
       </AppContext.Provider>
     </div>
   );
