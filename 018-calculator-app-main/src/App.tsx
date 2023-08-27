@@ -3,7 +3,7 @@ import { Screen } from "./components/Screen";
 import { ThemeSwitcher } from "./components/ThemeSwitcher";
 import { createContext, useState } from "react";
 
-type Theme = {
+export type Theme = {
   main: string;
   keypad: string;
   screen: string;
@@ -93,7 +93,8 @@ export const theme3 = {
 };
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState(theme1);
+  const lastTheme = localStorage.getItem("prefTheme");
+  const [currentTheme, setCurrentTheme] = useState(lastTheme ? JSON.parse(lastTheme) : theme1);
   const [expression, setExpression] = useState('');
 
   return (
