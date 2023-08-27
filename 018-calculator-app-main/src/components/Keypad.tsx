@@ -14,26 +14,29 @@ export const Keypad = () => {
   ${tema["t-color-prim"]} ${tema["focus-hover-key-thr"]} text-3xl`;
   };
 
+  let block = "";
+
   const handleInput = (value:string):void => {
     const opers = ["/", "+", "-", "x"];
-    let block = "";
-    const lastChar = block[block.length - 1];
+    const lastChar = expression[expression.length-1];
     if(value === "="){
-      // input is limited to predefined buttons, so even though i got this warning that eval is dangerous, those limited buttons shouldn't be harmful
+      if (expression === "" || lastChar === "." || opers.includes(lastChar)) return; // executing eval on these would bring errors
+
+      // input is limited to predefined buttons, so even though i got the warning that eval is dangerous, those limited buttons shouldn't be harmful
       // eslint-disable-next-line no-eval
-      const answer = eval(expression);
-      setExpression(String(answer));
+      const answer = String(eval(expression.replaceAll("x", "*")));
+      setExpression(answer);
     } else if (value === "RESET") {
       setExpression("");
     } else if (value === "DEL") {
       setExpression(expression.slice(0, -1));
-    } else if(value === "." && block.includes(".")){
-      console.log("no more dots....");
-    } else if(!opers.includes(value)) {
-      block += value;
-    } else {
-      setExpression(expression + block);
+    } else if (opers.includes(value)) {
+      setExpression(expression + block + value);
       block = "";
+    } else {
+      block += value;
+      setExpression(expression + block);
+      console.log(block);
     }
   };
 
