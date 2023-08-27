@@ -95,6 +95,12 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
+(https://nekocalc.com/px-to-rem-converter)
+(https://www.w3schools.com/howto/howto_css_custom_checkbox.asp)
+(https://codepen.io/fredjens/pen/adqLNO)
+(https://www.sliderrevolution.com/resources/styling-radio-buttons/)
+(https://sentry.io/answers/unique-key-prop/)
+
 ## Author
 
 - GitHub - [gutoPsilva](https://github.com/gutoPsilva)

@@ -24,11 +24,15 @@ type Theme = {
 interface IAppContext {
   currentTheme: Theme;
   setCurrentTheme(args: Theme): void;
+  expression: string,
+  setExpression(args:string): void;
 }
 
 export const AppContext = createContext<IAppContext>({
   currentTheme: { main: "", keypad: "", screen: "", "key-prim": "", "focus-hover-key-prim":"", "key-prim-shw": "", "key-sec": "", "focus-hover-key-sec": "", "key-sec-shw": "", "key-thr": "", "focus-hover-key-thr": "", "key-thr-shw": "", "t-color-prim": "", "t-color-sec": "", "t-color-thr": "" },
   setCurrentTheme: () => {},
+  expression: "",
+  setExpression: () => {},
 });
 
 function App() {
@@ -50,10 +54,11 @@ function App() {
     "t-color-thr": "", // only exists on theme 3
   };
   const [currentTheme, setCurrentTheme] = useState(theme1);
+  const [expression, setExpression] = useState('');
 
   return (
     <div className="App font-league-spartan bg-main-prim min-h-screen flex flex-col justify-center items-center p-4 gap-4">
-      <AppContext.Provider value={{ currentTheme, setCurrentTheme }}>
+      <AppContext.Provider value={{ currentTheme, setCurrentTheme, expression, setExpression }}>
         <header className="max-w-lg w-full flex justify-between text-white">
           <span className="text-white text-4xl">calc</span>
           <div className="text-sm flex gap-4">
