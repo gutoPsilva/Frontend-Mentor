@@ -1,13 +1,13 @@
 import { AppContext, Theme, theme1, theme2, theme3 } from "../App";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 export const ThemeSwitcher = () => {
   const { setCurrentTheme, currentTheme: tema } = useContext(AppContext);
   const lastIndiPos = localStorage.getItem("indiPos");
-  const lastRadio = Number(JSON.parse(localStorage.getItem("radioNumber")||"1")); // default is theme 1
+  let lastRadio = Number(JSON.parse(localStorage.getItem("radioNumber")||"1")); // default is theme 1
   const [indiPos, setIndiPos] = useState(lastIndiPos ? JSON.parse(lastIndiPos) : "left-[.3rem]");
 
-  const saveThemeOnStorage = (theme: Theme, indiPos: string, num?: number):void => {
+  const saveThemeOnStorage = (theme: Theme, indiPos: string, num: number):void => {
     localStorage.setItem("prefTheme", JSON.stringify(theme));
     localStorage.setItem("indiPos", JSON.stringify(indiPos));
     localStorage.setItem("radioNumber", JSON.stringify(num));
@@ -28,6 +28,21 @@ export const ThemeSwitcher = () => {
       saveThemeOnStorage(theme3, "left-[3.3rem]", 3);
     }
   };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const checkArrow = (e:KeyboardEvent) => {
+    if(e.key === "ArrowRight") {
+      lastRadio = (lastRadio + 1) > 3 ? 1 : (lastRadio += 1);
+    } else if(e.key === "ArrowLeft"){
+      lastRadio = (lastRadio - 1) < 1 ? 3 : (lastRadio -= 1);
+    }
+    switchTheme(lastRadio);
+  };
+
+  useEffect(() => {
+    window.addEventListener("keyup", checkArrow);
+    return () => window.removeEventListener("keyup", checkArrow);
+  }, [checkArrow]);
 
   const radioButtons = [1, 2, 3];
 

@@ -21,7 +21,6 @@ export type Theme = {
   "t-color-thr": string;
   "t-alt": string;
 };
-
 interface IAppContext {
   currentTheme: Theme;
   setCurrentTheme(args: Theme): void;
@@ -72,7 +71,6 @@ export const theme2 = {
     "t-color-thr": "", // only exists on theme 3
     "t-alt": "text-very-dark-gy-sec",
 };
-
 export const theme3 = {
   main: "bg-main-thr",
   keypad: "bg-keypad-screen-thr",
@@ -94,15 +92,16 @@ export const theme3 = {
 
 function App() {
   const lastTheme = localStorage.getItem("prefTheme");
+  const lastExp = localStorage.getItem("lastExp");
   const [currentTheme, setCurrentTheme] = useState(lastTheme ? JSON.parse(lastTheme) : theme1);
-  const [expression, setExpression] = useState('');
+  const [expression, setExpression] = useState(lastExp ? JSON.parse(lastExp) :'');
 
   return (
-    <div className={`App font-league-spartan ${currentTheme.main} min-h-screen flex flex-col justify-center items-center p-4 gap-4`}>
+    <div className={`App font-league-spartan ${currentTheme.main} min-h-screen flex flex-col justify-center items-center p-4 gap-6`}>
       <AppContext.Provider value={{ currentTheme, setCurrentTheme, expression, setExpression }}>
         <header className={`max-w-lg w-full flex justify-between ${currentTheme["t-alt"]}`}>
-          <span className="text-4xl self-end">calc</span>
-          <div className="text-sm flex gap-4">
+          <span className="text-4xl self-end cursor-pointer" title="Press 'h' on keyboard for help">calc</span>
+          <div className="text-sm flex gap-6">
             <span className="uppercase self-end">theme</span>
             <ThemeSwitcher />
           </div>

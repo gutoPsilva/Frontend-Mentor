@@ -1,5 +1,5 @@
 import { AppContext } from "../App";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { evaluate } from "mathjs";
 
 let block = "";
@@ -10,12 +10,10 @@ export const Keypad = () => {
   const keys = ["7", "8", "9", "DEL", "4", "5", "6", "+", "1", "2", "3", "-", ".", "0", "/", "x", "RESET", "="];
   const nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-
   // process the data & receive inputs
   const evaluateExpression = (value: string, exp: string): string => {
-
     // in case of unexpected results
-    if(exp === "NaN" || exp === "Infinity" || exp === "Error") return exp = "0";
+    if (exp === "NaN" || exp === "Infinity" || exp === "-Infinity" || exp === "Error") return (exp = "");
 
     // mul & div must only be possible if there's a number on the left
     if ((value === "x" || value === "/") && nums.includes(lastChar)) {
@@ -24,19 +22,24 @@ export const Keypad = () => {
     } else if (value === "RESET") {
       exp = "";
       block = "";
-    } else if (value === "DEL") { // pick everything expect of the last char, same as deleting the last char
+    } else if (value === "DEL") {
+      // pick everything except the last char, same as deleting the last char
       exp = exp.slice(0, -1);
       block = block.slice(0, -1);
-    } else if ((value === "." && !block.includes(".")) || nums.includes(value)) { // if it's a ., there MUSTN'T be another . on that block to add it OR if it's a number, just add it
+    } else if ((value === "." && !block.includes(".")) || nums.includes(value)) {
+      // if it's a ., there MUSTN'T be another . on that block to add it OR if it's a number, just add it
       exp += value;
       block += value;
-    } else if (value === "-" || value === "+") { // + & - can be anywhere, since the evaluation only happens when the lastChar is a number, so there can be cases like -+--5, that equals -5!
+    } else if (value === "-" || value === "+") {
+      // + & - can be anywhere, since the evaluation only happens when the lastChar is a number, so there should have cases like -+--5, that equals -5!
       exp += value;
       block = "";
-    } else if (value === "=" && nums.includes(lastChar)) { // the only thing necessary to try evaluation is that the lastChar is a number, based on all the case scenarios i imaginated there isn't a way to build a wrong math expression, but even if the user manages to do so, it'll just show a Error on the calc screen!
+    } else if (value === "=" && nums.includes(lastChar)) {
+      // the only thing necessary to try evaluation is that the lastChar is a number, based on all the case scenarios i imaginated there isn't a way to build a wrong math expression, but even if the user manages to do so, it'll just show a Error on the calc screen!
       try {
         exp = String(evaluate(exp.replaceAll("x", "*")));
         block = exp;
+        localStorage.setItem("lastExp", JSON.stringify(exp));
       } catch (error) {
         exp = "Error";
         block = "";
@@ -51,9 +54,24 @@ export const Keypad = () => {
     setExpression(evaluateExpression(value, expression));
   };
 
-  // window.addEventListener("keyup", e => {
-  //   if(nums.includes(e.key)) handleInput(e.key);
-  // });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleKey = (e: KeyboardEvent) => {
+    if (keys.includes(e.key)) handleInput(e.key);
+    else if (e.key === "Enter") handleInput("=");
+    else if (e.key === "r") handleInput("RESET");
+    else if (e.key === "Backspace" || e.key === "Delete") handleInput("DEL");
+    else if (e.key === ":") handleInput("/");
+    else if (e.key === "*") handleInput("x");
+    else if (e.key === "h") {
+      // help for shortcuts
+      alert("Shortcuts for Keyboard:\nR --> Reset\nBackspace or Delete --> delete\n* or x --> multiply\n/ or : --> division\n Enter or = --> =\n Key arrows (left & right) --> switch themes");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keyup", handleKey);
+    return () => window.removeEventListener("keyup", handleKey);
+  }, [handleKey]);
 
   // style teh buttons based on their text
   const themeButton = (text: string): string => {
