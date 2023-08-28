@@ -12,22 +12,12 @@ PS: Since the 14th challenge i started using Tailwind CSS, so fully responsive w
 
 ## Main Projects
 
-### Advice Generator App `[LATEST]`
+- <a href="https://fe-reactapp-interactive-card-form.netlify.app/">Interactive Card Details Form</a> `[LATEST]` `[REACT & TS]`
 
-- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/016.%20advice-generator-app-main/dist/index.html
+- <a href="https://gutopsilva.github.io/FrontEnd-Mentor/016.%20advice-generator-app-main/dist/index.html">Advice Generator App</a>
 
-### Time tracking dashboard
+- <a href="https://gutopsilva.github.io/FrontEnd-Mentor/009.%20tip-calculator-app-main/index.html">Tip Calcular App</a>
 
-- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/015.%20time-tracking-dashboard-main/dist/index.html
+- <a href="https://gutopsilva.github.io/FrontEnd-Mentor/005.%20age-calculator-app-main/index.html">Age Calculator App</a>
 
-### Tip Calcular App
-
-- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/009.%20tip-calculator-app-main/index.html 
-
-### Age Calculator App
-
-- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/005.%20age-calculator-app-main/index.html
-
-### E-commerce Product Page
-
-- Live Site: https://gutopsilva.github.io/FrontEnd-Mentor/010.%20ecommerce-product-page-main/index.html
+- <a href="https://gutopsilva.github.io/FrontEnd-Mentor/010.%20ecommerce-product-page-main/index.html">E-commerce Product Page</a> `[OLD]` `[Vanilla HTML-CSS-JS]`
