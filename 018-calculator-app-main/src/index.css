@@ -4,13 +4,25 @@
 
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
 
-input[type="radio"] {
-  &:not(:checked),
-  &:checked {
-    height: .9rem;
-    width: .9rem;
-    margin-inline: .3rem;
-    opacity: 0;
-    color: hsl(267, 48%, 41%);
-  }
+/* width */
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

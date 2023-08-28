@@ -14,6 +14,10 @@ export const Keypad = () => {
   ${tema["t-color-prim"]} ${tema["focus-hover-key-thr"]} text-3xl`;
   };
 
+  window.addEventListener("keyup", e => {
+    console.log(e.key);
+  });
+
   let block = "";
 
   const handleInput = (value:string):void => {
@@ -36,7 +40,6 @@ export const Keypad = () => {
     } else {
       block += value;
       setExpression(expression + block);
-      console.log(block);
     }
   };
 

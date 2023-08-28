@@ -100,6 +100,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 (https://codepen.io/fredjens/pen/adqLNO)
 (https://www.sliderrevolution.com/resources/styling-radio-buttons/)
 (https://sentry.io/answers/unique-key-prop/)
+(https://www.geeksforgeeks.org/make-a-div-horizontally-scrollable-using-css/)
+(https://bobbyhadz.com/blog/typescript-export-interface#:~:text=%23%20Export%20a%20Type%20in%20TypeScript,necessary%20in%20a%20single%20file.)
 
 ## Author
 
