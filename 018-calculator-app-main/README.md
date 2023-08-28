@@ -104,7 +104,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 (https://bobbyhadz.com/blog/typescript-export-interface#:~:text=%23%20Export%20a%20Type%20in%20TypeScript,necessary%20in%20a%20single%20file.)
 (https://stackoverflow.com/questions/44334106/how-can-i-style-horizontal-scrollbar-by-css)
 (https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp)
-
+(https://mathjs.org/)
 
 ## Author
 
