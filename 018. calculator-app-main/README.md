@@ -40,8 +40,8 @@ EXTRA (i create it myself):
 
 ### Links
 
-- [Solution URL](https://gutopsilva-calculator-app.netlify.app/)
-- [Live Site URL](#)
+- [Solution URL](#)
+- [Live Site URL](https://gutopsilva-calculator-app.netlify.app/)
 
 ## My process
 
