@@ -12,7 +12,7 @@ PS: Since the 14th challenge i started using Tailwind CSS, so fully responsive w
 
 ## Main Projects
 
-- <a href="https://fe-reactapp-interactive-card-form.netlify.app/">Interactive Card Details Form</a> `[LATEST]` `[REACT & TS]`
+- <a href="https://gutopsilva-calculator-app.netlify.app/">Calculator App</a> `[LATEST]` `[REACT & TS]`
 
 - <a href="https://gutopsilva.github.io/FrontEnd-Mentor/016.%20advice-generator-app-main/dist/index.html">Advice Generator App</a>
 
