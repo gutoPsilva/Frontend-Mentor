@@ -15,6 +15,9 @@ export default {
         "very-d-blue": "hsl(255, 11%, 22%)",
         "very-d-violet": "hsl(260, 8%, 14%)",
       },
+      screens: {
+        'xl': '1152px'
+      }
     },
   },
   plugins: [],

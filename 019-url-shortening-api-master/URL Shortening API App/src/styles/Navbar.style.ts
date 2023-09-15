@@ -23,6 +23,7 @@ export const MenuContainer = styled.section`
   align-items: center;
   @media (max-width: 700px){
     display: flex;
+    gap: 1rem;
     width: 100%;
   }
 `;
@@ -47,6 +48,9 @@ export const NavbarExtendedContainer = styled.div`
   border-radius: .5rem;
   position: absolute;
   margin-top: 3rem;
+  padding-inline: 1rem;
+  padding-block: 2rem;
+  z-index: 10;
 
   @media (min-width: 701px) {
     display: none;
