@@ -6,11 +6,12 @@ export const GeneralContainer = styled.section`
   gap: 2rem;
   width: 100%;
   text-align: center;
+  padding-bottom: 4rem;
 
   @media (min-width: 640px) {
     align-items: center;
     flex-direction: row-reverse;
-    margin-block: 2rem;
+    margin-top: 2rem;
     gap: 2rem;
   }
 
