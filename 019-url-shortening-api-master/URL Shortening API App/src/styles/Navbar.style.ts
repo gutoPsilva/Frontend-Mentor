@@ -48,8 +48,8 @@ export const NavbarExtendedContainer = styled.div`
   border-radius: .5rem;
   position: absolute;
   margin-top: 3rem;
-  padding-inline: 1rem;
-  padding-block: 2rem;
+  padding-inline: 1.5rem;
+  padding-block: 2.5rem;
   z-index: 10;
 
   @media (min-width: 701px) {

@@ -39,7 +39,7 @@ export const Navbar = () => {
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer className="bg-dark-violet text-white">
-          <ul className="flex flex-col items-center gap-6">
+          <ul className="flex flex-col items-center gap-7">
             <li>
               <a href="#">Features</a>
             </li>
@@ -50,8 +50,8 @@ export const Navbar = () => {
               <a href="#">Resources</a>
             </li>
           </ul>
-          <hr className="w-full h-[1px] text-grayish-violet my-6" />
-          <section className="flex flex-col items-center w-full gap-6">
+          <hr className="w-full text-grayish-violet my-7" />
+          <section className="flex flex-col items-center w-full gap-7">
             <button>Login</button>
             <button className=" bg-cyan px-5 py-2 rounded-full w-full">Sign Up</button>
           </section>
