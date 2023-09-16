@@ -11,6 +11,7 @@ export default {
         "dark-violet": "hsl(257, 27%, 26%)",
         red: "hsl(0, 87%, 67%)",
         gray: "hsl(0, 0%, 75%)",
+        "lighter-gray": "#EFF1F7",
         "grayish-violet": "hsl(257, 7%, 63%)",
         "very-d-blue": "hsl(255, 11%, 22%)",
         "very-d-violet": "hsl(260, 8%, 14%)",

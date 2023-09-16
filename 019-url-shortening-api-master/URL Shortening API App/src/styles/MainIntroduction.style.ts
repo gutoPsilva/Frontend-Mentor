@@ -24,7 +24,6 @@ export const TextContainer = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
   padding-inline: 1rem;
 
   @media (min-width: 640px) {
