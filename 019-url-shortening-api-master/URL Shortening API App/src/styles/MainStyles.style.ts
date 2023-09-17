@@ -1,5 +1,49 @@
 import styled from "styled-components";
 
+export const GeneralContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 4rem;
+
+  @media (min-width: 640px) {
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  @media (min-width: 1152px) {
+    gap: 7rem;
+  }
+`;
+
+export const TextContainer = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 1rem;
+
+  @media (min-width: 640px) {
+    align-items: start;
+    text-align: left;
+  }
+
+  @media (min-width: 1152px) {
+    padding-left: 0;
+  }
+`;
+
+export const StartedButton = styled.button`
+  color: hsl(0, 0%, 100%);
+  border-radius: 9999px;
+  padding: .5rem 2rem;
+  width: fit-content;
+  font-weight: 700;
+`;
+
 export const SectionContainer = styled.section`
   display: flex;
   align-items: center;
@@ -50,7 +94,7 @@ export const ImageContainer = styled.div`
   margin-bottom: -44px;
   z-index: 20;
 
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     align-self: flex-start;
     margin-left: 1.75rem;
   }
@@ -63,9 +107,9 @@ export const CardTextContainer = styled.div`
   text-align: center;
   background-color: hsl(0, 0%, 100%);
   padding: 4.25rem 1.25rem 2rem 1.25rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 
-  @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     text-align: left;
     padding-inline: 1.75rem;
   }
@@ -86,3 +130,4 @@ export const ConnectionLine = styled.hr`
     width: 90%;
   }
 `;
+

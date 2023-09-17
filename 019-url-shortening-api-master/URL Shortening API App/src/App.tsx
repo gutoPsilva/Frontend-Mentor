@@ -1,5 +1,6 @@
 import "./App.css";
 import { MainFeatures } from "./components/MainFeatures";
+import { MainFooter } from "./components/MainFooter";
 import { MainIntroduction } from "./components/MainIntroduction";
 import { Navbar } from "./components/Navbar";
 import { URLShortener } from "./components/URLShortener";
@@ -18,6 +19,7 @@ function App() {
           </section>
         </div>
         <MainFeatures />
+        <MainFooter/>
       </main>
     </div>
   );

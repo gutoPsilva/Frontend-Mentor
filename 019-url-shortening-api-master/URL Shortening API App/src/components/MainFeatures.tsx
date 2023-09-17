@@ -1,4 +1,4 @@
-import { CardTextContainer, ConnectionLine, FeatureCard, FeaturesContainer, ImageContainer, SectionContainer, StatisticsContainer } from "../styles/MainFeatures.style";
+import { CardTextContainer, ConnectionLine, FeatureCard, FeaturesContainer, ImageContainer, SectionContainer, StatisticsContainer } from "../styles/MainStyles.style";
 
 import BrandIMG from "../assets/images/icon-brand-recognition.svg";
 import RecordsIMG from "../assets/images/icon-detailed-records.svg";
