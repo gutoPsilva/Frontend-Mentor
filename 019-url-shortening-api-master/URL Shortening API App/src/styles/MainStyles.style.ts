@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import SectionMobBG from "../assets/images/bg-boost-mobile.svg";
+import SectionDesBG from "../assets/images/bg-boost-desktop.svg";
 
 export const GeneralContainer = styled.section`
   display: flex;
@@ -39,8 +41,9 @@ export const TextContainer = styled.article`
 export const StartedButton = styled.button`
   color: hsl(0, 0%, 100%);
   border-radius: 9999px;
-  padding: .5rem 2rem;
+  padding: .6em 2em;
   width: fit-content;
+  font-size: 1.25rem;
   font-weight: 700;
 `;
 
@@ -131,3 +134,19 @@ export const ConnectionLine = styled.hr`
   }
 `;
 
+export const BoostContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 3rem 1rem;
+  background: hsl(257 27% 26%) url(${SectionMobBG}) no-repeat right;
+  text-align: center;
+
+  @media (min-width: 1024px){
+    background-image: url(${SectionDesBG});
+    gap: 1.75rem;
+  }
+`;

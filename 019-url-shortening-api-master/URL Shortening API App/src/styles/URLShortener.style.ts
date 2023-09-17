@@ -10,8 +10,7 @@ export const URLContainer = styled.article`
   width: 100%;
   padding: 1.25rem;
   border-radius: 0.5rem;
-  background: hsl(257 27% 26%) url(${MobileBG}) no-repeat right;
-  background-size: contain;
+  background: hsl(257 27% 26%) url(${MobileBG}) no-repeat right top;
 
   @media (min-width: 768px) {
     background-image: url(${DesktopBG});
