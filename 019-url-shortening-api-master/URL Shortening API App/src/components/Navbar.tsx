@@ -13,18 +13,24 @@ export const Navbar = () => {
         <DeskContainer>
           <ul className="text-grayish-violet flex gap-6">
             <li>
-              <a href="#features">Features</a>
+              <a href="#features" className="hover:text-very-d-blue focus:text-very-d-blue outline-none transition duration-500">
+                Features
+              </a>
             </li>
             <li>
-              <a href="#">Pricing</a>
+              <a href="#" className="hover:text-very-d-blue focus:text-very-d-blue outline-none transition duration-500">
+                Pricing
+              </a>
             </li>
             <li>
-              <a href="#">Resources</a>
+              <a href="#" className="hover:text-very-d-blue focus:text-very-d-blue outline-none transition duration-500">
+                Resources
+              </a>
             </li>
           </ul>
           <section className="flex gap-6">
-            <button className="text-grayish-violet">Login</button>
-            <button className="text-white bg-cyan px-5 py-1 rounded-full">Sign Up</button>
+            <button className="text-grayish-violet hover:text-very-d-blue focus:text-very-d-blue outline-none transition duration-500">Login</button>
+            <button className="text-white bg-cyan px-5 py-1 rounded-full hover:bg-cyan/75 focus:bg-cyan/75 outline-none transition">Sign Up</button>
           </section>
         </DeskContainer>
         <MenuContainer>
@@ -41,7 +47,7 @@ export const Navbar = () => {
         <NavbarExtendedContainer className="bg-dark-violet text-white">
           <ul className="flex flex-col items-center gap-7">
             <li>
-              <a href="#">Features</a>
+              <a href="#features">Features</a>
             </li>
             <li>
               <a href="#">Pricing</a>

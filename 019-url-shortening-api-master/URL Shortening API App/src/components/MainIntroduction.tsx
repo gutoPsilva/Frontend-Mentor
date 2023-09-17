@@ -10,7 +10,7 @@ export const MainIntroduction = () => {
       <TextContainer>
         <h1 className="text-very-d-violet text-4xl mb-3 md:leading-[1.1] md:text-5xl lg:leading-[1.2] lg:text-6xl font-bold lg:mb-0">More than just shorter links</h1>
         <p className="text-grayish-violet max-w-md mb-6">Build your brand's recognition and get detailed insights on how your links are performing.</p>
-        <StartedButton className="bg-cyan">Get Started</StartedButton>
+        <StartedButton className="bg-cyan hover:bg-cyan/75 transition focus:bg-cyan/75 outline-none">Get Started</StartedButton>
       </TextContainer>
     </GeneralContainer>
   );

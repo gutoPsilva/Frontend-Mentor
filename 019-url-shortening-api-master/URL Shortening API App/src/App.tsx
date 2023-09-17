@@ -13,16 +13,18 @@ function App() {
         <Navbar />
       </header>
       <main className="flex flex-col items-center xl:mx-auto font-medium pt-6">
-        <div className="max-w-6xl xl:px-4"> {/* container because of the illustration img */}
+        <div className="max-w-6xl xl:px-4">
+          {" "}
+          {/* container because of the illustration img */}
           <MainIntroduction />
-          <section className="w-full px-4 xl:px-0 -mb-[82px] md:-mb-[50px] relative">
+          <section className="w-full px-4 xl:px-0 -mb-[82px] md:-mb-[58px] lg:-mb-[66px] relative" id="url">
             <URLShortener />
           </section>
         </div>
         <MainFeatures />
-        <MainFooter/>
+        <MainFooter />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

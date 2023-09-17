@@ -16,6 +16,10 @@ export const URLContainer = styled.article`
     background-image: url(${DesktopBG});
     background-size: cover;
     flex-direction: row;
-    padding: 1.75rem;
+    padding: 2rem;
+  }
+
+  @media (min-width: 1024px){
+    padding: 2.5rem;
   }
 `;

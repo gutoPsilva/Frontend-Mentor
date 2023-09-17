@@ -17,6 +17,17 @@ export const FooterContainer = styled.div`
 
 export const WhiteImage = styled.img`
   filter: brightness(10);
+  
+`;
+
+export const SocialLinks = styled.a`
+  outline: 2px solid transparent;
+  &:hover,
+  &:focus {
+    & > * {
+      filter: brightness(0) saturate(100%) invert(90%) sepia(82%) saturate(5569%) hue-rotate(130deg) brightness(83%) contrast(94%);
+    }
+  }
 `;
 
 export const LinksGroup = styled.div`
