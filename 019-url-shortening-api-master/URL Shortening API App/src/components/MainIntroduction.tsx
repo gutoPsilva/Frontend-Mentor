@@ -1,4 +1,4 @@
-import { GeneralContainer, StartedButton, TextContainer } from "../styles/MainStyles.style";
+import { GeneralContainer, StartedButton, TextContainer } from "../styles/Main.style";
 import IllustrationIMG from "../assets/images/illustration-working.svg";
 
 export const MainIntroduction = () => {

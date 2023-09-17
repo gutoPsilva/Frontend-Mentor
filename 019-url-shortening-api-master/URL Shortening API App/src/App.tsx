@@ -1,4 +1,5 @@
 import "./App.css";
+import { Footer } from "./components/Footer";
 import { MainFeatures } from "./components/MainFeatures";
 import { MainFooter } from "./components/MainFooter";
 import { MainIntroduction } from "./components/MainIntroduction";
@@ -12,7 +13,7 @@ function App() {
         <Navbar />
       </header>
       <main className="flex flex-col items-center xl:mx-auto font-medium pt-6">
-        <div className="max-w-6xl xl:px-4"> {/* container */}
+        <div className="max-w-6xl xl:px-4"> {/* container because of the illustration img */}
           <MainIntroduction />
           <section className="w-full px-4 xl:px-0 -mb-[82px] md:-mb-[50px] relative">
             <URLShortener />
@@ -21,6 +22,7 @@ function App() {
         <MainFeatures />
         <MainFooter/>
       </main>
+      <Footer/>
     </div>
   );
 }

@@ -139,14 +139,16 @@ export const BoostContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 100%;
-  padding: 3rem 1rem;
+  padding: 4.5rem 1rem;
   background: hsl(257 27% 26%) url(${SectionMobBG}) no-repeat right;
+  background-size: cover;
   text-align: center;
 
   @media (min-width: 1024px){
     background-image: url(${SectionDesBG});
+    padding-block: 3rem;
     gap: 1.75rem;
   }
 `;

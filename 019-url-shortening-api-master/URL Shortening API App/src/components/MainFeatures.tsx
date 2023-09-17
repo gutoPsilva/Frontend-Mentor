@@ -1,4 +1,4 @@
-import { CardTextContainer, ConnectionLine, FeatureCard, FeaturesContainer, ImageContainer, SectionContainer, StatisticsContainer } from "../styles/MainStyles.style";
+import { CardTextContainer, ConnectionLine, FeatureCard, FeaturesContainer, ImageContainer, SectionContainer, StatisticsContainer } from "../styles/Main.style";
 
 import BrandIMG from "../assets/images/icon-brand-recognition.svg";
 import RecordsIMG from "../assets/images/icon-detailed-records.svg";
@@ -6,7 +6,7 @@ import CustomizableIMG from "../assets/images/icon-fully-customizable.svg"
 
 export const MainFeatures = () => {
   return (
-    <SectionContainer className="bg-lighter-gray">
+    <SectionContainer id="features" className="bg-lighter-gray">
       <StatisticsContainer>
         <h2 className="font-bold text-3xl md:text-4xl text-very-d-violet">Advanced Statistics</h2>
         <p className="text-grayish-violet">Track how your links are performing across the web with our advanced statistics dashboard.</p>

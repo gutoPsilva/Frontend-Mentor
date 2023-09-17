@@ -13,7 +13,7 @@ export const Navbar = () => {
         <DeskContainer>
           <ul className="text-grayish-violet flex gap-6">
             <li>
-              <a href="#">Features</a>
+              <a href="#features">Features</a>
             </li>
             <li>
               <a href="#">Pricing</a>

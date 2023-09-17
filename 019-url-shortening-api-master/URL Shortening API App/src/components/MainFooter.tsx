@@ -1,4 +1,4 @@
-import { BoostContainer, StartedButton } from "../styles/MainStyles.style"
+import { BoostContainer, StartedButton } from "../styles/Main.style"
 
 
 export const MainFooter = () => {
