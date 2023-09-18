@@ -7,7 +7,6 @@ export const URLShortener = () => {
   const [originalURL, setOriginalURL] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const { shortenedLinks, setShortenedLinks } = useContext(MainContext);
-  console.log(shortenedLinks);
 
   const storageLinks = (lURL: string, sURL: string) => {
     localStorage.setItem(
@@ -38,7 +37,7 @@ export const URLShortener = () => {
         ]);
         storageLinks(originalLink, newLink);
         setErrorMsg("");
-        console.log(localStorage.getItem("shortLinks"));
+        // document.getElementById(`link-${shortenedLinks.length - 1}`)?.scrollIntoView(); // scroll to the last generated short link.
       }
     } catch (err) {
       setErrorMsg("Invalid URL submitted");

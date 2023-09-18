@@ -60,12 +60,12 @@ export const StatisticsContainer = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 9rem 0rem 1.5rem 0rem; // top = 80px + 4rem, half URLShortener + 1.5 margin.
+  margin: 1rem 0rem 1.5rem 0rem;
   text-align: center;
   max-width: 33rem;
 
   @media (min-width: 768px) {
-    margin-top: 7.125rem; // 50px + 4rem
+    margin-top: 3.125rem;
   }
 `;
 
