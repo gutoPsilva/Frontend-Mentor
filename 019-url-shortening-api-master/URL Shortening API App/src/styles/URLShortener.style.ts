@@ -23,3 +23,25 @@ export const URLContainer = styled.article`
     padding: 2.5rem;
   }
 `;
+
+export const ErrorContainer = styled.span`
+  font-style: italic;
+  font-size: 14px;
+
+  @media (min-width: 768px){
+    position: absolute;
+    font-size: 1rem;
+    bottom: .4rem;
+  }
+
+  @media (min-width: 1024px){
+    bottom: .75rem;
+  }
+`;
+
+export const BreakLine = styled.hr`
+
+  @media (min-width: 768px){
+    display: none;
+  }
+`;

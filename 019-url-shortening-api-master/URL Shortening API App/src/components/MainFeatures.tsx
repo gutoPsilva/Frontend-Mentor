@@ -3,10 +3,12 @@ import { CardTextContainer, ConnectionLine, FeatureCard, FeaturesContainer, Imag
 import BrandIMG from "../assets/images/icon-brand-recognition.svg";
 import RecordsIMG from "../assets/images/icon-detailed-records.svg";
 import CustomizableIMG from "../assets/images/icon-fully-customizable.svg"
+import { ShortenedLinks } from "./ShortenedLinks";
 
 export const MainFeatures = () => {
   return (
     <SectionContainer id="features" className="bg-lighter-gray">
+      <ShortenedLinks></ShortenedLinks>
       <StatisticsContainer>
         <h2 className="font-bold text-3xl md:text-4xl text-very-d-violet">Advanced Statistics</h2>
         <p className="text-grayish-violet">Track how your links are performing across the web with our advanced statistics dashboard.</p>
