@@ -10,7 +10,7 @@ export const MainFeatures = () => {
     <SectionContainer id="features" className="bg-lighter-gray">
       <ShortenedLinks></ShortenedLinks>
       <StatisticsContainer>
-        <h2 className="font-bold text-3xl md:text-4xl text-very-d-violet">Advanced Statistics</h2>
+        <h2 className="font-bold text-3xl md:text-4xl xl:text-5xl text-very-d-violet">Advanced Statistics</h2>
         <p className="text-grayish-violet">Track how your links are performing across the web with our advanced statistics dashboard.</p>
       </StatisticsContainer>
       <FeaturesContainer className="max-w-6xl lg:px-4">

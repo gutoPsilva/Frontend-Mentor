@@ -25,7 +25,6 @@ export const MainContext = createContext<MainCType>({
 function App() {
   const savedData = localStorage.getItem("shortLinks");
   const [shortenedLinks, setShortenedLinks] = useState(savedData ? JSON.parse(savedData) : []);
-  // const shortenedLinks: (URLObject[] | []) = savedData ? JSON.parse(savedData) : [];
 
   return (
     <div className="font-popins text-lg overflow-hidden">

@@ -60,7 +60,7 @@ export const StatisticsContainer = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 1rem 0rem 1.5rem 0rem;
+  margin-top: 1rem;
   text-align: center;
   max-width: 33rem;
 

@@ -25,9 +25,10 @@ export const URLShortener = () => {
     try {
       const res = await axios.get(`https://api.shrtco.de/v2/shorten?url=${originalURL}`);
       const data = res.data;
+      console.log(data);
       if (data.ok) {
         const originalLink = data.result.original_link;
-        const newLink = data.result.full_short_link;
+        const newLink = data.result.short_link;
         setShortenedLinks([
           ...shortenedLinks,
           {
