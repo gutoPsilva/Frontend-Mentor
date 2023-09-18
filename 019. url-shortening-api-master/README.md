@@ -31,7 +31,7 @@ Users should be able to:
 
 <div align="center">
   <img src="./src/assets/images/screenshots/desktop.jpeg" alt="desktop screenshot">
-  <img src="./src/assets/images/screenshots/mobile.jpeg" alt="mobile screenshot" style="width: 375px">
+  <img src="./src/assets/images/screenshots/Mobile.jpeg" alt="mobile screenshot" style="width: 375px">
 </div>
 
 ### Links
