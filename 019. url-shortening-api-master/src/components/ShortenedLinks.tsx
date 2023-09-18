@@ -3,13 +3,12 @@ import { MainContext } from "../App";
 import { useContext } from "react";
 
 export const ShortenedLinks = () => {
-  const {shortenedLinks} = useContext(MainContext);
+  const { shortenedLinks } = useContext(MainContext);
 
   const styleCopiedButton = (id: number) => {
     const copyBtns = Array.from(document.querySelectorAll("#copyB"));
     copyBtns.map((btn, i) => {
-
-      if(i === id){
+      if (i === id) {
         btn.textContent = "Copied!";
         btn.classList.add("bg-dark-violet");
         btn.classList.remove("hover:bg-cyan/75", "focus:bg-cyan/75", "outline-none", "bg-cyan");
@@ -23,15 +22,15 @@ export const ShortenedLinks = () => {
 
   const copyLink = (id: number) => {
     const linkToCopy = document.querySelector(`#p${id}`);
-    if(linkToCopy?.textContent) navigator.clipboard.writeText(linkToCopy.textContent);
+    if (linkToCopy?.textContent) navigator.clipboard.writeText(linkToCopy.textContent);
     styleCopiedButton(id);
-  }
+  };
 
   return (
     <section className="flex flex-col gap-4 mt-28 z-10 w-full max-w-[1120px]">
       {shortenedLinks.map((link, i) => {
         return (
-          <div key={i + 1001} id={`link-${i}`} className="flex flex-col md:flex-row md:items-center bg-white py-4 md:px-8 md:py-6 lg:px-10 rounded ">
+          <div key={i + 1001} id={`link-${i}`} className="flex flex-col md:flex-row md:items-center bg-white py-4 md:px-8 md:py-6 lg:px-10 rounded fade-in">
             <div className="flex flex-col md:gap-6 md:flex-row md:justify-between w-full">
               <p className="text-very-d-violet break-all mx-4 md:mr-auto md:ml-0 md:w-2/3">{link.longURL}</p>
               <BreakLine className="text-gray/75 my-2" />

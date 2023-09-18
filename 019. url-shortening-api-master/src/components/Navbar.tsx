@@ -1,7 +1,8 @@
 import { NavbarContainer, DeskContainer, MenuContainer, NavbarInnerContainer, NavbarExtendedContainer, MenuButton } from "../styles/Navbar.style";
-import { AiOutlineMenu } from "react-icons/ai";
-import LogoIMG from "../assets/images/logo.svg";
 import { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { CSSTransition } from "react-transition-group";
+import LogoIMG from "../assets/images/logo.svg";
 
 export const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
@@ -43,8 +44,8 @@ export const Navbar = () => {
           </MenuButton>
         </MenuContainer>
       </NavbarInnerContainer>
-      {extendNavbar && (
-        <NavbarExtendedContainer className="bg-dark-violet text-white">
+      <CSSTransition in={extendNavbar} timeout={350} classNames={"navbar"} unmountOnExit>
+        <NavbarExtendedContainer className={`bg-dark-violet text-white`}>
           <ul className="flex flex-col items-center gap-7">
             <li>
               <a href="#features">Features</a>
@@ -62,7 +63,7 @@ export const Navbar = () => {
             <button className=" bg-cyan px-5 py-2 rounded-full w-full">Sign Up</button>
           </section>
         </NavbarExtendedContainer>
-      )}
+      </CSSTransition>
     </NavbarContainer>
   );
 };

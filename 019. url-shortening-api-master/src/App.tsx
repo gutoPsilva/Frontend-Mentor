@@ -32,12 +32,11 @@ function App() {
         <Navbar />
       </header>
       <MainContext.Provider value={{shortenedLinks, setShortenedLinks}}> {/* the links generated on URLShortener will be passed to MainFeatures via useContext */}
-        <main className="flex flex-col items-center xl:mx-auto font-medium pt-6">
-          <div className="max-w-6xl xl:px-4">
-            {" "}
+        <main className="flex flex-col items-center xl:mx-auto font-medium pt-6 w-screen">
+          <div className="px-4 max-w-6xl w-screen">
             {/* container because of the illustration img */}
             <MainIntroduction />
-            <section className="w-full px-4 xl:px-0 -mb-[82px] md:-mb-[58px] lg:-mb-[66px] relative" id="url">
+            <section className="w-full -mb-[82px] md:-mb-[58px] lg:-mb-[66px]" id="url">
               <URLShortener />
             </section>
           </div>

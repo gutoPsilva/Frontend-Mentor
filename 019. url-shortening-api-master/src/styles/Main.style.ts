@@ -26,14 +26,10 @@ export const TextContainer = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-inline: 1rem;
 
   @media (min-width: 640px) {
     align-items: start;
     text-align: left;
-  }
-
-  @media (min-width: 1152px) {
     padding-left: 0;
   }
 `;

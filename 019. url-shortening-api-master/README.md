@@ -67,6 +67,7 @@ Users should be able to:
 - [Axios](https://axios-http.com/ptbr/) - HTTP Client to Fetch Data
 - [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
 - [Styled Components](https://styled-components.com/) - React Library to Customize your Components
+- [React Transition Group](https://reactcommunity.org/react-transition-group/) - Transition DOM Elements
 - [Google Fonts](https://fonts.google.com/) - Fonts Library
 
 ### Continued development
@@ -77,7 +78,7 @@ Also gotta say that VITE is really faster than the default CRA way to develop.
 ### Useful resources
 
 - [Copy Text to Clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp) - Helped me to copy the generated short link into the user clipboard.
-- [ChatGPT](https://chat.openai.com/) - Helped me on getting over with styled components.
+- [ChatGPT](https://chat.openai.com/) - Helped me on getting over with styled components and transitions.
 
 ## Author
 

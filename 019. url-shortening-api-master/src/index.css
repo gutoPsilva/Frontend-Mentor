@@ -7,3 +7,39 @@
 html {
   scroll-behavior: smooth; /* for some reason this wasn't being applied even though i put it on the APP first div, but somehow it managed to work here*/
 }
+
+/* Classes para o react-transition-group */
+.navbar-enter {
+  opacity: 0;
+}
+
+.navbar-enter-active {
+  opacity: 1;
+  transition: opacity 350ms;
+}
+
+.navbar-exit {
+  opacity: 1;
+}
+
+.navbar-exit-active {
+  opacity: 0;
+  transition: opacity 350ms;
+}
+
+/* Animação suave de aparição das DIV's dos links gerados */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 350ms ease-in-out;
+}
