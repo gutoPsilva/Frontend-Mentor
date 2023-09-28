@@ -25,7 +25,6 @@ export const URLShortener = () => {
     try {
       const res = await axios.get(`https://api.shrtco.de/v2/shorten?url=${originalURL}`);
       const data = res.data;
-      console.log(data);
       if (data.ok) {
         const originalLink = data.result.original_link;
         const newLink = data.result.short_link;
@@ -38,7 +37,7 @@ export const URLShortener = () => {
         ]);
         storageLinks(originalLink, newLink);
         setErrorMsg("");
-        // document.getElementById(`link-${shortenedLinks.length - 1}`)?.scrollIntoView(); // scroll to the last generated short link.
+        document.getElementById(`link-${shortenedLinks.length - 1}`)?.scrollIntoView(); // scroll to the last generated short link.
       }
     } catch (err) {
       setErrorMsg("Invalid URL submitted");
@@ -60,7 +59,7 @@ export const URLShortener = () => {
         <input
           type="text"
           placeholder="Shorten a link here..."
-          className={`rounded-lg py-3 px-3 md:px-5 border-2 border-transparent ${errorMsg && "border-red placeholder:text-red/75 outline-none"} duration-300 transition`}
+          className={`rounded-lg py-3 px-3 md:px-5 border-2 ${errorMsg ? "border-red placeholder:text-red/75 outline-none" : "border-transparent"} duration-300 transition`}
           onChange={e => setOriginalURL(e.target.value)}
           onKeyUp={e => {
             if (e.key === "Enter") {
