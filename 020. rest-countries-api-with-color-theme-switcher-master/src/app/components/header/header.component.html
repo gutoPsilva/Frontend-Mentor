@@ -1,0 +1,9 @@
+<header class="px-4 py-6 text-sm font-nunito text-light-mode shadow-black/5 bg-white shadow-lg dark:text-dark-mode dark:bg-dark-blue">
+  <div class="flex justify-between items-center max-w-7xl w-full mx-auto"> <!-- Container dos elementos, o header como tem um bg deve cobrir todo o espaço, mas os items não-->
+    <a routerLink="/"><h1 class="font-extrabold sm:text-base md:text-lg lg:text-xl">Where in the world?</h1></a>
+    <div class="flex gap-2 cursor-pointer items-center" (click)="switchMode()">
+      <fa-icon class="text-base md:text-lg" [icon]="lightMode ? farMoon : faMoon"></fa-icon>
+      <span class="font-semibold md:text-base">Dark Mode</span>
+    </div>
+  </div>
+</header>

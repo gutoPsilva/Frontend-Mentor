@@ -94,7 +94,7 @@ function App() {
   const lastTheme = localStorage.getItem("prefTheme");
   const lastExp = localStorage.getItem("lastExp");
   const [currentTheme, setCurrentTheme] = useState(lastTheme ? JSON.parse(lastTheme) : theme1);
-  const [expression, setExpression] = useState(lastExp ? JSON.parse(lastExp) :'');
+  const [expression, setExpression] = useState(lastExp ? JSON.parse(lastExp) : '');
 
   return (
     <div className={`App font-league-spartan ${currentTheme.main} min-h-screen flex flex-col justify-center items-center p-4 gap-6`}>

@@ -1,0 +1,16 @@
+.dropdown {
+  z-index: -10;
+  visibility: hidden;
+  opacity: 0;
+  transition: z-index 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000), opacity 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000), visibility 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.show {
+  visibility: visible;
+  z-index: 30;
+  opacity: 1;
+}
+
+.country {
+  transition: 400ms box-shadow cubic-bezier(0.215, 0.610, 0.355, 1.000), 400ms transform cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}

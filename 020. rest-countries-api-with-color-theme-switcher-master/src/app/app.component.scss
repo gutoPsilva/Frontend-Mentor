@@ -1,0 +1,9 @@
+.main{
+  padding-inline: 1rem;
+}
+
+@media (min-width:1312px){ // 1280px + 32px(1rem of each side)
+  .main{
+    padding-inline: 0;
+  }
+}

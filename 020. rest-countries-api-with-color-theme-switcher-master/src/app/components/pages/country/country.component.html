@@ -1,0 +1,45 @@
+<section class="flex flex-col gap-10 max-w-7xl w-full text-light-mode dark:text-dark-mode">
+  <a routerLink="/" class="w-fit">
+    <button class="flex gap-2 bg-white dark:bg-dark-blue rounded-sm shadow-md shadow-black/20 py-1 px-6">
+      <fa-icon [icon]="faArrow"></fa-icon>
+      <span>Back</span>
+    </button>
+  </a>
+  <fa-icon *ngIf="isLoadingCountry" class="animate-spin mx-auto text-6xl" [icon]="faLoading"></fa-icon>
+  <article *ngIf="country" class="flex flex-col gap-10 lg:flex-row lg:justify-between lg:items-center">
+    <a href="{{this.country.maps.googleMaps}}" rel="external" target="_blank" class="cursor-pointer sm:mx-auto lg:mx-0" title="Click me to open on google maps!">
+      <img class="max-w-xl w-full aspect-[9/6] sm:aspect-[14/9] object-cover object-left" src="{{country.flags.svg}}" alt="{{country.flags.alt}}">
+    </a>
+    <div class="max-w-xl w-full flex flex-col gap-8 sm:mx-auto lg:mx-0">
+      <h2 class="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl"> {{country.name.common}} </h2>
+      <div class="flex flex-col sm:flex-row sm:justify-between gap-6">
+        <div class="flex flex-col gap-2">
+          <p class="font-semibold">Native name: <span class="dark:text-very-light-gray font-light">{{countryNativeName?.common || 'none'}}</span></p>
+          <p class="font-semibold">Population: <span class="dark:text-very-light-gray font-light"> {{country.population | number:'1.0-0'}} </span></p>
+          <p class="font-semibold">Region: <span class="dark:text-very-light-gray font-light"> {{country.region}} </span></p>
+          <p class="font-semibold">Sub Region: <span class="dark:text-very-light-gray font-light"> {{country.subregion||'none'}}</span></p>
+          <p class="font-semibold">Capital: <span class="dark:text-very-light-gray font-light"> {{country.capital||'none'}} </span></p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-semibold">Top Level Domain: <span *ngFor="let sLtd of country.tld" class="dark:text-very-light-gray font-light"> {{sLtd}}<span *ngIf="country.tld.indexOf(sLtd) !== country.tld.length-1">, </span></span></p> <!-- Segundo span para colocar uma vírgula a direita em todo single Top Level Domain que não for o último -->
+          <p class="font-semibold">Currencies: <span *ngFor="let cur of countryCurrencies" class="dark:text-very-light-gray font-light">{{cur.name}}<span *ngIf="countryCurrencies.indexOf(cur) !== countryCurrencies.length-1">, </span></span></p>
+          <p class="font-semibold">Languages: <span *ngFor="let lang of countryLanguages" class="dark:text-very-light-gray font-light">{{lang}}<span *ngIf="countryLanguages.indexOf(lang) !== countryLanguages.length-1">, </span></span></p>
+        </div>
+      </div>
+      <div class="flex flex-col lg:items-center lg:flex-row gap-3">
+        <div class="flex gap-2 flex-wrap">
+          <h3 class="font-semibold text-lg w-full lg:w-fit">Border Countries: </h3>
+          <a routerLink="/country/{{border.name}}" *ngFor="let border of countryBorders; let i = index" class="rounde shadow-md shadow-black/10 text-center flex-grow py-1 px-2 dark:bg-dark-blue transition-transform duration-300 rounded-sm animate-slideLeft hover:scale-105 cursor-pointer">
+            <p> {{border.name}} </p>
+          </a>
+          <div *ngIf="country.borders.length === 0" class="rounded shadow-md shadow-black/10 text-center py-2 px-6 dark:bg-dark-blue">
+            <p class="dark:text-dark-mode font-semibold ">No borders</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article *ngIf="!country && !isLoadingCountry" class="w-fit bg-white rounded px-6 py-2 shadow-lg shadow-black/15 dark:bg-dark-blue">
+    <p class="dark:text-dark-mode text-lg font-semibold">No corresponding countries.</p>
+  </article> <!-- No country found even after search -->
+</section>

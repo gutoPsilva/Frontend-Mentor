@@ -1,0 +1,57 @@
+<div class="flex flex-col gap-8 w-full text-light-mode">
+  <section class="flex flex-col gap-6 sm:flex-row sm:justify-between w-full"> <!-- search section -->
+    <form (ngSubmit)="handleSubmit()" class="rounded shadow-black/10 shadow-lg flex gap-6 py-4 px-6 bg-white dark:bg-dark-blue dark:text-dark-mode max-w-lg flex-grow relative placeholder:text-dark-gray">
+      <button type="submit" class="cursor-pointer">
+        <fa-icon [icon]="faMagnifyingGlass" ></fa-icon>
+      </button>
+      <input [ngModelOptions]="{standalone: true}" [(ngModel)]="search" type="text" class="flex-grow bg-transparent outline-none border-b border-transparent focus:border-very-dark-blue focus:dark:border-white" placeholder="Search for a country...">
+      <fa-icon *ngIf="isLoadingData" class="animate-spin" [icon]="faLoading"></fa-icon>
+    </form>
+    <div class="inline-block dark:text-dark-mode w-fit relative">
+      <div (click)="toggleDropdown()" class="flex py-4 px-6 gap-24 rounded bg-white dark:bg-dark-blue shadow-black/10 shadow-lg cursor-pointer">
+        <p >Filter by Region</p>
+        <fa-icon [ngClass]="isDropdownVisible ? 'rotate-0' : 'rotate-90'" class="transition-transform transition-t duration-[400ms] in-expo" [icon]="dropDownIcon"></fa-icon>
+      </div>
+      <div [ngClass]="isDropdownVisible ? 'show' : ''" class="dropdown rounded shadow-black/15 shadow-lg py-4 px-6 bg-white dark:bg-dark-blue dark:text-dark-mode w-full mt-2 absolute z-20">
+        <ul class="flex flex-col gap-4">
+          <li class="flex gap-4 justify-between">
+            <span class="cursor-pointer flex-grow" (click)="filterRegion('Africa')">Africa</span>
+            <fa-icon class="cursor-pointer" (click)="removeFilter()" *ngIf="selectedFilter.Africa" [icon]="faXMark"></fa-icon>
+          </li>
+          <li class="flex gap-4 justify-between">
+            <span class="cursor-pointer flex-grow" (click)="filterRegion('Americas')">America</span>
+            <fa-icon class="cursor-pointer" (click)="removeFilter()" *ngIf="selectedFilter.Americas" [icon]="faXMark"></fa-icon>
+          </li>
+          <li class="flex gap-4 justify-between">
+            <span class="cursor-pointer flex-grow" (click)="filterRegion('Asia')">Asia</span>
+            <fa-icon class="cursor-pointer" (click)="removeFilter()" *ngIf="selectedFilter.Asia" [icon]="faXMark"></fa-icon>
+          </li>
+          <li class="flex gap-4 justify-between">
+            <span class="cursor-pointer flex-grow" (click)="filterRegion('Europe')">Europe</span>
+            <fa-icon class="cursor-pointer" (click)="removeFilter()" *ngIf="selectedFilter.Europe" [icon]="faXMark"></fa-icon>
+          </li>
+          <li class="flex gap-4 justify-between">
+            <span class="cursor-pointer flex-grow" (click)="filterRegion('Oceania')">Oceania</span>
+            <fa-icon class="cursor-pointer" (click)="removeFilter()" *ngIf="selectedFilter.Oceania" [icon]="faXMark"></fa-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section [ngClass]="filteredCountries.length === 0 ? '' : 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-5 sm:px-0'" class="grid grid-cols-1 gap-8 xl:gap-14"> <!-- countries list -->
+    <article (click)="onCountryClick(country)" *ngFor="let country of filteredCountries" class="country rounded shadow-black/15 shadow-lg overflow-hidden bg-white dark:bg-dark-blue cursor-pointer animate-scaleUp hover:scale-105 hover:shadow-black/30">
+      <img class="w-full h-[165px] object-cover" src="{{country.flags.png}}" alt="{{country.flags.alt}}"> <!-- PNG aqui para não pesar muito pela quantidade enorme de países, SVG na página do país pois será somente uma imagem SVG -->
+      <div class="flex flex-col gap-4 mx-4 my-6">
+        <h2 class="dark:text-dark-mode font-bold text-xl"> {{country.name.common}} </h2>
+        <div>
+          <p class="dark:text-dark-mode font-semibold">Population: <span class="font-light">{{country.population | number: '1.0-0' }}</span> </p>
+          <p class="dark:text-dark-mode font-semibold">Region: <span class="font-light">{{country.region}}</span> </p>
+          <p class="dark:text-dark-mode font-semibold">Capital: <span class="font-light">{{country.capital}}</span> </p>
+        </div>
+      </div>
+    </article> <!-- *cdkVirtualFor -->
+    <article *ngIf="filteredCountries.length === 0" class="w-fit bg-white rounded p-6 shadow-lg shadow-black/15 dark:bg-dark-blue">
+      <p class="dark:text-dark-mode text-lg font-semibold">No corresponding countries.</p>
+    </article>
+  </section>
+</div>
