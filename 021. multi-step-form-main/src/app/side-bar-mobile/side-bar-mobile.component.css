@@ -1,0 +1,52 @@
+@import '../../variables.css';
+
+img {
+  width: 100%;
+}
+
+header {
+  position: relative;
+  width: 100%;
+}
+
+.steps-nav-container {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: .7rem;
+}
+
+.step {
+  cursor: pointer;
+  aspect-ratio: 1;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid var(--light-gray);
+}
+
+a {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.active-step {
+  background-color: var(--pastel-blue);
+  border-color: var(--pastel-blue);
+}
+
+.active-step a{
+  color: var(--marine-blue) !important;
+}
+
+@media (min-width: 768px) {
+  header {
+    display: none;
+  }
+}
