@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { SideBarMobileComponent } from './side-bar-mobile/side-bar-mobile.component';
 import { SideBarDesktopComponent } from './side-bar-desktop/side-bar-desktop.component';
 import { YourInfoComponent } from './form-steps/your-info/your-info.component';
+import { MobileFooterNavComponent } from './mobile-footer-nav/mobile-footer-nav.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { YourInfoComponent } from './form-steps/your-info/your-info.component';
     SideBarMobileComponent,
     SideBarDesktopComponent,
     YourInfoComponent,
+    MobileFooterNavComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

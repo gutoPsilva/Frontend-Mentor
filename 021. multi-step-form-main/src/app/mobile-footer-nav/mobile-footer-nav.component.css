@@ -1,0 +1,17 @@
+@import "../../variables.css";
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  justify-self: flex-end;
+  padding-block: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  footer {
+    display: none;
+  }
+}
