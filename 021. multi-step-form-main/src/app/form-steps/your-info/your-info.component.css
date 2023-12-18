@@ -1,0 +1,71 @@
+@import "../../../variables.css";
+
+@media (min-width: 768px) {
+  section {
+    padding-block: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding-block: 2rem;
+  }
+}
+
+h1 {
+  color: var(--marine-blue);
+  margin-bottom: .25em;
+}
+
+p {
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  gap: .5em;
+  flex-direction: column;
+}
+
+label {
+  color: var(--marine-blue);
+}
+
+input {
+  padding: .75em 1em;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--cool-gray);
+  font-weight: bold;
+}
+
+input:hover,
+input:focus {
+  border-color: var(--purplish-blue);
+}
+
+.input-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-msg {
+  color: var(--strawberry-red);
+  font-weight: 500;
+}
+
+.input-error {
+  border: 1px solid var(--strawberry-red) !important;
+}

@@ -3,12 +3,8 @@ main {
   padding-inline: 1rem;
 }
 
-.form-container {
-  padding: 1.5rem;
-}
-
 section {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   position: relative;
   max-width: 72rem; /* 1152px */
   width: 100%;
@@ -19,8 +15,24 @@ section {
   z-index: 10;
 }
 
+.form-container {
+  padding: 1.5rem;
+}
+
 @media (min-width: 768px) {
   section {
     margin-top: 0;
+  }
+
+  .form-container {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    gap: 4rem;
   }
 }

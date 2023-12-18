@@ -3,6 +3,9 @@
   <main>
     <section class="form-container">
       <app-side-bar-desktop></app-side-bar-desktop>
+      <article *ngIf="currentStep === 1">
+        <app-your-info></app-your-info>
+      </article>
     </section>
   </main>
 </div>
