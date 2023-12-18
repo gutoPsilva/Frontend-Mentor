@@ -4,6 +4,60 @@
 @import 'variables.css';
 
 body {
+  min-height: 100svh;
   background-color: var(--magnolia);
   font-family: 'Ubuntu', 'sans-serif';
+}
+
+.app-container {
+  min-height: 100svh;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 2rem;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.steps-nav-container {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: .7rem;
+}
+
+.step {
+  cursor: pointer;
+  aspect-ratio: 1;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid var(--light-gray);
+}
+
+.step-link {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.active-step {
+  background-color: var(--light-blue);
+  border-color: var(--light-blue);
+}
+
+.active-step > .step-link {
+  color: var(--marine-blue) !important;
 }

@@ -1,0 +1,41 @@
+.side-bar-desktop {
+  display: none;
+}
+
+.steps-nav-container {
+  top: 4rem;
+  left: 4rem;
+  gap: 1.75rem;
+  width: fit-content;
+  flex-direction: column;
+}
+
+.step-group {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.step-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: .25em;
+}
+
+.step-text-group h2 {
+  font-size: 1rem;
+  color: var(--pastel-blue);
+  margin: 0;
+}
+
+.step-text-group p {
+  margin: 0;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  .side-bar-desktop {
+    display: flex;
+    z-index: 999;
+  }
+}

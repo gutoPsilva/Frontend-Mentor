@@ -1,0 +1,26 @@
+main {
+  width: 100%;
+  padding-inline: 1rem;
+}
+
+.form-container {
+  padding: 1.5rem;
+}
+
+section {
+  background-color: #FFFFFF;
+  position: relative;
+  max-width: 72rem; /* 1152px */
+  width: 100%;
+  min-height: 10rem;
+  border-radius: 12px;
+  margin-top: -4.7rem;
+  margin-inline: auto;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  section {
+    margin-top: 0;
+  }
+}
