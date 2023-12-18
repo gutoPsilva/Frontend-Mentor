@@ -1,8 +1,8 @@
 <div class="app-container">
-  <app-side-bar-mobile></app-side-bar-mobile>
+  <app-side-bar-mobile [step]="currentStep"></app-side-bar-mobile>
   <main>
     <section class="form-container">
-      <app-side-bar-desktop></app-side-bar-desktop>
+      <app-side-bar-desktop [step]="currentStep"></app-side-bar-desktop>
       <article *ngIf="currentStep === 1">
         <app-your-info></app-your-info>
         <button class="btn-next">Next Step</button>

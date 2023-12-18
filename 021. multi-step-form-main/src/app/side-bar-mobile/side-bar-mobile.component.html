@@ -1,9 +1,17 @@
 <header>
-  <img src="../../assets/images/bg-sidebar-mobile.svg"/>
+  <img src="../../assets/images/bg-sidebar-mobile.svg" />
   <section class="steps-nav-container">
-    <div class="step active-step"><a class="step-link">1</a></div>
-    <div class="step"><a class="step-link">2</a></div>
-    <div class="step"><a class="step-link">3</a></div>
-    <div class="step"><a class="step-link">4</a></div>
+    <div [ngClass]="{ 'active-step': step === 1 }" class="step">
+      <a class="step-link">1</a>
+    </div>
+    <div [ngClass]="{ 'active-step': step === 2 }" class="step">
+      <a class="step-link">2</a>
+    </div>
+    <div [ngClass]="{ 'active-step': step === 3 }" class="step">
+      <a class="step-link">3</a>
+    </div>
+    <div [ngClass]="{ 'active-step': step >= 4 }" class="step">
+      <a class="step-link">4</a>
+    </div>
   </section>
 </header>

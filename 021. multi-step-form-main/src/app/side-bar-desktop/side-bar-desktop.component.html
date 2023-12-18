@@ -1,32 +1,34 @@
 <section class="side-bar-desktop">
-  <img src="../../assets/images/bg-sidebar-desktop.svg"/>
+  <img src="../../assets/images/bg-sidebar-desktop.svg" />
   <article class="steps-nav-container">
     <div class="step-group">
-      <div class="step active-step"><a class="step-link">1</a></div>
+      <div [ngClass]="{ 'active-step': step === 1 }" class="step">
+        <a class="step-link">1</a>
+      </div>
       <div class="step-text-group">
-        <h2>STEP 1</h2>
-        <p>YOUR INFO</p>
+        <p>STEP 1</p>
+        <h2>YOUR INFO</h2>
       </div>
     </div>
     <div class="step-group">
-      <div class="step"><a class="step-link">2</a></div>
+      <div [ngClass]="{ 'active-step': step === 2 }" class="step"><a class="step-link">2</a></div>
       <div class="step-text-group">
-        <h2>STEP 2</h2>
-        <p>SELECT PLAN</p>
+        <p>STEP 2</p>
+        <h2>SELECT PLAN</h2>
       </div>
     </div>
     <div class="step-group">
-      <div class="step"><a class="step-link">3</a></div>
+      <div [ngClass]="{ 'active-step': step === 3 }" class="step"><a class="step-link">3</a></div>
       <div class="step-text-group">
-        <h2>STEP 3</h2>
-        <p>ADD-ONS</p>
+        <p>STEP 3</p>
+        <h2>ADD-ONS</h2>
       </div>
     </div>
     <div class="step-group">
-      <div class="step"><a class="step-link">4</a></div>
+      <div [ngClass]="{ 'active-step': step >= 4 }" class="step"><a class="step-link">4</a></div>
       <div class="step-text-group">
-        <h2>STEP 4</h2>
-        <p>SUMMARY</p>
+        <p>STEP 4</p>
+        <h2>SUMMARY</h2>
       </div>
     </div>
   </article>

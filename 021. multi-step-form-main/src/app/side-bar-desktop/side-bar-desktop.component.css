@@ -23,14 +23,15 @@
 
 .step-text-group h2 {
   font-size: 1rem;
-  color: var(--pastel-blue);
+  color: #FFFFFF;
   margin: 0;
 }
 
 .step-text-group p {
   margin: 0;
   font-weight: 700;
-  color: #FFFFFF;
+  font-size: .8rem;
+  color: var(--pastel-blue);
 }
 
 @media (min-width: 768px) {

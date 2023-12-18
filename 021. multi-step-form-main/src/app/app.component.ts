@@ -5,6 +5,7 @@ import { SideBarMobileComponent } from './side-bar-mobile/side-bar-mobile.compon
 import { SideBarDesktopComponent } from './side-bar-desktop/side-bar-desktop.component';
 import { YourInfoComponent } from './form-steps/your-info/your-info.component';
 import { MobileFooterNavComponent } from './mobile-footer-nav/mobile-footer-nav.component';
+import Steps from './models/steps.type';
 
 @Component({
   selector: 'app-root',
@@ -21,5 +22,5 @@ import { MobileFooterNavComponent } from './mobile-footer-nav/mobile-footer-nav.
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  currentStep: 1 | 2 | 3 | 4 | 5 = 1;
+  currentStep: Steps = 2;
 }
