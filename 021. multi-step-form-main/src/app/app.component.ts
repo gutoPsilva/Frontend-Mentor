@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SideBarMobileComponent } from './side-bar-mobile/side-bar-mobile.component';
@@ -22,5 +22,17 @@ import Steps from './models/steps.type';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  currentStep: Steps = 2;
+  currentStep: Steps = 1;
+
+  @ViewChild(YourInfoComponent) yourInfoComponent!: YourInfoComponent;
+
+  formSubmit() {
+    console.log('submitting');
+    if(this.currentStep === 1) { // personalInfo form submitted
+      console.log(this.yourInfoComponent.infoForm.value);
+      const validForm = this.yourInfoComponent.submitForm();
+
+      if(validForm) this.currentStep++; // increment step if form is valid
+    }
+  }
 }

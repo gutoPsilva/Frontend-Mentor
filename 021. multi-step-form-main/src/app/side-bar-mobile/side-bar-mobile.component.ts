@@ -7,7 +7,7 @@ import Steps from '../models/steps.type';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './side-bar-mobile.component.html',
-  styleUrl: './side-bar-mobile.component.css'
+  styleUrl: './side-bar-mobile.component.css',
 })
 export class SideBarMobileComponent {
   @Input() step!: Steps;

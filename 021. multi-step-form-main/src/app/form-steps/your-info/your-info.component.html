@@ -1,27 +1,54 @@
 <section>
   <h1>Personal Info</h1>
   <p>Please provide your name, email address, and phone number.</p>
-  <form>
+  <form [formGroup]="infoForm">
     <div class="form-group">
       <div class="input-info">
         <label for="name">Name</label>
-        <span class="error-msg"></span>
+        <div *ngIf="submitted && name?.invalid">
+          <span class="error-msg">This field is Required</span>
+        </div>
       </div>
-      <input type="text" id="name" placeholder="e.g. Stephen King"/>
+      <input
+        type="text"
+        id="name"
+        placeholder="e.g. Stephen King"
+        formControlName="name"
+      />
     </div>
     <div class="form-group">
       <div class="input-info">
         <label for="email">Email Address</label>
-        <span class="error-msg"></span>
+        <div *ngIf="submitted && email?.invalid">
+          <span *ngIf="email?.errors?.['required']" class="error-msg"
+            >This field is Required</span
+          >
+          <span *ngIf="email?.errors?.['email']" class="error-msg"
+            >This field must be an Email</span
+          >
+        </div>
       </div>
-      <input type="email" id="email" placeholder="e.g. stephenking@lorem.com"/>
+      <input
+        type="email"
+        id="email"
+        placeholder="e.g. stephenking@lorem.com"
+        formControlName="email"
+      />
     </div>
     <div class="form-group">
       <div class="input-info">
         <label for="phone">Phone Number</label>
-        <span class="error-msg"></span>
+        <div *ngIf="submitted && phone?.invalid">
+          <!-- I don't need to check the errors like on the email input since the only validation is required, so it's only invalid if no phone number was provided-->
+          <span class="error-msg">This field is Required</span>
+        </div>
       </div>
-      <input type="text" id="phone" placeholder="e.g. +1 234 567 890"/>
+      <input
+        type="text"
+        id="phone"
+        placeholder="e.g. +1 234 567 890"
+        formControlName="phone"
+      />
     </div>
   </form>
 </section>

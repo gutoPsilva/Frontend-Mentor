@@ -5,9 +5,9 @@
       <app-side-bar-desktop [step]="currentStep"></app-side-bar-desktop>
       <article *ngIf="currentStep === 1">
         <app-your-info></app-your-info>
-        <button class="btn-next">Next Step</button>
+        <button class="btn-next" (click)="formSubmit()">Next Step</button>
       </article>
     </section>
   </main>
-  <app-mobile-footer-nav></app-mobile-footer-nav>
+  <app-mobile-footer-nav [step]="currentStep" (formSubmitRequest)="formSubmit()"></app-mobile-footer-nav>
 </div>
