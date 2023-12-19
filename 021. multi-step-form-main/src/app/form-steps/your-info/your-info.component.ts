@@ -24,25 +24,26 @@ export class YourInfoComponent {
 
   ngOnInit() {
     const { name, email, phone } = this.loadInfo();
-    
+
     // load the input fields with the provided values from localStorage
-    if(name) this.infoForm.controls['name'].setValue(name);
-    if(email) this.infoForm.controls['email'].setValue(email);
-    if(phone) this.infoForm.controls['phone'].setValue(phone);
+    if (name) this.infoForm.controls['name'].setValue(name);
+    if (email) this.infoForm.controls['email'].setValue(email);
+    if (phone) this.infoForm.controls['phone'].setValue(phone);
   }
 
   storeInfo() {
-    const { name, email, phone } = this.infoForm.value;
-    if(name) localStorage.setItem('name', name);
-    if(email) localStorage.setItem('email', email);
-    if(phone) localStorage.setItem('phone', phone);
+    localStorage.setItem('user-info', JSON.stringify(this.infoForm.value));
   }
 
   loadInfo() {
-    const name = localStorage.getItem('name');
-    const email = localStorage.getItem('email');
-    const phone = localStorage.getItem('phone');
-    return { name, email, phone };
+    const userinfo = localStorage.getItem('user-info');
+    return userinfo
+      ? JSON.parse(userinfo)
+      : {
+          name: '',
+          email: '',
+          phone: '',
+        };
   }
 
   submitForm(): boolean {

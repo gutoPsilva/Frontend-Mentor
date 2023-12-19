@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import Steps from '../models/info.types';
+import { Steps } from '../models/info.types';
 import { CommonModule } from '@angular/common';
 
 @Component({

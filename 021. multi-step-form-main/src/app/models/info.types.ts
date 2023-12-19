@@ -1,3 +1,1 @@
-type Steps = 1 | 2 | 3 | 4 | 5;
-
-export default Steps;
+export type Steps = 1 | 2 | 3 | 4 | 5;

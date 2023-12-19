@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import Steps from '../models/info.types';
+import { Steps } from '../models/info.types';
 
 @Component({
   selector: 'app-side-bar-mobile',

@@ -1,4 +1,7 @@
-type Plans = 'Arcade' | 'Advanced' | 'Pro';
-type PlanDuration = 'Monthly' | 'Yearly';
+export type Plans = 'Arcade' | 'Advanced' | 'Pro';
+export type PlanDuration = 'Monthly' | 'Yearly';
 
-export { Plans, PlanDuration };
+export interface Plan {
+  type: Plans;
+  duration: PlanDuration;
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {PlanDuration, Plans} from '../../models/plan.types';
+import { CommonModule, JsonPipe } from '@angular/common';
+import { Plan, PlanDuration, Plans } from '../../models/plan.types';
 
 @Component({
   selector: 'app-select-plan',
@@ -10,33 +10,38 @@ import {PlanDuration, Plans} from '../../models/plan.types';
   styleUrl: './select-plan.component.css',
 })
 export class SelectPlanComponent {
-  selectedPlan: Plans = 'Arcade';
-  duration: PlanDuration = 'Monthly';
+  plan!: Plan;
+
+  ngOnInit() {
+    this.loadPlan();
+    this.storePlan(); // after loading the plan, if there is no localStorage plan, store the default plan
+  }
 
   storePlan() {
-    localStorage.setItem('plan', this.selectedPlan);
-    localStorage.setItem('duration', this.duration);
+    localStorage.setItem('plan', JSON.stringify(this.plan));
   }
 
   loadPlan() {
     const plan = localStorage.getItem('plan');
-    const duration = localStorage.getItem('duration');
 
-    if (plan) this.selectedPlan = plan as Plans;
-    if (duration) this.duration = duration as PlanDuration;
+    if (plan) {
+      this.plan = JSON.parse(plan);
+    } else {
+      this.plan = {
+        type: 'Arcade',
+        duration: 'Monthly',
+      };
+    }
   }
 
-  ngOnInit() {
-    this.loadPlan();
-  }
-
-  changePlan(plan: Plans) {
-    this.selectedPlan = plan;
+  changePlanType(plan: Plans) {
+    this.plan.type = plan;
     this.storePlan();
   }
 
   toggleDuration() {
-    this.duration = this.duration === 'Monthly' ? 'Yearly' : 'Monthly';
+    this.plan.duration =
+      this.plan.duration === 'Monthly' ? 'Yearly' : 'Monthly';
     this.storePlan();
   }
 }

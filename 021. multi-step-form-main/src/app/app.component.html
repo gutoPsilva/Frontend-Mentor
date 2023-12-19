@@ -6,6 +6,7 @@
       <article>
         <app-your-info class="form" *ngIf="currentStep === 1"></app-your-info>
         <app-select-plan class="form" *ngIf="currentStep === 2"></app-select-plan>
+        <app-add-ons class="form" *ngIf="currentStep === 3"></app-add-ons>
         <nav class="nav-buttons">
           <button
             *ngIf="currentStep !== 1"

@@ -98,7 +98,7 @@
   position: relative;
   display: inline-block;
   width: 44px;
-  height: 34px;
+  height: 22px;
 }
 
 /* Hide default HTML checkbox */
@@ -112,10 +112,10 @@
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 6px;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 6px;
+  bottom: 0;
   background-color: var(--marine-blue);
   -webkit-transition: 0.4s;
   transition: 0.4s;

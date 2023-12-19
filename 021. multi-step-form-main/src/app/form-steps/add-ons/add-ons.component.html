@@ -1,0 +1,75 @@
+<div class="step-container">
+  <h1>Pick add-ons</h1>
+  <p>Add-ons help enhance your gaming experience.</p>
+  <div class="add-ons-container">
+    <div
+      [ngClass]="{ 'selected-add-on': selectedAddons.onlineService }"
+      class="add-on"
+      (click)="toggleAddon('onlineService')"
+    >
+      <label for="online-service" class="container">
+        <input
+          type="checkbox"
+          name="online-service"
+          id="online-service"
+          [checked]="selectedAddons.onlineService"
+          (change)="toggleAddon('onlineService')"
+        />
+        <span class="checkmark"></span>
+      </label>
+      <div class="description">
+        <p class="add-on-name">Online service</p>
+        <p class="add-on-desc">Access to multiplayer games</p>
+      </div>
+      <span class="price">
+        {{ planDuration === "Monthly" ? "+$1/mo" : "+$10/yr" }}
+      </span>
+    </div>
+    <div
+      class="add-on"
+      [ngClass]="{ 'selected-add-on': selectedAddons.extraStorage }"
+      (click)="toggleAddon('extraStorage')"
+    >
+      <label for="larger-storage" class="container">
+        <input
+          type="checkbox"
+          name="larger-storage"
+          id="larger-storage"
+          [checked]="selectedAddons.extraStorage"
+          (change)="toggleAddon('extraStorage')"
+        />
+        <span class="checkmark"></span>
+      </label>
+      <div class="description">
+        <p class="add-on-name">Larger Storage</p>
+        <p class="add-on-desc">Extra 1TB of cloud save</p>
+      </div>
+      <span class="price">
+        {{ planDuration === "Monthly" ? "+$2/mo" : "+$20/yr" }}
+      </span>
+    </div>
+    <div
+      class="add-on"
+      [ngClass]="{ 'selected-add-on': selectedAddons.customProfile }"
+      (click)="toggleAddon('customProfile')"
+    >
+      <label for="customizable-profile" class="container">
+        <input
+          type="checkbox"
+          name="customizable-profile"
+          id="customizable-profile"
+          [checked]="selectedAddons.customProfile"
+          (change)="toggleAddon('customProfile')"
+        />
+        <span class="checkmark"></span>
+      </label>
+      <div class="description">
+        <p class="add-on-name">Customizable profile</p>
+        <p class="add-on-desc">Custom theme on your profile</p>
+      </div>
+      <span class="price">
+        {{ planDuration === "Monthly" ? "+$2/mo" : "+$20/yr" }}
+      </span>
+    </div>
+  </div>
+</div>

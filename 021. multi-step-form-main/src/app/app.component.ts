@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Steps } from './models/info.types';
 import { YourInfoComponent } from './form-steps/your-info/your-info.component';
 import { MobileFooterNavComponent } from './mobile-footer-nav/mobile-footer-nav.component';
-import Steps from './models/info.types';
 import { SideBarDesktopComponent } from './side-bar-desktop/side-bar-desktop.component';
 import { SideBarMobileComponent } from './side-bar-mobile/side-bar-mobile.component';
 import { SelectPlanComponent } from './form-steps/select-plan/select-plan.component';
+import { AddOnsComponent } from './form-steps/add-ons/add-ons.component';
 
 @Component({
   selector: 'app-root',
@@ -18,17 +19,17 @@ import { SelectPlanComponent } from './form-steps/select-plan/select-plan.compon
     SideBarDesktopComponent,
     YourInfoComponent,
     SelectPlanComponent,
+    AddOnsComponent,
     MobileFooterNavComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  currentStep: Steps = 2;
+  currentStep: Steps = 1;
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    console.log(event.key);
     if (event.key === 'Enter' || event.key === 'ArrowRight') this.nextStep();
     if (event.key === 'ArrowLeft') this.returnStep();
   }
@@ -47,6 +48,8 @@ export class AppComponent {
       }
     } else if (this.currentStep === 2) {
       this.currentStep = 3;
+    } else if (this.currentStep === 3) {
+      this.currentStep = 4;
     }
   }
 
