@@ -3,11 +3,25 @@
   <main>
     <section class="form-container">
       <app-side-bar-desktop [step]="currentStep"></app-side-bar-desktop>
-      <article *ngIf="currentStep === 1">
-        <app-your-info></app-your-info>
-        <button class="btn-next" (click)="formSubmit()">Next Step</button>
+      <article>
+        <app-your-info class="form" *ngIf="currentStep === 1"></app-your-info>
+        <app-select-plan class="form" *ngIf="currentStep === 2"></app-select-plan>
+        <nav class="nav-buttons">
+          <button
+            *ngIf="currentStep !== 1"
+            (click)="returnStep()"
+            class="btn-back"
+          >
+            Go Back
+          </button>
+          <button class="btn-next" (click)="nextStep()">Next Step</button>
+        </nav>
       </article>
     </section>
   </main>
-  <app-mobile-footer-nav [step]="currentStep" (formSubmitRequest)="formSubmit()"></app-mobile-footer-nav>
+  <app-mobile-footer-nav
+    [step]="currentStep"
+    (formSubmitRequest)="nextStep()"
+    (returnStepRequest)="returnStep()"
+  ></app-mobile-footer-nav>
 </div>

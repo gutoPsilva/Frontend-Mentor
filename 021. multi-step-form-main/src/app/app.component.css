@@ -4,38 +4,51 @@ main {
   flex: 1;
 }
 
-section {
+.form-container {
   background-color: #ffffff;
   position: relative;
-  max-width: fit-content;
+  max-width: 1024px;
   width: 100%;
   min-height: 10rem;
-  flex-grow: 1;
   border-radius: 12px;
   margin-top: -4.7rem;
   margin-inline: auto;
   z-index: 10;
+  padding: 1.5rem;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
 .app-container {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
-}
-
-.form-container {
-  padding: 1.5rem;
 }
 
 article {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* align next button to the right */
+}
+
+.form {
+  width: 100%;
 }
 
 .btn-next {
   display: none;
-  margin-top: 3rem;
   margin-right: 0;
+}
+
+.btn-back {
+  display: none;
+  margin-left: 0;
+}
+
+.nav-buttons {
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
 }
 
 @media (min-width: 768px) {
@@ -43,26 +56,24 @@ article {
     flex: 0;
   }
 
-  section {
-    margin-top: 0;
-  }
-
   .form-container {
     display: flex;
     padding: 1.5rem;
+    margin-top: 0;
   }
 
   article {
     margin-inline: 3rem;
   }
 
-  .btn-next {
+  .btn-next,
+  .btn-back {
     display: block;
   }
 }
 
 @media (min-width: 1024px) {
   article {
-    margin-inline:  7rem;
+    margin-inline: 7rem;
   }
 }

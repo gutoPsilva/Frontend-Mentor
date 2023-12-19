@@ -13,6 +13,16 @@ h1, h2, h3, h4, h5, h6, p, span {
   margin: 0;
 }
 
+h1 {
+  color: var(--marine-blue);
+  margin-bottom: .25em;
+}
+
+p {
+  color: var(--cool-gray);
+  font-weight: 500;
+}
+
 .app-container {
   min-height: 100svh;
 }
@@ -22,6 +32,16 @@ h1, h2, h3, h4, h5, h6, p, span {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-block: 2rem;
+  }
+
+  .step-container {
+    padding-block: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .step-container {
     padding-block: 2rem;
   }
 }
@@ -48,6 +68,7 @@ h1, h2, h3, h4, h5, h6, p, span {
   align-items: center;
   border-radius: 9999px;
   border: 1px solid var(--light-gray);
+  cursor: default;
 }
 
 .step-link {
@@ -65,14 +86,36 @@ h1, h2, h3, h4, h5, h6, p, span {
   color: var(--marine-blue) !important;
 }
 
+button {
+  border: none;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .btn-next {
   margin-right: 1rem;
+  margin-left: auto;
   padding: 0.85em 1.15em;
   border-radius: 6px;
   background-color: var(--marine-blue);
   color: #ffffff;
-  font-weight: 500;
-  border: none;
-  outline: none;
-  cursor: pointer;
+  transition: background-color .15s ease-in-out;
+}
+
+.btn-next:hover,
+.btn-next:focus {
+  background-color: var(--purplish-blue);
+}
+
+.btn-back {
+  background: transparent;
+  color: var(--cool-gray);
+  margin-left: 1rem;
+  transition: color .15s ease-in-out;
+}
+
+.btn-back:hover, 
+.btn-back:focus {
+  color: var(--marine-blue);
 }

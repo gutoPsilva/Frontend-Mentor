@@ -1,3 +1,4 @@
 <footer>
+  <button *ngIf="step !== 1" class="btn-back" (click)="emitReturnStep()">Go Back</button>
   <button class="btn-next" (click)="emitFormSubmit()">Next Step</button>
 </footer>
