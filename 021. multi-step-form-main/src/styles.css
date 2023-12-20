@@ -119,3 +119,13 @@ button {
 .btn-back:focus {
   color: var(--marine-blue);
 }
+
+.btn-confirm {
+  transition: opacity .15s ease-in-out;
+  background-color: var(--purplish-blue) !important;
+}
+
+.btn-confirm:hover,
+.btn-confirm:focus {
+  opacity: .75;
+}

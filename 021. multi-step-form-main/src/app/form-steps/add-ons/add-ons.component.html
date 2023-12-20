@@ -3,8 +3,10 @@
   <p>Add-ons help enhance your gaming experience.</p>
   <div class="add-ons-container">
     <div
-      [ngClass]="{ 'selected-add-on': selectedAddons.onlineService }"
+      [ngClass]="{ 'selected-add-on': selectedAddons.onlineService.active }"
       class="add-on"
+      tabindex="0"
+      (keypress)="toggleAddonOnSpace($event, 'onlineService')"
       (click)="toggleAddon('onlineService')"
     >
       <label for="online-service" class="container">
@@ -12,7 +14,8 @@
           type="checkbox"
           name="online-service"
           id="online-service"
-          [checked]="selectedAddons.onlineService"
+          tabindex="-1"
+          [checked]="selectedAddons.onlineService.active"
           (change)="toggleAddon('onlineService')"
         />
         <span class="checkmark"></span>
@@ -22,21 +25,25 @@
         <p class="add-on-desc">Access to multiplayer games</p>
       </div>
       <span class="price">
-        {{ planDuration === "Monthly" ? "+$1/mo" : "+$10/yr" }}
+        +${{ selectedAddons.onlineService.price
+        }}{{ planDuration === "Monthly" ? "/mo" : "/yr" }}
       </span>
     </div>
     <div
       class="add-on"
-      [ngClass]="{ 'selected-add-on': selectedAddons.extraStorage }"
-      (click)="toggleAddon('extraStorage')"
+      [ngClass]="{ 'selected-add-on': selectedAddons.largerStorage.active }"
+      tabindex="0"
+      (keypress)="toggleAddonOnSpace($event, 'largerStorage')"
+      (click)="toggleAddon('largerStorage')"
     >
       <label for="larger-storage" class="container">
         <input
           type="checkbox"
           name="larger-storage"
           id="larger-storage"
-          [checked]="selectedAddons.extraStorage"
-          (change)="toggleAddon('extraStorage')"
+          tabindex="-1"
+          [checked]="selectedAddons.largerStorage.active"
+          (change)="toggleAddon('largerStorage')"
         />
         <span class="checkmark"></span>
       </label>
@@ -45,21 +52,27 @@
         <p class="add-on-desc">Extra 1TB of cloud save</p>
       </div>
       <span class="price">
-        {{ planDuration === "Monthly" ? "+$2/mo" : "+$20/yr" }}
+        +${{ selectedAddons.largerStorage.price
+        }}{{ planDuration === "Monthly" ? "/mo" : "/yr" }}
       </span>
     </div>
     <div
       class="add-on"
-      [ngClass]="{ 'selected-add-on': selectedAddons.customProfile }"
-      (click)="toggleAddon('customProfile')"
+      [ngClass]="{
+        'selected-add-on': selectedAddons.customizableProfile.active
+      }"
+      tabindex="0"
+      (keypress)="toggleAddonOnSpace($event, 'customizableProfile')"
+      (click)="toggleAddon('customizableProfile')"
     >
       <label for="customizable-profile" class="container">
         <input
           type="checkbox"
           name="customizable-profile"
           id="customizable-profile"
-          [checked]="selectedAddons.customProfile"
-          (change)="toggleAddon('customProfile')"
+          tabindex="-1"
+          [checked]="selectedAddons.customizableProfile.active"
+          (change)="toggleAddon('customizableProfile')"
         />
         <span class="checkmark"></span>
       </label>
@@ -68,7 +81,8 @@
         <p class="add-on-desc">Custom theme on your profile</p>
       </div>
       <span class="price">
-        {{ planDuration === "Monthly" ? "+$2/mo" : "+$20/yr" }}
+        +${{ selectedAddons.customizableProfile.price
+        }}{{ planDuration === "Monthly" ? "/mo" : "/yr" }}
       </span>
     </div>
   </div>

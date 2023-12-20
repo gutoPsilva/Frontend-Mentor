@@ -1,4 +1,12 @@
 <footer>
-  <button *ngIf="step !== 1" class="btn-back" (click)="emitReturnStep()">Go Back</button>
-  <button class="btn-next" (click)="emitFormSubmit()">Next Step</button>
+  <button *ngIf="step !== 1" class="btn-back" (click)="emitReturnStep()">
+    Go Back
+  </button>
+  <button
+    [ngClass]="{ 'btn-confirm': step === 4 }"
+    class="btn-next"
+    (click)="emitFormSubmit()"
+  >
+    {{ step !== 4 ? "Next Step" : "Confirm" }}
+  </button>
 </footer>

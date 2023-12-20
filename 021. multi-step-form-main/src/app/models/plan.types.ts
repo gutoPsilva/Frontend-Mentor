@@ -4,4 +4,5 @@ export type PlanDuration = 'Monthly' | 'Yearly';
 export interface Plan {
   type: Plans;
   duration: PlanDuration;
+  price: number;
 }

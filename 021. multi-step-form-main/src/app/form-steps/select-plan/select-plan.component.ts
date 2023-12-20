@@ -14,7 +14,6 @@ export class SelectPlanComponent {
 
   ngOnInit() {
     this.loadPlan();
-    this.storePlan(); // after loading the plan, if there is no localStorage plan, store the default plan
   }
 
   storePlan() {
@@ -22,26 +21,41 @@ export class SelectPlanComponent {
   }
 
   loadPlan() {
-    const plan = localStorage.getItem('plan');
+    const savedPlan = localStorage.getItem('plan');
 
-    if (plan) {
-      this.plan = JSON.parse(plan);
+    if (savedPlan) {
+      this.plan = JSON.parse(savedPlan);
     } else {
       this.plan = {
         type: 'Arcade',
         duration: 'Monthly',
+        price: 9,
       };
     }
+
+    this.storePlan();
   }
 
-  changePlanType(plan: Plans) {
+  updatePlan(plan: Plans) {
     this.plan.type = plan;
+    switch (this.plan.type) {
+      case 'Arcade':
+        this.plan.price = this.plan.duration === 'Monthly' ? 9 : 90;
+        break;
+      case 'Advanced':
+        this.plan.price = this.plan.duration === 'Monthly' ? 12 : 120;
+        break;
+      case 'Pro':
+        this.plan.price = this.plan.duration === 'Monthly' ? 15 : 150;
+        break;
+    }
     this.storePlan();
   }
 
   toggleDuration() {
     this.plan.duration =
       this.plan.duration === 'Monthly' ? 'Yearly' : 'Monthly';
+    this.updatePlan(this.plan.type); // maintain the selected type and update the price since the duration is another
     this.storePlan();
   }
 }

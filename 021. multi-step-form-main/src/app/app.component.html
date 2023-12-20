@@ -5,8 +5,16 @@
       <app-side-bar-desktop [step]="currentStep"></app-side-bar-desktop>
       <article>
         <app-your-info class="form" *ngIf="currentStep === 1"></app-your-info>
-        <app-select-plan class="form" *ngIf="currentStep === 2"></app-select-plan>
+        <app-select-plan
+          class="form"
+          *ngIf="currentStep === 2"
+        ></app-select-plan>
         <app-add-ons class="form" *ngIf="currentStep === 3"></app-add-ons>
+        <app-summary
+          (changePlanRequest)="currentStep = 2"
+          class="form"
+          *ngIf="currentStep === 4"
+        ></app-summary>
         <nav class="nav-buttons">
           <button
             *ngIf="currentStep !== 1"
@@ -15,7 +23,13 @@
           >
             Go Back
           </button>
-          <button class="btn-next" (click)="nextStep()">Next Step</button>
+          <button
+            [ngClass]="{ 'btn-confirm': currentStep === 4 }"
+            class="btn-next"
+            (click)="nextStep()"
+          >
+            {{ currentStep !== 4 ? "Next Step" : "Confirm" }}
+          </button>
         </nav>
       </article>
     </section>

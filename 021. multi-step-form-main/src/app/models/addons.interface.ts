@@ -1,5 +1,10 @@
 export interface AddOns {
-  onlineService: boolean;
-  extraStorage: boolean;
-  customProfile: boolean; 
+  onlineService: AddOn;
+  largerStorage: AddOn;
+  customizableProfile: AddOn;
+}
+
+export interface AddOn {
+  active: boolean;
+  price: number;
 }

@@ -8,6 +8,7 @@ import { SideBarDesktopComponent } from './side-bar-desktop/side-bar-desktop.com
 import { SideBarMobileComponent } from './side-bar-mobile/side-bar-mobile.component';
 import { SelectPlanComponent } from './form-steps/select-plan/select-plan.component';
 import { AddOnsComponent } from './form-steps/add-ons/add-ons.component';
+import { SummaryComponent } from './form-steps/summary/summary.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { AddOnsComponent } from './form-steps/add-ons/add-ons.component';
     YourInfoComponent,
     SelectPlanComponent,
     AddOnsComponent,
+    SummaryComponent,
     MobileFooterNavComponent,
   ],
   templateUrl: './app.component.html',
@@ -30,7 +32,11 @@ export class AppComponent {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if (event.key === 'Enter' || event.key === 'ArrowRight') this.nextStep();
+    if (
+      (event.key === 'Enter' && this.currentStep === 1) ||
+      event.key === 'ArrowRight'
+    )
+      this.nextStep();
     if (event.key === 'ArrowLeft') this.returnStep();
   }
 

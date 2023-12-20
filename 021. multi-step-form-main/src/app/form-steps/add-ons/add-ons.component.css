@@ -15,6 +15,12 @@
   background-color: transparent;
   transition: all 0.15s ease-in-out;
   cursor: pointer;
+  outline: none;
+}
+
+.add-on:hover,
+.add-on:focus {
+  border-color: var(--purplish-blue);
 }
 
 .description {
@@ -54,6 +60,11 @@
   background-color: var(--alabaster);
 }
 
+.selected-add-on:hover,
+.selected-add-on:focus {
+  background-color: var(--magnolia);
+}
+
 .container {
   margin-top: 8px;
   margin-right: .25rem;
@@ -90,9 +101,11 @@
 }
 
 /* On mouse-over, add a grey background color */
-/* .container:hover input ~ .checkmark {
-  background-color: var(--cool-gray);
-} */
+.container input:hover ~ .checkmark,
+.container input:focus ~ .checkmark {
+  border-color: var(--purplish-blue);
+}
+
 
 .container input:checked ~ .checkmark {
   background-color: var(--purplish-blue);

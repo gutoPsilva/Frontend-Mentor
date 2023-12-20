@@ -1,0 +1,31 @@
+<div class="step-container">
+  <h1>Finishing up</h1>
+  <p>Double-check evrything looks OK before confirming.</p>
+  <div class="checkout-container">
+    <div class="plan-type">
+      <div class="choosen-type">
+        <p>{{ plan.type }} ({{ plan.duration }})</p>
+        <a href="#" (click)="emitChangePlan()">Change</a>
+      </div>
+      <span class="plan-price">
+        ${{ plan.price }}{{ plan.duration === "Monthly" ? "/mo" : "/yr" }}
+      </span>
+    </div>
+    <div class="choosen-add-ons" *ngIf="activeAddons.length > 0">
+      <div *ngFor="let addon of activeAddons" class="individual-add-on">
+        <p>{{ addon.name }}</p>
+        <span class="add-on-price">
+          {{
+            "+$" + addon.price + (plan.duration === "Monthly" ? "/mo" : "/yr")
+          }}</span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="total-payment-container">
+    <span class="total-text">Total (per {{ plan.duration | lowercaseTrim }})</span>
+    <span class="total-price">
+      +${{ totalPrice }}{{ plan.duration === "Monthly" ? "/mo" : "/yr" }}</span
+    >
+  </div>
+</div>

@@ -5,7 +5,7 @@
     <button
       class="option"
       [ngClass]="{ 'selected-option': plan.type === 'Arcade' }"
-      (click)="changePlanType('Arcade')"
+      (click)="updatePlan('Arcade')"
     >
       <img src="../../../assets/images/icon-arcade.svg" alt="Arcade option" />
       <div class="description">
@@ -21,7 +21,7 @@
     <button
       class="option"
       [ngClass]="{ 'selected-option': plan.type === 'Advanced' }"
-      (click)="changePlanType('Advanced')"
+      (click)="updatePlan('Advanced')"
     >
       <img
         src="../../../assets/images/icon-advanced.svg"
@@ -41,7 +41,7 @@
     <button
       class="option"
       [ngClass]="{ 'selected-option': plan.type === 'Pro' }"
-      (click)="changePlanType('Pro')"
+      (click)="updatePlan('Pro')"
     >
       <img src="../../../assets/images/icon-pro.svg" alt="Pro option" />
       <div class="description">
