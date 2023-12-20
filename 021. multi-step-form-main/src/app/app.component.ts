@@ -30,7 +30,7 @@ import { CompletedComponent } from './form-steps/completed/completed.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  currentStep: Steps = 1;
+  currentStep: Steps = 2;
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {

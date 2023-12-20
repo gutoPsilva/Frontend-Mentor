@@ -18,6 +18,11 @@
   transition: all 0.15s ease-in-out;
 }
 
+.plan-info {
+  display: flex;
+  flex-direction: column;
+}
+
 .description {
   display: flex;
   flex-direction: column;
@@ -78,18 +83,37 @@
 }
 
 @media (min-width: 768px) {
-  .options-group {
-    grid-template-columns: 1fr 1fr 1fr;
+  .option {
+    align-items: start;
   }
 
-  .option {
-    flex-direction: column;
-    gap: 3rem;
-    align-items: start;
+  .description {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .plan-duration-container span {
     font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .options-group {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .description {
+    flex-direction: column;
+  }
+
+  .option {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .free-months {
+    text-align: start;
   }
 }
 
