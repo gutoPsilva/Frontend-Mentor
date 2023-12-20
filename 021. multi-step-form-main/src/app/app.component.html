@@ -3,7 +3,7 @@
   <main>
     <section class="form-container">
       <app-side-bar-desktop [step]="currentStep"></app-side-bar-desktop>
-      <article>
+      <article [ngClass]="{ 'justify-center': currentStep === 5 }">
         <app-your-info class="form" *ngIf="currentStep === 1"></app-your-info>
         <app-select-plan
           class="form"
@@ -15,7 +15,8 @@
           class="form"
           *ngIf="currentStep === 4"
         ></app-summary>
-        <nav class="nav-buttons">
+        <app-completed class="form" *ngIf="currentStep === 5"></app-completed>
+        <nav class="nav-buttons" *ngIf="currentStep !== 5">
           <button
             *ngIf="currentStep !== 1"
             (click)="returnStep()"
@@ -38,5 +39,6 @@
     [step]="currentStep"
     (formSubmitRequest)="nextStep()"
     (returnStepRequest)="returnStep()"
+    *ngIf="currentStep !== 5"
   ></app-mobile-footer-nav>
 </div>

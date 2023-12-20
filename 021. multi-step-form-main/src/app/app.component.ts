@@ -9,6 +9,7 @@ import { SideBarMobileComponent } from './side-bar-mobile/side-bar-mobile.compon
 import { SelectPlanComponent } from './form-steps/select-plan/select-plan.component';
 import { AddOnsComponent } from './form-steps/add-ons/add-ons.component';
 import { SummaryComponent } from './form-steps/summary/summary.component';
+import { CompletedComponent } from './form-steps/completed/completed.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { SummaryComponent } from './form-steps/summary/summary.component';
     SelectPlanComponent,
     AddOnsComponent,
     SummaryComponent,
+    CompletedComponent,
     MobileFooterNavComponent,
   ],
   templateUrl: './app.component.html',
@@ -32,6 +34,7 @@ export class AppComponent {
 
   @HostListener('window:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
+    if (this.currentStep === 5) return; // no keyboard navigation on last step
     if (
       (event.key === 'Enter' && this.currentStep === 1) ||
       event.key === 'ArrowRight'
@@ -52,11 +55,10 @@ export class AppComponent {
         this.yourInfoComponent.storeInfo(); // save form data to localStorage
         this.currentStep = 2; // increment step if form is valid
       }
-    } else if (this.currentStep === 2) {
-      this.currentStep = 3;
-    } else if (this.currentStep === 3) {
-      this.currentStep = 4;
-    }
+    } 
+    else if (this.currentStep === 2) this.currentStep = 3;
+    else if (this.currentStep === 3) this.currentStep = 4;
+    else if (this.currentStep === 4) this.currentStep = 5;
   }
 
   returnStep() {

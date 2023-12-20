@@ -30,6 +30,10 @@ article {
   flex-direction: column;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .form {
   width: 100%;
 }
