@@ -22,8 +22,8 @@ Users should be able to:
 
 ### Screenshot
 
-<div>
-  <img src="./assets/screenshot/mobile.png">
+<div align="center">
+  <img src="./assets/screenshot/mobile.png" width="375px" alt="Mobile screenshot">
 </div>
 
 ### Links
