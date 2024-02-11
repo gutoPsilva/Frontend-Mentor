@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live Site URL](https://gutopsilva.github.io/FrontEnd-Mentor/023.%20social-links-profile-main/index.html)
+- [Solution URL](https://github.com/gutoPsilva/Frontend-Mentor/edit/main/023.%20social-links-profile-main/)
+- [Live Site URL](https://gutopsilva.github.io/Frontend-Mentor/023.%20social-links-profile-main/)
 
 ## My process
 
