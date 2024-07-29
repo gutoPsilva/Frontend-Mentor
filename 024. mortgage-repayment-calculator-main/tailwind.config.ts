@@ -17,7 +17,10 @@ const config: Config = {
         'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
       },
       colors: {
-        "lime-fe": "hsl(61, 70%, 52%)",
+        "lime-fe": {
+          300: "hsl(61, 58%, 64%)",
+          900: "hsl(61, 70%, 52%)"
+        },
         "red-fe": "hsl(4, 69%, 50%)",
         slate: {
           100: 'hsl(202, 86%, 94%)',

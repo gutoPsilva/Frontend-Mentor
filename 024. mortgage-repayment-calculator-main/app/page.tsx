@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen w-full font-jakarta">
       <article className="flex flex-col w-full p-4 mb-3">
-        <section className="w-full flex flex-col items-start gap-2">
+        <section className="w-full flex flex-col transition items-start gap-2">
           <h1 className="font-bold text-2xl text-slate-900">Mortgage Calculator</h1>
-          <button className="underline decoration-1 font-semibold text-slate-600">Clear All</button>
+          <button className="underline decoration-1 font-semibold text-slate-600  hover:text-gray-700">Clear All</button>
         </section>
-        <section className="w-full h-fit flex flex-col items-start gap-2 mt-4">
+        <section className="w-full h-fit font-semibold flex flex-col items-start gap-2 mt-4">
           <label className="text-slate-600" htmlFor="mortgage-amount">Mortgage Amount</label>
-          <div className="flex w-full h-full rounded-md overflow-hidden border-slate-700 border">
+          <div className="flex w-full h-full rounded-md overflow-hidden border-slate-700  border hover:border-black">
             <div className="flex min-h-full flex-grow items-center justify-center bg-slate-100">
               <span className="text-slate-700 font-extrabold">£</span>
             </div>
@@ -27,9 +27,9 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="w-full flex flex-col items-start gap-2 mt-4">
+        <section className="w-full flex font-semibold flex-col items-start gap-2 mt-4">
           <label className="text-slate-600" htmlFor="mortgage-term">Mortgage Term</label>
-          <div className="flex w-full rounded-md overflow-hidden border-slate-700 border">
+          <div className="flex w-full rounded-md overflow-hidden border-slate-700 transition border hover:border-black">
             <CurrencyInput
               id="mortgage-term"
               name="mortgage-term"
@@ -41,9 +41,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full flex flex-col items-start gap-2 mt-4">
+        <section className="w-full flex font-semibold flex-col items-start gap-2 mt-4">
           <label className="text-slate-600" htmlFor="interest-rate">Interest Rate</label>
-          <div className="flex w-full h-full rounded-md overflow-hidden border-slate-700 border">
+          <div className="flex w-full h-full rounded-md overflow-hidden border-slate-700 transition border hover:border-black">
             <CurrencyInput
               id="interest-rate"
               name="interest-rate"
@@ -56,19 +56,20 @@ export default function Home() {
           </div>
         </section>
         <section className="w-full flex flex-col gap-2 mt-4">
-          <p className="text-slate-600">Mortgage Type</p>
+          <p className="text-slate-600 font-semibold">Mortgage Type</p>
           <div className="w-full flex flex-col gap-2">
-            <label className="flex items-center p-2 gap-4 border rounded border-slate-700">
+            <label className="flex items-center p-2 gap-4 border rounded border-slate-700 transition cursor-pointer hover:border-lime-fe-900">
               <input type="radio" id="type-repayment" name="mortgage-type" value="repayment" />
-              <label htmlFor="type-repayment" className="text-slate-900 font-bold">Repayment</label>
+              <label htmlFor="type-repayment" className="text-slate-900 font-bold cursor-pointer">Repayment</label>
             </label>
-            <label className="flex items-center p-2 gap-4 border rounded border-slate-700">
+            <label className="flex items-center p-2 gap-4 border rounded border-slate-700 transition cursor-pointer hover:border-lime-fe-900">
               <input id="type-interest" type="radio" name="mortgage-type" value="interest-only" />
-              <label htmlFor="type-interest" className="text-slate-900 font-bold">Interest Only</label>
+              <label htmlFor="type-interest" className="text-slate-900 font-bold cursor-pointer">Interest Only</label>
             </label>
           </div>
         </section>
-        <button className="text-slate-900 bg-lime-fe font-bold flex gap-2 justify-center items-center mt-4 rounded-3xl p-3">
+
+        <button className="text-slate-900 bg-lime-fe-900 font-bold flex gap-2 justify-center items-center mt-4 rounded-3xl p-3 transition hover:bg-lime-fe-300">
         <Image src={CalculatorSVG} alt="Ilustração Calculadora" className="w-fit h-fit" />
         <span>Calculate Repayments</span>
         </button>
