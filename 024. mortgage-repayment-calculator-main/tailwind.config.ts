@@ -16,6 +16,14 @@ const config: Config = {
       fontFamily: {
         'jakarta': ['"Plus Jakarta Sans"', 'sans-serif'],
       },
+      borderRadius: {
+        "4xl": "2rem",
+        "5xl": "2.5rem",
+        "6xl": "3rem",
+        "7xl": "3.5rem",
+        "8xl": "4rem",
+        "9xl": "4.5rem"
+      },
       colors: {
         "lime-fe": {
           300: "hsl(61, 58%, 64%)",
