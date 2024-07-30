@@ -20,7 +20,14 @@ export default function Home() {
     total: 0
   });
 
-  const handleChange = (prop: keyof typeof mortgage, value: string | number | undefined ) => {
+  const [errors, setErrors] = useState({
+    amount: false,
+    mortgage_term: false,
+    interest_rate: false,
+    type: false,
+  });
+
+  const handleChangeMortgage = (prop: keyof typeof mortgage, value: string | number | undefined ) => {
     if(value == undefined) value = 0;
 
     if(!value && value != 0) return;
@@ -31,9 +38,28 @@ export default function Home() {
     }));
   };
 
+  const validateValues = () => {
+    const { amount, mortgage_term, interest_rate, type } = mortgage;
+
+    const newErrors = { ...errors };
+
+    newErrors.amount = !amount;
+    newErrors.mortgage_term = !mortgage_term;
+    newErrors.interest_rate = !interest_rate;
+    newErrors.type = !type;
+
+    setErrors(newErrors);
+
+    const hasError = Object.values(newErrors).some(error => error);
+
+    return hasError;
+  }
+
   const calculateRepayment = () => {
     const { amount, mortgage_term, interest_rate, type } = mortgage;
     let repayment = 0;
+
+    if(validateValues()) return;
 
     const principal = amount;
     const monthlyInterestRate = interest_rate / 12 / 100;
@@ -53,7 +79,21 @@ export default function Home() {
     });
   };
 
+  const clearAll = () => {
+    setMortgage({
+      amount: 0,
+      mortgage_term: 0,
+      interest_rate: 0,
+      type: 0,
+    });
 
+    setRepayment({
+      monthly: 0,
+      total: 0
+    });
+
+
+  }
 
   return (
 
@@ -63,7 +103,7 @@ export default function Home() {
 
         <section className="w-full flex flex-col transition items-start gap-2 md:flex-row md:items-end md:justify-between">
           <h1 className="font-bold text-2xl text-slate-900">Mortgage Calculator</h1>
-          <button className="underline decoration-1 font-semibold text-slate-600  hover:text-gray-700">Clear All</button>
+          <button onClick={clearAll} className="underline decoration-1 font-semibold text-slate-600  hover:text-gray-700">Clear All</button>
         </section>
 
         <section className="w-full h-fit flex flex-col items-start gap-2 mt-4  md:mt-8">
@@ -77,14 +117,18 @@ export default function Home() {
               name="mortgage-amount"
               decimalsLimit={2}
               decimalSeparator="."
+              value={mortgage.amount == 0 ? undefined : mortgage.amount}
               groupSeparator=","
-              onEmptied={() => handleChange("amount", 0)}
+              onEmptied={() => handleChangeMortgage("amount", 0)}
               className="p-3 flex-grow"
-              onValueChange={(value) => handleChange("amount", value)}
+              onValueChange={(value) => handleChangeMortgage("amount", value)}
             />
           </div>
 
-          <p className="text-red-fe">This field is required</p>
+          {
+            errors.amount && <p className="text-red-fe">This field is required</p>
+          }
+
         </section>
 
         <section className="w-full md:flex md:gap-6">
@@ -94,17 +138,18 @@ export default function Home() {
               <CurrencyInput
                 id="mortgage-term"
                 name="mortgage-term"
+                value={mortgage.mortgage_term == 0 ? undefined : mortgage.mortgage_term}
                 allowDecimals={false}
                 className="p-3 w-full"
-                onValueChange={(value) => handleChange("mortgage_term", value)}
+                onValueChange={(value) => handleChangeMortgage("mortgage_term", value)}
               />
               <div className="flex min-h-full px-5 items-center justify-center bg-slate-100">
                 <span className="text-slate-700 font-extrabold">years</span>
               </div>
             </div>
-            <div>
-              <p className="text-red-fe">This field is required</p>
-            </div>
+            {
+              errors.mortgage_term && <p className="text-red-fe">This field is required</p>
+            }
           </div>
           <div className="flex flex-grow flex-col items-start gap-2 mt-4">
             <label className="text-slate-600" htmlFor="interest-rate">Interest Rate</label>
@@ -112,17 +157,20 @@ export default function Home() {
               <CurrencyInput
                 id="interest-rate"
                 name="interest-rate"
+                value={mortgage.interest_rate == 0 ? undefined : mortgage.interest_rate}
                 decimalsLimit={2}
                 className="p-3 w-full"
                 decimalSeparator="."
                 groupSeparator=","
-                onValueChange={(value) => handleChange("interest_rate", value)}
+                onValueChange={(value) => handleChangeMortgage("interest_rate", value)}
               />
               <div className="flex min-h-full px-5 items-center justify-center bg-slate-100">
                 <span className="text-slate-700 font-extrabold">%</span>
               </div>
             </div>
-            <p className="text-red-fe">This field is required</p>
+            {
+              errors.interest_rate && <p className="text-red-fe">This field is required</p>
+            }
           </div>
         </section>
 
@@ -130,14 +178,17 @@ export default function Home() {
           <p className="text-slate-600">Mortgage Type</p>
           <div className="w-full flex flex-col gap-2">
             <label className="flex items-center px-4 py-2 gap-4 border rounded border-slate-700 transition cursor-pointer hover:border-lime-fe-900 md:py-3">
-              <input type="radio" id="type-repayment" name="mortgage-type" onChange={() => handleChange("type", 1)} />
+              <input type="radio" id="type-repayment" name="mortgage-type" checked={mortgage.type == 1} onChange={() => handleChangeMortgage("type", 1)} />
               <label htmlFor="type-repayment" className="text-slate-900 font-bold cursor-pointer">Repayment</label>
             </label>
             <label className="flex items-center px-4 py-2 gap-4 border rounded border-slate-700 transition cursor-pointer hover:border-lime-fe-900 md:py-3">
-              <input id="type-interest" type="radio" name="mortgage-type" onChange={() => handleChange("type", 2)} />
+              <input id="type-interest" type="radio" name="mortgage-type" checked={mortgage.type == 2} onChange={() => handleChangeMortgage("type", 2)} />
               <label htmlFor="type-interest" className="text-slate-900 font-bold cursor-pointer">Interest Only</label>
             </label>
           </div>
+          {
+            errors.type && <p className="text-red-fe">This field is required</p>
+          }
         </section>
 
         <button onClick={calculateRepayment} className="text-slate-900 bg-lime-fe-900 font-bold flex gap-2 justify-center items-center mt-4 rounded-3xl p-3 transition hover:bg-lime-fe-300 md:w-fit md:px-10 md:mt-8">
