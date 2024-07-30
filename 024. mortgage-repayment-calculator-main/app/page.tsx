@@ -4,12 +4,32 @@ import CalculatorSVG from "../assets/images/icon-calculator.svg"
 import IlustrationSVG from "../assets/images/illustration-empty.svg"
 
 import Image from 'next/image'
+import { useState } from "react";
 
 export default function Home() {
+
+  const [mortgage, setMortgage] = useState({
+    amount: 0,
+    mortgage_term: 0,
+    interest_rate: 0,
+    type: 0,
+  });
+
+  const handleChange = (prop: keyof typeof mortgage, value: string | number | undefined ) => {
+    if(!value && value != 0 ) return;
+
+    setMortgage((prevMortgage) => ({
+      ...prevMortgage,
+      [prop]: +value,
+    }));
+
+    console.log(mortgage)
+  };
+
   return (
     <main className="flex flex-col min-h-screen w-full font-jakarta bg-white md:flex-row md:w-fit md:min-h-min md:h-min md:rounded-3xl md:overflow-hidden md:mx-4">
       <article className="flex flex-col w-full p-4 mb-3 md:max-w-md md:mb-0 md:p-8">
-        
+
         <section className="w-full flex flex-col transition items-start gap-2 md:flex-row md:items-end md:justify-between">
           <h1 className="font-bold text-2xl text-slate-900">Mortgage Calculator</h1>
           <button className="underline decoration-1 font-semibold text-slate-600  hover:text-gray-700">Clear All</button>
@@ -26,8 +46,11 @@ export default function Home() {
               name="mortgage-amount"
               decimalsLimit={2}
               className="p-3 flex-grow"
+              onValueChange={(value) => handleChange("amount", value)}
             />
           </div>
+
+          <p className="text-red-fe">This field is required</p>
         </section>
 
         <section className="w-full md:flex md:gap-6">
@@ -39,10 +62,14 @@ export default function Home() {
                 name="mortgage-term"
                 allowDecimals={false}
                 className="p-3 w-full"
+                onValueChange={(value) => handleChange("mortgage_term", value)}
               />
               <div className="flex min-h-full px-5 items-center justify-center bg-slate-100">
                 <span className="text-slate-700 font-extrabold">years</span>
               </div>
+            </div>
+            <div>
+              <p className="text-red-fe">This field is required</p>
             </div>
           </div>
           <div className="flex flex-grow flex-col items-start gap-2 mt-4">
@@ -53,11 +80,13 @@ export default function Home() {
                 name="interest-rate"
                 decimalsLimit={2}
                 className="p-3 w-full"
+                onValueChange={(value) => handleChange("interest_rate", value)}
               />
               <div className="flex min-h-full px-5 items-center justify-center bg-slate-100">
                 <span className="text-slate-700 font-extrabold">%</span>
               </div>
             </div>
+            <p className="text-red-fe">This field is required</p>
           </div>
         </section>
 
@@ -65,11 +94,11 @@ export default function Home() {
           <p className="text-slate-600">Mortgage Type</p>
           <div className="w-full flex flex-col gap-2">
             <label className="flex items-center px-4 py-2 gap-4 border rounded border-slate-700 transition cursor-pointer hover:border-lime-fe-900 md:py-3">
-              <input type="radio" id="type-repayment" name="mortgage-type" value="repayment" />
+              <input type="radio" id="type-repayment" name="mortgage-type" onChange={() => handleChange("type", 1)} />
               <label htmlFor="type-repayment" className="text-slate-900 font-bold cursor-pointer">Repayment</label>
             </label>
             <label className="flex items-center px-4 py-2 gap-4 border rounded border-slate-700 transition cursor-pointer hover:border-lime-fe-900 md:py-3">
-              <input id="type-interest" type="radio" name="mortgage-type" value="interest-only" />
+              <input id="type-interest" type="radio" name="mortgage-type" onChange={() => handleChange("type", 2)} />
               <label htmlFor="type-interest" className="text-slate-900 font-bold cursor-pointer">Interest Only</label>
             </label>
           </div>
