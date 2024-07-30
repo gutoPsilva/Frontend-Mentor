@@ -92,7 +92,12 @@ export default function Home() {
       total: 0
     });
 
-
+    setErrors({
+      amount: false,
+      mortgage_term: false,
+      interest_rate: false,
+      type: false,
+    });
   }
 
   return (
@@ -108,9 +113,11 @@ export default function Home() {
 
         <section className="w-full h-fit flex flex-col items-start gap-2 mt-4  md:mt-8">
           <label className="text-slate-600" htmlFor="mortgage-amount">Mortgage Amount</label>
-          <div className="flex w-full h-full rounded-md overflow-hidden border-slate-700  border hover:border-black">
-            <div className="flex min-h-full px-5 items-center justify-center bg-slate-100">
-              <span className="text-slate-700 font-extrabold">£</span>
+          <div 
+            className={`flex w-full h-full rounded-md overflow-hidden  border ${errors.amount ? 'border-red-fe hover:border-red-fe' : 'border-slate-700 hover:border-black'}`}
+          >
+            <div className={`flex min-h-full px-5 items-center justify-center  ${errors.amount ? 'bg-red-fe ' : 'bg-slate-100'}`}>
+              <span className={`font-extrabold ${errors.amount ? 'text-white' : 'text-slate-700'}`}>£</span>
             </div>
             <CurrencyInput
               id="mortgage-amount"
@@ -134,7 +141,7 @@ export default function Home() {
         <section className="w-full md:flex md:gap-6">
           <div className="flex flex-grow flex-col items-start gap-2 mt-4">
             <label className="text-slate-600" htmlFor="mortgage-term">Mortgage Term</label>
-            <div className="flex w-full h-full rounded-md overflow-hidden border-slate-700 transition border hover:border-black">
+            <div className={`flex w-full rounded-md overflow-hidden transition border  ${errors.mortgage_term ? 'border-red-fe hover:border-red-fe' : ' border-slate-700  hover:border-black'}`}>
               <CurrencyInput
                 id="mortgage-term"
                 name="mortgage-term"
@@ -143,8 +150,8 @@ export default function Home() {
                 className="p-3 w-full"
                 onValueChange={(value) => handleChangeMortgage("mortgage_term", value)}
               />
-              <div className="flex min-h-full px-5 items-center justify-center bg-slate-100">
-                <span className="text-slate-700 font-extrabold">years</span>
+              <div className={`flex min-h-full px-5 items-center justify-center ${errors.mortgage_term ? 'bg-red-fe' : 'bg-slate-100'}`}>
+                <span className={`font-extrabold ${errors.mortgage_term ? 'text-white' : 'text-slate-700'}`}>years</span>
               </div>
             </div>
             {
@@ -153,7 +160,7 @@ export default function Home() {
           </div>
           <div className="flex flex-grow flex-col items-start gap-2 mt-4">
             <label className="text-slate-600" htmlFor="interest-rate">Interest Rate</label>
-            <div className="flex w-full h-full rounded-md overflow-hidden border-slate-700 transition border hover:border-black">
+            <div className={`flex w-full rounded-md overflow-hidden transition border ${errors.interest_rate ? 'border-red-fe hover:border-red-fe' : 'border-slate-700  hover:border-black'}`}>
               <CurrencyInput
                 id="interest-rate"
                 name="interest-rate"
@@ -164,8 +171,8 @@ export default function Home() {
                 groupSeparator=","
                 onValueChange={(value) => handleChangeMortgage("interest_rate", value)}
               />
-              <div className="flex min-h-full px-5 items-center justify-center bg-slate-100">
-                <span className="text-slate-700 font-extrabold">%</span>
+              <div className={`flex min-h-full px-5 items-center justify-center ${errors.interest_rate ? "bg-red-fe" : 'bg-slate-100'}`}>
+                <span className={`font-extrabold ${errors.interest_rate ? 'text-white' : 'text-slate-700 '}`}>%</span>
               </div>
             </div>
             {
