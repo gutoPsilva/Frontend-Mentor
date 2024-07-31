@@ -227,7 +227,7 @@ export default function Home() {
                     
                     <hr className="opacity-20 my-4"></hr>
                   
-                    <p className="text-slate-300">Total you'll repay over the term</p>
+                    <p className="text-slate-300">Total you&apos;ll repay over the term</p>
                     <p className="text-white text-2xl">£{repayment.total.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                   </div>
                 </div>
