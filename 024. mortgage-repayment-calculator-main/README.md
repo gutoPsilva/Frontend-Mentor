@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://github.com/gutoPsilva/Frontend-Mentor/blob/main/024.%20mortgage-repayment-calculator-main/README.md)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL](https://github.com/gutoPsilva/Frontend-Mentor/tree/main/024.%20mortgage-repayment-calculator-main)
+- [Live Site URL](https://gutopsilva-mortgage.vercel.app)
 
 ## My process
 
